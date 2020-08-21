@@ -1,1 +1,1 @@
-# Team-1720-FrontEnd
+# Team-1720-Frontend
