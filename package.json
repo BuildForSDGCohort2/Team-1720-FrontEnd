@@ -1,5 +1,5 @@
 {
-    "name": "mtibu-frontend",
+    "name": "mtibuFrontend",
     "version": "0.0.0",
     "scripts": {
         "ng": "ng",
@@ -7,6 +7,7 @@
         "build": "ng build",
         "test": "ng test",
         "lint": "ng lint",
+        "prod": "ng build --prod=true",
         "e2e": "ng e2e"
     },
     "private": true,
