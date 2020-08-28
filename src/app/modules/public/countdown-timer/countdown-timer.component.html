@@ -1,7 +1,11 @@
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <!-- <countdown #countdownTimer [config]="config"></countdown> -->
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-12 d-flex flex-column align-items-center h-100 justify-content-center">
+            <img src="./assets/logos/mtibu-logo-color.svg" alt="mtibu-logo-color" class="mtb-logo-l">
+            <h1 class="mtb-coming-soon-title">Coming Soon</h1>
+            <h2 class="mtb-coming-soon-subtitle">Next sprint end date <strong>{{enddate}}</strong></h2>
+            <!-- <p> milliseconds : {{diff}},</p> -->
+            <h3 class="mtb-coming-soon-time">Days: {{days}} <span>Hours: {{hours}}:{{minutes}}:{{seconds}}</span></h3>
         </div>
     </div>
 </div>
