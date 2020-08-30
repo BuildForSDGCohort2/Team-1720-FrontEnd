@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class CountdownTimerComponent implements OnInit {
 
-  public enddate = '31 August 2020 23:00';
+  public enddate = '31 August 2020';
   public diff: number;
   public days: number;
   public hours: number;
@@ -32,19 +32,19 @@ export class CountdownTimerComponent implements OnInit {
       });
   }
 
-  getDays(t):any {
+  getDays(t): any {
     return Math.floor(t / (1000 * 60 * 60 * 24));
   }
 
-  getHours(t):any {
+  getHours(t): any {
     return Math.floor((t / (1000 * 60 * 60)) % 24);
   }
 
-  getMinutes(t):any {
+  getMinutes(t): any {
     return Math.floor((t / 1000 / 60) % 60);
   }
 
-  getSeconds(t):any {
+  getSeconds(t): any {
     return Math.floor((t / 1000) % 60);
   }
 

@@ -1,5 +1,5 @@
-$orientation_landscape: 'landscape';
-$orientation_potrait: 'potrait';
+$orientation_landscape: "landscape";
+$orientation_potrait: "potrait";
 $min_small_mobile_width: 375px;
 $max_mobile_width: 670px;
 $min_tablet_width: 768px;
@@ -9,7 +9,7 @@ $max_laptop_width: 1440px;
 $min_desktop_width: 1680px;
 $large_desktop_width: 1980px;
 // Xtra Small mobile device.
-@mixin xtra_small_moblie_devices_only {
+@mixin xtra_small_moblie_devices_only() {
     @media screen and (max-width: $min_small_mobile_width) {
         @content;
     }
@@ -24,13 +24,13 @@ $large_desktop_width: 1980px;
     }
 }
 
-@mixin mobile_devices_only_landscape {
+@mixin mobile_devices_only_landscape() {
     @media screen and (min-width: $min_small_mobile_width) and (max-width: $max_mobile_width) and (orientation: $orientation_landscape) {
         @content;
     }
 }
 
-@mixin mobile_devices_only_potrait {
+@mixin mobile_devices_only_potrait() {
     @media screen and (max-width: $max_mobile_width) and (orientation: $orientation_potrait) {
         @content;
     }
@@ -39,21 +39,21 @@ $large_desktop_width: 1980px;
 // ***************
 // Tablet devices
 // ***************
-@mixin tablet_devices_only {
+@mixin tablet_devices_only() {
     @media screen and (min-width: $max_mobile_width) and (max-width: $max_tablet_width) {
         @content;
     }
 }
 
 // Tablet landscape
-@mixin tablet_devices_only_landscape {
+@mixin tablet_devices_only_landscape() {
     @media screen and (min-width: $min_tablet_width) and (max-width: $max_tablet_width) and (orientation: $orientation_landscape) {
         @content;
     }
 }
 
 // Tablet potrait
-@mixin tablet_devices_only_potrait {
+@mixin tablet_devices_only_potrait() {
     @media screen and (min-width: $max_mobile_width) and (max-width: $min_tablet_width) and (orientation: $orientation_potrait) {
         @content;
     }
@@ -62,13 +62,13 @@ $large_desktop_width: 1980px;
 // ***************
 // Laptops devices
 // ***************
-@mixin small_laptop_devices_only {
+@mixin small_laptop_devices_only() {
     @media screen and (min-width: $max_tablet_width) and (max-width: $min_laptop_width) and (orientation: $orientation_potrait) {
         @content;
     }
 }
 
-@mixin laptop_devices_only {
+@mixin laptop_devices_only() {
     @media screen and (min-width: $min_laptop_width) and (max-width: $max_laptop_width) and (orientation: $orientation_potrait) {
         @content;
     }
@@ -77,19 +77,19 @@ $large_desktop_width: 1980px;
 // ***************
 // Desktops devices
 // ***************
-@mixin desktop_devices_only {
+@mixin desktop_devices_only() {
     @media screen and (min-width: $max_laptop_width) and (max-width: $min_desktop_width) {
         @content;
     }
 }
 
-@mixin desktop_medium_devices_only {
+@mixin desktop_medium_devices_only() {
     @media screen and (min-width: $min_desktop_width) and (max-width: $large_desktop_width) {
         @content;
     }
 }
 
-@mixin desktop_large_devices_only {
+@mixin desktop_large_devices_only() {
     @media screen and (min-width: $large_desktop_width) {
         @content;
     }
