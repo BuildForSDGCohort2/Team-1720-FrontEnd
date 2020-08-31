@@ -24,6 +24,12 @@ $large_desktop_width: 1980px;
     }
 }
 
+@mixin large_mobile_devices_only {
+    @media screen and (max-width: $max_mobile_width) {
+        @content;
+    }
+}
+
 @mixin mobile_devices_only_landscape() {
     @media screen and (min-width: $min_small_mobile_width) and (max-width: $max_mobile_width) and (orientation: $orientation_landscape) {
         @content;
@@ -41,6 +47,12 @@ $large_desktop_width: 1980px;
 // ***************
 @mixin tablet_devices_only() {
     @media screen and (min-width: $max_mobile_width) and (max-width: $max_tablet_width) {
+        @content;
+    }
+}
+
+@mixin large_tablet_devices_only {
+    @media screen and (max-width: $max_tablet_width) {
         @content;
     }
 }

@@ -30,10 +30,16 @@ h3 {
 // *****************
 .mtb-logo-l {
     width: 25%;
+    @include xtra_small_moblie_devices_only() {
+        width: 50%;
+    }
     @include mobile_devices_only() {
         width: 50%;
     }
     @include mobile_devices_only_landscape() {
+        width: 40%;
+    }
+    @include tablet_devices_only_potrait() {
         width: 40%;
     }
 }
@@ -44,11 +50,23 @@ h3 {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin: 0.5em 0;
+    @include xtra_small_moblie_devices_only() {
+        font-size: 40px;
+    }
     @include mobile_devices_only() {
         font-size: 40px;
     }
     @include mobile_devices_only_landscape() {
         font-size: 40px;
+    }
+    @include tablet_devices_only() {
+        font-size: 40px;
+    }
+    @include tablet_devices_only_landscape() {
+        font-size: 60px;
+    }
+    @include tablet_devices_only_potrait() {
+        font-size: 70px;
     }
 }
 
@@ -57,10 +75,16 @@ h3 {
     font-weight: 400;
     letter-spacing: 1px;
     margin: 0.1em 0;
+    @include large_mobile_devices_only() {
+        font-size: 13px;
+    }
     @include mobile_devices_only() {
         font-size: 13px;
     }
     @include mobile_devices_only_landscape() {
+        font-size: 13px;
+    }
+    @include tablet_devices_only_potrait() {
         font-size: 13px;
     }
 }
@@ -73,6 +97,9 @@ h3 {
     margin: 0.1em 0;
     span {
         margin-left: 0.4em;
+    }
+    @include large_mobile_devices_only() {
+        font-size: 20px;
     }
     @include mobile_devices_only() {
         font-size: 20px;
