@@ -2,6 +2,7 @@ $orientation_landscape: "landscape";
 $orientation_potrait: "potrait";
 $min_small_mobile_width: 375px;
 $max_mobile_width: 670px;
+$large_mobile_width: 720px;
 $min_tablet_width: 768px;
 $max_tablet_width: 1024px;
 $min_laptop_width: 1366px;
@@ -19,19 +20,19 @@ $large_desktop_width: 1980px;
 // Mobile device.
 // ******************
 @mixin mobile_devices_only {
-    @media screen and (min-width: $min_small_mobile_width) and (max-width: $max_mobile_width) {
-        @content;
-    }
-}
-
-@mixin large_mobile_devices_only {
     @media screen and (max-width: $max_mobile_width) {
         @content;
     }
 }
 
+@mixin large_mobile_devices_only {
+    @media screen and (max-width: $large_mobile_width) {
+        @content;
+    }
+}
+
 @mixin mobile_devices_only_landscape() {
-    @media screen and (min-width: $min_small_mobile_width) and (max-width: $max_mobile_width) and (orientation: $orientation_landscape) {
+    @media screen and (max-width: $min_tablet_width) and (orientation: $orientation_landscape) {
         @content;
     }
 }
@@ -75,13 +76,13 @@ $large_desktop_width: 1980px;
 // Laptops devices
 // ***************
 @mixin small_laptop_devices_only() {
-    @media screen and (min-width: $max_tablet_width) and (max-width: $min_laptop_width) and (orientation: $orientation_potrait) {
+    @media screen and (min-width: $max_tablet_width) and (max-width: $min_laptop_width) {
         @content;
     }
 }
 
 @mixin laptop_devices_only() {
-    @media screen and (min-width: $min_laptop_width) and (max-width: $max_laptop_width) and (orientation: $orientation_potrait) {
+    @media screen and (min-width: $min_laptop_width) and (max-width: $max_laptop_width) {
         @content;
     }
 }

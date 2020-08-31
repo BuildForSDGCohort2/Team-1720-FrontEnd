@@ -25,9 +25,25 @@ h3 {
     font-family: $mtb-fnt-manrope;
 }
 
-// *****************
-// Coming soon page.
-// *****************
+.mtb-logo-sm {
+    width: 100%;
+    @include xtra_small_moblie_devices_only() {
+        width: 40%;
+    }
+    @include mobile_devices_only() {
+        width: 40%;
+    }
+    @include mobile_devices_only_landscape() {
+        width: 50%;
+    }
+    @include tablet_devices_only() {
+        width: 40%;
+    }
+    @include tablet_devices_only_landscape() {
+        width: 100%;
+    }
+}
+
 .mtb-logo-l {
     width: 25%;
     @include xtra_small_moblie_devices_only() {
@@ -44,6 +60,9 @@ h3 {
     }
 }
 
+// *****************
+// Coming soon page.
+// *****************
 .mtb-coming-soon-title {
     font-size: 85px;
     font-weight: 800;
@@ -107,4 +126,73 @@ h3 {
     @include mobile_devices_only_landscape() {
         font-size: 20px;
     }
+}
+
+// *****************
+// Error Message
+// *****************
+.mtb-error-container {
+    border-left: 1px solid $mtb-black-o-1;
+    padding-left: 2rem;
+    h1 {
+        font-weight: $mtb-fnt-w-900;
+        font-size: $mtb-fnt-sz-60;
+        margin: 0 0 0.4rem 0;
+        @include xtra_small_moblie_devices_only() {
+            font-size: $mtb-fnt-sz-20;
+        }
+        @include mobile_devices_only() {
+            font-size: $mtb-fnt-sz-40;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        @include mobile_devices_only_landscape() {
+            font-size: $mtb-fnt-sz-50;
+        }
+        @include tablet_devices_only() {
+            margin-top: 1rem;
+            font-size: $mtb-fnt-sz-40;
+            text-align: center;
+        }
+        @include tablet_devices_only_landscape() {
+            font-size: $mtb-fnt-sz-30;
+            text-align: left;
+        }
+    }
+    h2 {
+        font-weight: $mtb-fnt-w-400;
+        font-size: $mtb-fnt-sz-xlg;
+        text-align: left;
+        @include xtra_small_moblie_devices_only() {
+            font-size: $mtb-fnt-sz-md;
+            text-align: center;
+        }
+        @include mobile_devices_only() {
+            font-size: $mtb-fnt-sz-md;
+            text-align: center;
+        }
+        @include tablet_devices_only() {
+            font-size: $mtb-fnt-sz-md;
+            text-align: center;
+        }
+        @include tablet_devices_only_landscape() {
+            text-align: left;
+        }
+    }
+    @include tablet_devices_only_potrait() {
+        border-left: none;
+        padding-left: 0;
+    }
+    @include large_mobile_devices_only() {
+        border-left: none;
+        padding-left: 0;
+    }
+    @include mobile_devices_only_landscape() {
+        border-left: none;
+        padding-left: 0;
+    }
+    // @include xtra_small_moblie_devices_only() {
+    //     border-left: none;
+    //     padding-left: 0;
+    // }
 }
