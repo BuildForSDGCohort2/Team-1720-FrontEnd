@@ -9,7 +9,7 @@ import { map } from 'rxjs/operators';
 })
 export class CountdownTimerComponent implements OnInit {
 
-  public enddate = '31 August 2020 23:59:00';
+  public enddate = '15 September 2020 23:59:00';
   public diff: number;
   public days: number;
   public hours: number;
