@@ -1,1 +1,5 @@
+<app-public-header *ngIf="!userLoggedIn"></app-public-header>
+<app-admin-header *ngIf="userLoggedIn"></app-admin-header>
 <router-outlet></router-outlet>
+<app-public-footer *ngIf="!userLoggedIn" class="mt-auto"></app-public-footer>
+<app-admin-footer *ngIf="userLoggedIn" class="mt-auto"></app-admin-footer>

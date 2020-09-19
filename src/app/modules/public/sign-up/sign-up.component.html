@@ -1,0 +1,136 @@
+<div class="container h-100 mtb-page-wrapper">
+    <div class="row h-100 d-flex flex-column align-items-end justify-content-center">
+        <div class="col-12 col-lg-5 offset-lg-1 d-flex flex-column h-100 justify-content-center">
+            <div class="card mtb-card-reset">
+                <div class="card-title mtb-card-title">
+                    <h2>Sign up</h2>
+
+                    <div class="col-12 d-flex justify-content-between mt-3">
+                        <a href="javascript:void(0)" (click)="changeUserType()" class="mtb-link mtb-link-underline" [ngClass]="{'active': userType === 'patient'}">I'm a patient</a>
+                        <a href="javascript:void(0)" (click)="changeUserType()" class="mtb-link mtb-link-underline" [ngClass]="{'active': userType === 'doctor'}">I'm a doctor</a>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="col-12 d-flex px-0">
+                            <div class="form-group mtb-input-wrapper">
+                                <input type="text" placeholder="Name" class="mtb-input-md">
+                            </div>
+                            <div class="form-group mtb-input-wrapper ml-2">
+                                <input type="text" placeholder="Surname" class="mtb-input-md">
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex px-0">
+                            <div class="form-group mtb-input-wrapper">
+                                <input type="email" placeholder="Email" class="mtb-input-md">
+                            </div>
+                            <div class="form-group mtb-input-wrapper ml-2">
+                                <input type="tel" placeholder="Mobile number" class="mtb-input-md">
+                            </div>
+                        </div>
+                        <div class="col-12 d-flex px-0">
+                            <div class="form-group mtb-input-wrapper">
+                                <select name="gender" id="">
+                                    <option value="">Please select your gender</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Other">Other</option>
+                                    <option value="not-say">Rather not say</option>
+                                </select>
+                            </div>
+                            <div class="form-group mtb-input-wrapper ml-2">
+                                <input type="dateOfBirth" placeholder="Date of Birth" placeholder="yyyy-mm-dd" name="dp" [minDate]="minDate" ngbDatepicker #dp="ngbDatepicker" (click)="dp.toggle()" class="mtb-input-md">
+                            </div>
+                        </div>
+                        <div class="col-12 px-0 d-none" [ngClass]="{'d-flex': userType === 'doctor'}">
+                            <div class="form-group mtb-input-wrapper">
+                                <input type="text" placeholder="Medical Licence ID" class="mtb-input-md">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper-checkbox">
+                                <input type="checkbox" aria-label="Checkbox for following text input">
+                                <label for="terms and conditions">I accept the <a href="javascript:void(0)"
+                                         (click)="open(content)">Terms and conditions</a></label>
+                            </div>
+                        </div>
+
+                        <div class="col-12 px-0 text-center">
+                            <a href="javascript:void(0)" class="btn btn-lg btn-block mt-3 mtb-btn-lg mtb-btn-green">Sign up</a>
+                        </div>
+                    </form>
+                    <div class="col-12 mtb-footer-cont-links text-center">
+                        <a href="javascript:void(0)" [routerLink]="['/login']" routerLinkActive="router-link-active" class="mtb-link mtb-link-md">Already have an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #content let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Terms and conditions of service
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis augue neque, nec lacinia erat euismod sed. In iaculis eget sapien nec ultrices. Vivamus elementum lobortis mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum
+            tristique, metus id luctus porttitor, nisi tellus lacinia ligula, quis accumsan nibh ante ac elit. Nam aliquam sagittis imperdiet. Pellentesque blandit lacus quis augue placerat lobortis. Mauris volutpat est ut dolor malesuada molestie. Nunc
+            ac iaculis sapien. Nunc rhoncus dignissim sem, scelerisque lacinia diam rutrum ac. Nunc ante sem, suscipit sit amet pretium in, fringilla at est. Donec quis orci vitae lectus tincidunt venenatis sit amet et nisi.
+        </p>
+        <p>
+            Donec nec tristique est, et volutpat magna. Praesent nec diam quis sem accumsan consectetur sit amet a odio. Nullam suscipit, risus vel fringilla semper, purus enim vestibulum urna, sit amet dapibus eros odio id sem. Etiam vitae nisl tempor, vehicula
+            orci non, interdum purus. Aenean at ullamcorper lorem, id pretium velit. Nunc felis sapien, dignissim id pharetra at, rhoncus ut felis. Maecenas ultrices, nunc eu suscipit dignissim, enim nisi gravida libero, id egestas risus augue at nisl.
+        </p>
+        <p>
+            Quisque vel tincidunt felis, vitae blandit neque. Sed non neque tincidunt, consectetur leo sed, posuere neque. Aenean quis rhoncus eros, nec pharetra ante. Sed ornare condimentum lorem. Nam sed eros tristique, pulvinar nisi ac, tempor diam. Sed vel blandit
+            enim, sit amet varius risus. Suspendisse nec nisl ac nisi egestas sodales a non lorem. Donec in pulvinar dui. Pellentesque eget congue tortor. Fusce nec metus ipsum.</p>
+        <p>
+            Morbi egestas augue eget volutpat faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce vulputate quam et rhoncus imperdiet. Vivamus dolor lacus, consectetur sit amet lacinia nec, accumsan a augue.
+            Ut tincidunt vehicula venenatis. Nullam convallis neque non quam gravida, ut elementum turpis viverra. Vestibulum vehicula in justo in semper. Ut sit amet pretium metus. Quisque gravida sagittis magna elementum rhoncus. Donec et enim id elit
+            ornare iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+        <p>
+            Pellentesque feugiat ultricies sagittis. Nam et luctus erat. Sed ut dignissim dolor, quis laoreet felis. Vestibulum turpis eros, congue id commodo non, hendrerit at neque. Fusce erat lacus, aliquet vel bibendum vitae, bibendum consequat nisl. Praesent
+            posuere rutrum bibendum. Aenean id egestas tortor. Duis nibh eros, fringilla id tincidunt id, eleifend nec erat. Cras imperdiet purus lacus, sit amet varius nisl pulvinar quis. Ut pulvinar ex et magna sollicitudin, ut posuere quam facilisis.
+            Maecenas sit amet metus orci. Sed ultrices orci quis libero pellentesque pellentesque.
+        </p>
+        <p>
+            Nullam est sapien, ornare eu velit vel, iaculis bibendum eros. Ut in iaculis diam. Nunc eu tellus ac nisi auctor placerat eget eu est. Donec accumsan elit non leo eleifend maximus. Aliquam malesuada varius feugiat. Aenean egestas molestie diam sit amet
+            mattis. Pellentesque urna nibh, interdum non lacus ac, blandit vestibulum mi. Duis placerat nisl dui, a dictum ipsum commodo at. Proin accumsan pharetra porta. Sed tincidunt malesuada tempus. Proin gravida dapibus sodales. Praesent egestas
+            est nec est sollicitudin, eget porttitor tortor vestibulum. Nunc quis tellus quis dui semper lobortis a ut neque.
+            <p>
+                Integer sollicitudin tempor lorem varius molestie. Etiam fringilla molestie turpis. Mauris dapibus dictum ornare. In luctus tellus et nisl venenatis, vitae lobortis est rhoncus. Nam nunc ex, lobortis non commodo ac, finibus ac justo. Mauris et nibh nec
+                sapien cursus molestie sit amet eget magna. Sed vel mollis est. Morbi condimentum magna at ipsum fermentum, a pellentesque magna rhoncus. Donec maximus aliquet dui, tempus congue turpis congue et. Interdum et malesuada fames ac ante ipsum
+                primis in faucibus. Curabitur ut mi tristique, tempus nisi ut, vehicula metus. Sed vel blandit nibh.
+            </p>
+            <p>
+                Ut tristique aliquam velit ut imperdiet. Proin sed interdum odio. Vivamus consequat dolor sit amet nisi imperdiet dignissim. Phasellus auctor nibh nec porttitor dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                curae; Aliquam id dapibus mi. Cras et sollicitudin dolor. Cras hendrerit libero ac nulla sodales, sed gravida quam tincidunt. Suspendisse potenti.
+            </p>
+
+            <p>
+                Nulla vel porta urna. Proin dapibus, mi a accumsan dignissim, neque elit maximus libero, eget rutrum orci ligula in est. Sed non pretium leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ac felis eleifend,
+                placerat felis nec, cursus tortor. Pellentesque consequat urna vel risus varius pretium. Aenean a nibh non justo ullamcorper faucibus et sed lectus. Aenean vestibulum, massa ac aliquam pulvinar, lacus augue tempor massa, et facilisis metus
+                lorem quis justo. Suspendisse in pulvinar massa. Donec non porta erat, vitae pretium tellus. Vivamus tempus, nunc nec posuere euismod, orci magna malesuada risus, et scelerisque tellus eros eget lacus. Sed dignissim ex leo, semper imperdiet
+                lacus suscipit vel. Praesent tempus est vitae dignissim euismod. Vestibulum sapien lectus, maximus id eleifend at, rutrum vel leo.
+            </p>
+
+            <p>
+                Pellentesque nisl eros, blandit in dui non, dignissim efficitur odio. Vivamus in lectus eget dui porttitor eleifend ut et risus. Proin pretium risus nisi, ut tincidunt sem pharetra id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget
+                lobortis orci, non rhoncus purus. Pellentesque eget molestie est, at lobortis purus. Sed vehicula orci nec erat scelerisque aliquet. Suspendisse id mi id felis lobortis consectetur. Cras volutpat enim ornare turpis luctus pellentesque.
+                Phasellus venenatis, tellus sit amet volutpat lacinia, lacus massa fermentum ante, quis aliquet mauris elit vitae tellus. Donec ac efficitur neque. Aliquam vestibulum vulputate viverra. Aenean sed augue id nulla pharetra blandit. Proin
+                ultrices eros ut tellus molestie, in lacinia elit hendrerit. Mauris vitae mollis nulla.
+            </p>
+    </div>
+    <div class="modal-footer mtb-modal-footer">
+        <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark" (click)="modal.close('Save click')">
+            close
+        </a>
+    </div>
+</ng-template>

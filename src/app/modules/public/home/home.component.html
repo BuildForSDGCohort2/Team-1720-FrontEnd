@@ -1,0 +1,185 @@
+<div class="container-fluid h-100 mtb-page-wrapper mtb-home-main-row">
+    <div class="row h-100">
+        <div class="container h-100">
+            <div class="row h-100">
+
+                <div class="col-12 col-lg-6 offset-lg-1 d-flex flex-column h-100 justify-content-center">
+                    <div class="mtb-title d-flex flex-column mb-4">
+                        <h1 class="mtb-title-green mb-2">Chat to a doctor</h1>
+                        <span class="mtb-title-seperator"></span>
+                    </div>
+
+                    <div class="card mtb-card-reset">
+                        <div class="card-body">
+                            <nav>
+                                <div class="nav nav-tabs nav-pills d-flex justify-content-between" id="nav-tab" role="tablist">
+                                    <a class="nav-item active mtb-tab-icon-col mtb-icon-thirds" id="nav-get-help-tab" data-toggle="tab" href="#nav-get-help" role="tab" aria-controls="nav-get-help" aria-selected="true">
+                                        <i class="ri-first-aid-kit-fill mtb-icon mtb-icon-md"></i> Help me
+                                    </a>
+                                    <a class="nav-item mtb-tab-icon-col mtb-icon-thirds" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">
+                                        <i class="ri-nurse-fill mtb-icon mtb-icon-md"></i> Find a doctor</a>
+                                    <a class="nav-item mtb-tab-icon-col mtb-icon-thirds" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">
+                                        <i class="ri-hospital-fill  mtb-icon mtb-icon-md"></i>Find a hospital
+                                    </a>
+                                </div>
+                            </nav>
+                            <div class="tab-content py-3 px-3 px-sm-0 mtb-card-tabs-md" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-get-help" role="tabpanel" aria-labelledby="nav-get-help-tab">
+                                    <form>
+                                        <h3 class="mtb-section-title-1 my-3">Seeking medical help..</h3>
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-12 col-lg-6 pl-lg-0">
+                                                    <div class="form-group">
+                                                        <div class="mtb-input-wrapper">
+                                                            <input type="text" class="mtb-input mtb-input-search" placeholder="Full Name">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="mtb-input-wrapper">
+                                                            <input type="email" class="mtb-input mtb-input-search" placeholder="Email">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="mtb-input-wrapper">
+                                                            <input type="mobile" class="mtb-input mtb-input-search" placeholder="Mobile number">
+                                                        </div>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <div class="mtb-input-wrapper-checkbox">
+                                                            <input type="checkbox" aria-label="Checkbox for following text input">
+                                                            <label for="terms and conditions">I accept the <a href="javascript:void(0)" (click)="open(content)">Terms and conditions</a></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 col-lg-6 pl-lg-0">
+                                                    <div class="form-group">
+                                                        <div class="mtb-input-wrapper">
+                                                            <textarea name="condition" id="" cols="20" rows="10" placeholder="Give us a short description of what you are feeling"></textarea>
+                                                        </div>
+                                                        <!-- <p >There is a flat rate fee of R 20.00 that is charged per inquiry</p> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Get Help</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                    <form>
+                                        <h3 class="mtb-section-title-1 mt-3">Find a doctor</h3>
+                                        <div class="form-group">
+                                            <div class="mtb-input-w-icon">
+                                                <i class="ri-search-line"></i>
+                                                <input type="text" class="mtb-input mtb-input-search" placeholder="Search for a doctor by name or profession">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Find doctor</a>
+                                        </div>
+                                    </form>
+
+                                    <div class="col-12 mtb-footer-cont-links text-center">
+                                        <a href="javascript:void(0)" [routerLink]="['/login']" routerLinkActive="router-link-active" class="mtb-link mtb-link-md">I ‘m a
+                                            doctor, I would like follow up with a patient</a>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                    <form>
+                                        <h3 class="mtb-section-title-1 mt-3">Find a hospital</h3>
+                                        <div class="form-group">
+                                            <div class="mtb-input-w-icon">
+                                                <i class="ri-search-line"></i>
+                                                <input type="text" class="mtb-input mtb-input-search" placeholder="Search for a hospital. E.g. Johannesburg">
+                                            </div>
+                                        </div>
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Find hospital</a>
+                                        </div>
+                                    </form>
+
+                                    <!-- <div class="col-12 mtb-footer-cont-links text-center">
+                                        <a href="javascript:void(0)" [routerLink]="['/login']" routerLinkActive="router-link-active" class="mtb-link mtb-link-md">I ‘m a
+                                            doctor, I would like follow up with a patient</a>
+                                    </div> -->
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<ng-template #content let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Terms and conditions of service
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque iaculis augue neque, nec lacinia erat euismod sed. In iaculis eget sapien nec ultrices. Vivamus elementum lobortis mollis. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vestibulum
+            tristique, metus id luctus porttitor, nisi tellus lacinia ligula, quis accumsan nibh ante ac elit. Nam aliquam sagittis imperdiet. Pellentesque blandit lacus quis augue placerat lobortis. Mauris volutpat est ut dolor malesuada molestie. Nunc
+            ac iaculis sapien. Nunc rhoncus dignissim sem, scelerisque lacinia diam rutrum ac. Nunc ante sem, suscipit sit amet pretium in, fringilla at est. Donec quis orci vitae lectus tincidunt venenatis sit amet et nisi.
+        </p>
+        <p>
+            Donec nec tristique est, et volutpat magna. Praesent nec diam quis sem accumsan consectetur sit amet a odio. Nullam suscipit, risus vel fringilla semper, purus enim vestibulum urna, sit amet dapibus eros odio id sem. Etiam vitae nisl tempor, vehicula
+            orci non, interdum purus. Aenean at ullamcorper lorem, id pretium velit. Nunc felis sapien, dignissim id pharetra at, rhoncus ut felis. Maecenas ultrices, nunc eu suscipit dignissim, enim nisi gravida libero, id egestas risus augue at nisl.
+        </p>
+        <p>
+            Quisque vel tincidunt felis, vitae blandit neque. Sed non neque tincidunt, consectetur leo sed, posuere neque. Aenean quis rhoncus eros, nec pharetra ante. Sed ornare condimentum lorem. Nam sed eros tristique, pulvinar nisi ac, tempor diam. Sed vel blandit
+            enim, sit amet varius risus. Suspendisse nec nisl ac nisi egestas sodales a non lorem. Donec in pulvinar dui. Pellentesque eget congue tortor. Fusce nec metus ipsum.</p>
+        <p>
+            Morbi egestas augue eget volutpat faucibus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce vulputate quam et rhoncus imperdiet. Vivamus dolor lacus, consectetur sit amet lacinia nec, accumsan a augue.
+            Ut tincidunt vehicula venenatis. Nullam convallis neque non quam gravida, ut elementum turpis viverra. Vestibulum vehicula in justo in semper. Ut sit amet pretium metus. Quisque gravida sagittis magna elementum rhoncus. Donec et enim id elit
+            ornare iaculis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        </p>
+        <p>
+            Pellentesque feugiat ultricies sagittis. Nam et luctus erat. Sed ut dignissim dolor, quis laoreet felis. Vestibulum turpis eros, congue id commodo non, hendrerit at neque. Fusce erat lacus, aliquet vel bibendum vitae, bibendum consequat nisl. Praesent
+            posuere rutrum bibendum. Aenean id egestas tortor. Duis nibh eros, fringilla id tincidunt id, eleifend nec erat. Cras imperdiet purus lacus, sit amet varius nisl pulvinar quis. Ut pulvinar ex et magna sollicitudin, ut posuere quam facilisis.
+            Maecenas sit amet metus orci. Sed ultrices orci quis libero pellentesque pellentesque.
+        </p>
+        <p>
+            Nullam est sapien, ornare eu velit vel, iaculis bibendum eros. Ut in iaculis diam. Nunc eu tellus ac nisi auctor placerat eget eu est. Donec accumsan elit non leo eleifend maximus. Aliquam malesuada varius feugiat. Aenean egestas molestie diam sit amet
+            mattis. Pellentesque urna nibh, interdum non lacus ac, blandit vestibulum mi. Duis placerat nisl dui, a dictum ipsum commodo at. Proin accumsan pharetra porta. Sed tincidunt malesuada tempus. Proin gravida dapibus sodales. Praesent egestas
+            est nec est sollicitudin, eget porttitor tortor vestibulum. Nunc quis tellus quis dui semper lobortis a ut neque.
+            <p>
+                Integer sollicitudin tempor lorem varius molestie. Etiam fringilla molestie turpis. Mauris dapibus dictum ornare. In luctus tellus et nisl venenatis, vitae lobortis est rhoncus. Nam nunc ex, lobortis non commodo ac, finibus ac justo. Mauris et nibh nec
+                sapien cursus molestie sit amet eget magna. Sed vel mollis est. Morbi condimentum magna at ipsum fermentum, a pellentesque magna rhoncus. Donec maximus aliquet dui, tempus congue turpis congue et. Interdum et malesuada fames ac ante ipsum
+                primis in faucibus. Curabitur ut mi tristique, tempus nisi ut, vehicula metus. Sed vel blandit nibh.
+            </p>
+            <p>
+                Ut tristique aliquam velit ut imperdiet. Proin sed interdum odio. Vivamus consequat dolor sit amet nisi imperdiet dignissim. Phasellus auctor nibh nec porttitor dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia
+                curae; Aliquam id dapibus mi. Cras et sollicitudin dolor. Cras hendrerit libero ac nulla sodales, sed gravida quam tincidunt. Suspendisse potenti.
+            </p>
+
+            <p>
+                Nulla vel porta urna. Proin dapibus, mi a accumsan dignissim, neque elit maximus libero, eget rutrum orci ligula in est. Sed non pretium leo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Maecenas ac felis eleifend,
+                placerat felis nec, cursus tortor. Pellentesque consequat urna vel risus varius pretium. Aenean a nibh non justo ullamcorper faucibus et sed lectus. Aenean vestibulum, massa ac aliquam pulvinar, lacus augue tempor massa, et facilisis metus
+                lorem quis justo. Suspendisse in pulvinar massa. Donec non porta erat, vitae pretium tellus. Vivamus tempus, nunc nec posuere euismod, orci magna malesuada risus, et scelerisque tellus eros eget lacus. Sed dignissim ex leo, semper imperdiet
+                lacus suscipit vel. Praesent tempus est vitae dignissim euismod. Vestibulum sapien lectus, maximus id eleifend at, rutrum vel leo.
+            </p>
+
+            <p>
+                Pellentesque nisl eros, blandit in dui non, dignissim efficitur odio. Vivamus in lectus eget dui porttitor eleifend ut et risus. Proin pretium risus nisi, ut tincidunt sem pharetra id. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris eget
+                lobortis orci, non rhoncus purus. Pellentesque eget molestie est, at lobortis purus. Sed vehicula orci nec erat scelerisque aliquet. Suspendisse id mi id felis lobortis consectetur. Cras volutpat enim ornare turpis luctus pellentesque.
+                Phasellus venenatis, tellus sit amet volutpat lacinia, lacus massa fermentum ante, quis aliquet mauris elit vitae tellus. Donec ac efficitur neque. Aliquam vestibulum vulputate viverra. Aenean sed augue id nulla pharetra blandit. Proin
+                ultrices eros ut tellus molestie, in lacinia elit hendrerit. Mauris vitae mollis nulla.
+            </p>
+    </div>
+    <div class="modal-footer mtb-modal-footer">
+        <a href="javascript:void(0)" class="btn btn-sm btn-outline-dark" (click)="modal.close('Save click')">
+            close
+        </a>
+    </div>
+</ng-template>
