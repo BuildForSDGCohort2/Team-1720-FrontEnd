@@ -1,0 +1,35 @@
+<div class="container h-100 mtb-page-wrapper">
+    <div class="row h-100 d-flex flex-column align-items-end justify-content-center">
+        <div class="col-12 col-lg-5 offset-lg-1 d-flex flex-column h-100 justify-content-center">
+            <div class="card mtb-card-reset">
+                <div class="card-title mtb-card-title">
+                    <h2>Login</h2>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group mtb-input-wrapper">
+                            <input type="text" placeholder="ID Number/Mobile Number/Email" class="mtb-input-md">
+                        </div>
+                        <div class="form-group mtb-input-wrapper">
+                            <input type="password" placeholder="Password" class="mtb-input-md">
+                        </div>
+                        <div class="col-12 px-0 text-center">
+                            <a href="javascript:void(0)" class="btn btn-lg btn-block mt-3 mtb-btn-lg mtb-btn-green">Login</a>
+                            <a href="javascript:void(0)" class="text-center mt-3 mtb-link mtb-link-xs">Forgot
+                                password</a>
+                        </div>
+                        <p class="text-center mtb-text-sm pt-4">Or you can also login with</p>
+                        <div class="col-8 offset-lg-2 d-flex justify-content-between">
+                            <a href="javascript:void(0)" class="text-center mtb-icon-text-link"><i class="ri-facebook-fill"></i> Facebook</a>
+                            <a href="javascript:void(0)" class="text-center mtb-icon-text-link"><i class="ri-google-fill"></i> Google</a>
+                            <a href="javascript:void(0)" class="text-center mtb-icon-text-link"><i class="ri-twitter-fill"></i> Twitter</a>
+                        </div>
+                    </form>
+                    <div class="col-12 mtb-footer-cont-links text-center">
+                        <a href="javascript:void(0)" [routerLink]="['/sign-up']" routerLinkActive="router-link-active" class="mtb-link mtb-link-md">I don't have an account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
