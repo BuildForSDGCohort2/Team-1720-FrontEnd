@@ -1,5 +1,5 @@
-<app-public-header *ngIf="!userLoggedIn && routerUrl !== ''"></app-public-header>
-<app-admin-header *ngIf="userLoggedIn && routerUrl !== ''"></app-admin-header>
+<app-public-header *ngIf="!userLoggedIn && !isCountDownPage"></app-public-header>
+<app-admin-header *ngIf="userLoggedIn && !isCountDownPage"></app-admin-header>
 <router-outlet></router-outlet>
-<app-public-footer *ngIf="!userLoggedIn && routerUrl !== ''" class="mt-auto"></app-public-footer>
-<app-admin-footer *ngIf="userLoggedIn && routerUrl !== ''" class="mt-auto"></app-admin-footer>
+<app-public-footer *ngIf="!userLoggedIn && !isCountDownPage" class="mt-auto"></app-public-footer>
+<app-admin-footer *ngIf="userLoggedIn && !isCountDownPage" class="mt-auto"></app-admin-footer>

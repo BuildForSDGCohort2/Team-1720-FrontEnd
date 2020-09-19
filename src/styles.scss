@@ -229,7 +229,7 @@ p {
 // Public Navigation
 // *****************
 .ai-header-logo {
-    width: 10%;
+    width: 7%;
     img {
         width: 100%;
     }
@@ -247,6 +247,11 @@ p {
 .mtb-pub-header {
     display: block;
     height: 70px;
+    background-color: $mtb-white;
+    box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
 }
 
 #mtbbu-pub-header-nav {
@@ -436,7 +441,7 @@ p {
 
 .mtb-footer-cont-links {
     border-top: 1px solid $mtb-black-o-0-5;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding: 0.5rem 0;
 }
 
@@ -487,7 +492,7 @@ p {
     display: flex;
     flex-direction: column;
     i {
-        font-size: $mtb-fnt-sz-30;
+        font-size: $mtb-fnt-sz-20;
         line-height: $mtb-fnt-sz-23;
     }
     &:hover {

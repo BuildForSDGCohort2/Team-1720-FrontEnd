@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router, ActivatedRoute, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
 
 @Component({
@@ -11,18 +11,21 @@ export class AppComponent {
 
   cookieValue;
   userLoggedIn = false;
-  routerUrl;
+  isCountDownPage = false;
 
   constructor(private cookieService: CookieService, private router: Router, public route: ActivatedRoute) {
     this.cookieService.set('mtibabu', JSON.stringify({user: ''}));
     this.cookieValue = JSON.parse(this.cookieService.get('mtibabu'));
     this.userLoggedIn = this.cookieValue.user !== undefined && this.cookieValue.user.length > 0 ? true : false;
-    // console.log(this.userLoggedIn);
-    // console.log(this.cookieValue.user);
-    this.routerUrl = router.url;
-    router.events.subscribe((val) => {
-      // see also 
-      console.log(val instanceof NavigationEnd);
+
+    this.router.events.subscribe((val) => {
+      if (val instanceof NavigationEnd) {
+        if (val.url === '/') {
+          this.isCountDownPage = true;
+        } else {
+          this.isCountDownPage = false;
+        }
+      }
     });
   }
 }
