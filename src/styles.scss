@@ -371,7 +371,7 @@ p {
 }
 
 .mtb-card-title {
-    padding: 1rem 2rem;
+    padding: 1rem 2rem 0rem 1rem;
 }
 
 // *****************
@@ -387,6 +387,7 @@ p {
         font-family: $mtb-fnt-manrope;
         font-weight: $mtb-fnt-w-500;
         letter-spacing: 1px;
+        padding: 0.4rem 3rem;
     }
 }
 
@@ -549,10 +550,10 @@ p {
     display: flex;
     flex-direction: row;
     align-items: center;
-    box-shadow: 3px 3px 7px $mtb-black-o-0-5;
-    -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
-    -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
-    -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    box-shadow: 3px -1px 7px $mtb-black-o-0-5;
+    -webkit-box-shadow: 3px 1-px 7px $mtb-black-o-0-5;
+    -moz-box-shadow: 3px -1px 7px $mtb-black-o-0-5;
+    -o-box-shadow: 3px -1px 7px $mtb-black-o-0-5;
     input {
         width: 100%;
         padding: 0.3rem 0.7rem;
@@ -595,17 +596,53 @@ p {
     flex-direction: row;
     align-items: center;
     input {
-        width: 1em;
-        height: 1em;
-        background-color: white;
-        border-radius: 50%;
-        vertical-align: middle;
-        border: 1px solid #ddd;
-        -webkit-appearance: none;
-        outline: none;
-        cursor: pointer;
+        // width: 1em;
+        // height: 1em;
+        // background-color: white;
+        // border-radius: 50%;
+        // vertical-align: middle;
+        // border: 1px solid #ddd;
+        // -webkit-appearance: none;
+        // outline: none;
+        // cursor: pointer;
+        // &:checked {
+        //     background-color: $mtb-p-green;
+        // }
+        display: none;
         &:checked {
-            background-color: $mtb-p-green;
+            +label {
+                span {
+                    background-color: $mtb-p-green;
+                    transform: scale(1.25); // enlarge the box
+                    &:after {
+                        width: 6px;
+                        background: $mtb-white;
+                        transition: width 150ms ease 100ms; // enlarge the tick
+                    }
+                    &:before {
+                        width: 3px;
+                        background: $mtb-white;
+                        transition: width 150ms ease 100ms; // enlarge the tick
+                    }
+                }
+                &:hover {
+                    // copy the states for onMouseOver to avoid flickering
+                    span {
+                        background-color: $mtb-p-green;
+                        transform: scale(1.25); // enlarge the box
+                        &:before {
+                            width: 3px;
+                            background: $mtb-white;
+                            transition: width 150ms ease 100ms; // enlarge the tick
+                        }
+                        &:after {
+                            width: 8px;
+                            background: $mtb-white;
+                            transition: width 150ms ease 100ms; // enlarge the tick
+                        }
+                    }
+                }
+            }
         }
     }
     label {
@@ -614,6 +651,60 @@ p {
         font-size: $mtb-fnt-sz-11;
         margin-bottom: 0.1rem;
         margin-left: 0.3rem;
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        span {
+            display: inline-block;
+            position: relative;
+            background-color: transparent;
+            width: 20px;
+            height: 20px;
+            transform-origin: center;
+            border: 2px solid $mtb-black-o-4;
+            border-radius: 50%;
+            vertical-align: -6px;
+            margin-right: 10px;
+            transition: background-color 150ms 200ms, transform 350ms cubic-bezier(.78, -1.22, .17, 1.89);
+            &:before {
+                content: "";
+                width: 0px;
+                height: 1px;
+                border-radius: 0px; // so that the tick has nice rounded look
+                background: $mtb-p-green;
+                position: absolute;
+                transform: rotate(45deg);
+                top: 8px; // you'll need to experiment with placement depending on the dimensions you've chosen
+                left: 5px; // you'll need to experiment with placement depending on the dimensions you've chosen
+                transition: width 50ms ease 50ms;
+                transform-origin: 0% 0%;
+            }
+            &:after {
+                content: "";
+                width: 0;
+                height: 1px;
+                border-radius: 0px; // so that the tick has nice rounded look
+                background: $mtb-p-green;
+                position: absolute;
+                transform: rotate(310deg);
+                top: 10px; // you'll need to experiment with placement depending on the dimensions you've chosen
+                left: 6px; // you'll need to experiment with placement depending on the dimensions you've chosen
+                transition: width 50ms ease;
+                transform-origin: 0% 0%;
+            }
+        }
+        &:hover {
+            span {
+                &:before {
+                    width: 3px;
+                    transition: width 100ms ease;
+                }
+                &:after {
+                    width: 8px;
+                    transition: width 150ms ease 100ms;
+                }
+            }
+        }
     }
     a {
         color: $mtb-black-o-4;
