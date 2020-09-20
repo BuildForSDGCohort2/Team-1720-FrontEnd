@@ -1,6 +1,6 @@
 <app-public-header *ngIf="!userLoggedIn && !isCountDownPage"></app-public-header>
 <app-admin-header *ngIf="userLoggedIn && !isCountDownPage"></app-admin-header>
-<div class="mtb-content-offset">
+<div class="" [ngClass]="{'mtb-content-offset': !isHome, 'h-100': isHome }">
     <router-outlet></router-outlet>
 </div>
 <app-public-footer *ngIf="!userLoggedIn && !isCountDownPage" class="mt-auto"></app-public-footer>

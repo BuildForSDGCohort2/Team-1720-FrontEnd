@@ -12,6 +12,7 @@ export class AppComponent {
   cookieValue;
   userLoggedIn = false;
   isCountDownPage = false;
+  isHome = false;
 
   constructor(private cookieService: CookieService, private router: Router, public route: ActivatedRoute) {
     this.cookieService.set('mtibabu', JSON.stringify({user: ''}));
@@ -24,6 +25,11 @@ export class AppComponent {
           this.isCountDownPage = true;
         } else {
           this.isCountDownPage = false;
+        }
+        if (val.url === '/home') {
+          this.isHome = true;
+        } else {
+          this.isHome = false;
         }
       }
     });

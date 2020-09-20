@@ -16,6 +16,7 @@ body {
 
 *:focus {
     outline: none;
+    transition: all 0.1s ease-in-out;
 }
 
 // Overall wrapping container
@@ -28,6 +29,14 @@ body {
 
 .mtb-page-wrapper {
     min-height: 92vh;
+}
+
+.mtb-content-offset {
+    min-height: 91%;
+    padding-top: 70px;
+    // height: 92%;
+    // max-height: 100%;
+    // display: flex;
 }
 
 h1 {
@@ -245,8 +254,6 @@ p {
 }
 
 .mtb-pub-header {
-    display: block;
-    height: 70px;
     background-color: $mtb-white;
     box-shadow: 3px 3px 7px $mtb-black-o-0-5;
     -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
@@ -254,9 +261,14 @@ p {
     -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
 }
 
-.mtb-content-offset {
-    padding-top: 70px;
-    height: 100%;
+.mtb-pub-main-header-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
+.mtb-main-nav {
+    width: 95%;
 }
 
 #mtbbu-pub-header-nav {
@@ -298,13 +310,54 @@ p {
     }
 }
 
+// Legal pages
+.mtb-nav-sec-title {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-lg;
+    font-weight: $mtb-fnt-w-400;
+    margin-bottom: 0px;
+    color: $mtb-black-o-3;
+}
+
+.mtb-in-page-nav {
+    background-color: $mtb-black-o-0-2;
+    box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    &.navbar {
+        padding: 0.5rem 1rem 0 1rem;
+    }
+    ul.navbar-nav {
+        li {
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease-in-out;
+            a {
+                font-family: $mtb-fnt-manrope;
+                color: $mtb-black-o-3;
+                font-size: $mtb-fnt-sz-11;
+                font-weight: $mtb-fnt-w-500;
+                transition: all 0.2s ease-in-out;
+            }
+            &.active {
+                border-bottom-color: $mtb-p-green;
+                transition: all 0.2s ease-in-out;
+                a {
+                    color: $mtb-p-green;
+                    transition: all 0.2s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
 // *****************
 // Public Footer
 // *****************
 .mtb-pub-footer {
     background-color: $mtb-black-o-0-2;
     padding: 1rem;
-    height: 60px;
+    height: 70px;
     margin-top: auto;
     a {
         font-family: $mtb-fnt-noto;
@@ -341,19 +394,58 @@ p {
     color: $mtb-black-o-7;
 }
 
+.mtb-main-title-2 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xlg;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-black-o-8;
+}
+
 .mtb-text-sm {
     font-family: $mtb-fnt-manrope;
     font-size: $mtb-fnt-sz-sm;
     color: $mtb-black-o-6;
 }
 
+// Title seperators
+.mtb-title-right-border {
+    border-right: 1px solid $mtb-black-o-1;
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
+}
+
 // *****************
 // Separators
 // *****************
+.mtb-has-separator-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .mtb-title-seperator {
     background-color: $mtb-p-green;
     width: 80px;
     height: 5px;
+}
+
+.mtb-title-seperator-black {
+    background-color: $mtb-black-o-4;
+    width: 80px;
+    height: 5px;
+}
+
+.mtb-title-seperator-black-md {
+    background-color: $mtb-black-o-8;
+    width: 40px;
+    height: 3px;
+}
+
+.mtb-seperator-right-md {
+    width: 1px;
+    height: 60%;
+    background-color: $mtb-black-o-1;
+    display: block;
 }
 
 // *****************
@@ -795,6 +887,20 @@ p {
     font-size: $mtb-fnt-sz-md;
     max-height: 15rem;
     overflow-y: auto;
+}
+
+// *****************
+// Scroll Sections
+// *****************
+.mtb-scroll-section-md {
+    max-height: 72vh;
+    overflow-y: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    p {
+        width: 70%;
+    }
 }
 
 // *****************
