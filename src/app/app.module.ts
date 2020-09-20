@@ -10,8 +10,8 @@ import { ErrorPageComponent } from './modules/public/error-page/error-page.compo
 // ------ External Libraries ----------------
 import { CountdownModule } from 'ngx-countdown';
 import { HomeComponent } from './modules/public/home/home.component';
-import { TermsAndConditionsComponent } from './modules/public/terms-and-conditions/terms-and-conditions.component';
-import { PrivacyPolicyComponent } from './modules/public/privacy-policy/privacy-policy.component';
+import { TermsAndConditionsComponent } from './modules/public/legal/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './modules/public/legal/privacy-policy/privacy-policy.component';
 import { HowItWorksComponent } from './modules/public/how-it-works/how-it-works.component';
 import { AboutUsComponent } from './modules/public/about-us/about-us.component';
 import { LoginComponent } from './modules/public/login/login.component';
@@ -23,6 +23,7 @@ import { AdminFooterComponent } from './shared/components/navigation/admin-foote
 import { PublicFooterComponent } from './shared/components/navigation/public-footer/public-footer.component';
 import { SignUpComponent } from './modules/public/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LegalComponent } from './modules/public/legal/legal.component';
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -42,7 +43,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AdminHeaderComponent,
     AdminFooterComponent,
     PublicFooterComponent,
-    SignUpComponent
+    SignUpComponent,
+    LegalComponent
   ],
   imports: [
     BrowserModule,

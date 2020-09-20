@@ -8,8 +8,9 @@ import { SignUpComponent } from './modules/public/sign-up/sign-up.component';
 import { HowItWorksComponent } from './modules/public/how-it-works/how-it-works.component';
 import { AboutUsComponent } from './modules/public/about-us/about-us.component';
 import { SearchResultsComponent } from './modules/public/search-results/search-results.component';
-import { PrivacyPolicyComponent } from './modules/public/privacy-policy/privacy-policy.component';
-import { TermsAndConditionsComponent } from './modules/public/terms-and-conditions/terms-and-conditions.component';
+import { PrivacyPolicyComponent } from './modules/public/legal/privacy-policy/privacy-policy.component';
+import { LegalComponent } from './modules/public/legal/legal.component';
+import { TermsAndConditionsComponent } from './modules/public/legal/terms-and-conditions/terms-and-conditions.component';
 import { CountdownTimerComponent } from './modules/public/countdown-timer/countdown-timer.component';
 import { ErrorPageComponent } from './modules/public/error-page/error-page.component';
 
@@ -43,12 +44,22 @@ const routes: Routes = [
     component: SearchResultsComponent
   },
   {
-    path: 'privacy-policy',
-    component: PrivacyPolicyComponent
-  },
-  {
-    path: 'terms-and-conditions',
-    component: TermsAndConditionsComponent
+    path: 'legal',
+    component: LegalComponent,
+    children: [
+      {
+        path: '',
+        component: LegalComponent
+      },
+      {
+        path: 'privacy-policy',
+        component: PrivacyPolicyComponent
+      },
+      {
+        path: 'terms-and-conditions',
+        component: TermsAndConditionsComponent
+      }
+    ]
   },
   {
     path: '404',
