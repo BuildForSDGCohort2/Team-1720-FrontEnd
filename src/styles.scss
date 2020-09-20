@@ -32,7 +32,8 @@ body {
 }
 
 .mtb-content-offset {
-    min-height: 91%;
+    flex: 1;
+    // min-height: 91%;
     padding-top: 70px;
     // height: 92%;
     // max-height: 100%;
@@ -377,6 +378,9 @@ p {
             transition: all .5s ease;
             color: $mtb-p-green-o-6;
         }
+        &.router-link-active {
+            color: $mtb-p-green-o-6;
+        }
     }
 }
 
@@ -399,6 +403,20 @@ p {
     font-size: $mtb-fnt-sz-xlg;
     font-weight: $mtb-fnt-w-700;
     color: $mtb-black-o-8;
+}
+
+.mtb-main-title-3 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-80;
+    font-weight: $mtb-fnt-w-900;
+    color: $mtb-black-o-9;
+}
+
+.mtb-main-title-2-white {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xlg;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-white;
 }
 
 .mtb-text-sm {
@@ -439,6 +457,14 @@ p {
     background-color: $mtb-black-o-8;
     width: 40px;
     height: 3px;
+    display: block;
+}
+
+.mtb-title-seperator-white-md {
+    background-color: $mtb-white;
+    width: 40px;
+    height: 3px;
+    display: block;
 }
 
 .mtb-seperator-right-md {
@@ -446,6 +472,21 @@ p {
     height: 60%;
     background-color: $mtb-black-o-1;
     display: block;
+}
+
+// *****************
+// Copy
+// *****************
+.mtb-body-copy-1 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-md;
+    line-height: $mtb-fnt-sz-20;
+}
+
+.mtb-body-copy-2 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-lg;
+    line-height: $mtb-fnt-sz-30;
 }
 
 // *****************
@@ -698,18 +739,6 @@ p {
     flex-direction: row;
     align-items: center;
     input {
-        // width: 1em;
-        // height: 1em;
-        // background-color: white;
-        // border-radius: 50%;
-        // vertical-align: middle;
-        // border: 1px solid #ddd;
-        // -webkit-appearance: none;
-        // outline: none;
-        // cursor: pointer;
-        // &:checked {
-        //     background-color: $mtb-p-green;
-        // }
         display: none;
         &:checked {
             +label {
@@ -898,9 +927,35 @@ p {
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding-left: 5rem;
     p {
         width: 70%;
     }
+}
+
+// *****************
+// Sections
+// *****************
+.mtb-section-type-1 {
+    min-height: 32vh;
+    height: auto;
+    width: 100%;
+    box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+    -webkit-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+    -moz-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+    -o-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+}
+
+.mtb-bg-col {
+    padding: 7rem 5rem;
+    &.col-lg-6 {
+        padding: 7rem 5rem;
+    }
+}
+
+.mtb-bg-col-green {
+    background-color: $mtb-p-green;
+    color: $mtb-white;
 }
 
 // *****************
