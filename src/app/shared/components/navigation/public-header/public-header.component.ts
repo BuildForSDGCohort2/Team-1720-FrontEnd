@@ -14,9 +14,9 @@ export class PublicHeaderComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationEnd) {
-        if( val.url === '/home' ){
+        if ( val.url === '/home' ){
           this.isHome = true;
-        }else{
+        } else {
           this.isHome = false;
         }
       }
