@@ -412,6 +412,55 @@ p {
     color: $mtb-black-o-9;
 }
 
+.mtb-main-title-4 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-lg;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-8;
+}
+
+.mtb-main-title-5 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-13;
+    font-weight: $mtb-fnt-w-400;
+    color: $mtb-black-o-8;
+}
+
+.mtb-main-title-6 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-lg;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-8;
+}
+
+.mtb-main-title-7 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-md;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-8;
+}
+
+.mtb-main-title-8 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-23;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-8;
+}
+
+.mtb-main-title-9 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-md;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-7;
+}
+
+.mtb-card-section-title {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-md;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-8;
+}
+
 .mtb-main-title-2-white {
     font-family: $mtb-fnt-noto;
     font-size: $mtb-fnt-sz-xlg;
@@ -489,6 +538,29 @@ p {
     line-height: $mtb-fnt-sz-30;
 }
 
+.mtb-body-copy-3 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-md;
+    line-height: $mtb-fnt-sz-25;
+}
+
+.mtb-body-copy-4 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-sm;
+    line-height: $mtb-fnt-sz-20;
+    margin-bottom: 0px;
+}
+
+.mtb-text-green {
+    color: $mtb-p-green;
+}
+
+.mtb-card-section-body {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-sm;
+    line-height: $mtb-fnt-sz-20;
+}
+
 // *****************
 // Cards
 // *****************
@@ -520,6 +592,20 @@ p {
 // *****************
 // Buttons
 // *****************
+.mtb-btn-sm {
+    font-size: $mtb-fnt-sz-xs;
+    font-family: $mtb-fnt-manrope;
+    font-weight: $mtb-fnt-w-500;
+    letter-spacing: 1px;
+    &.btn {
+        font-size: $mtb-fnt-sz-xs;
+        font-family: $mtb-fnt-manrope;
+        font-weight: $mtb-fnt-w-500;
+        letter-spacing: 1px;
+        padding: 0.4rem 1rem;
+    }
+}
+
 .mtb-btn-md {
     font-size: $mtb-fnt-sz-11;
     font-family: $mtb-fnt-manrope;
@@ -649,6 +735,11 @@ p {
         border-color: $mtb-p-green;
         transition: all .5s ease;
     }
+}
+
+.mtb-link-dark-grey {
+    color: $mtb-black-o-8;
+    font-weight: $mtb-fnt-w-700;
 }
 
 // *****************
@@ -956,6 +1047,17 @@ p {
 .mtb-bg-col-green {
     background-color: $mtb-p-green;
     color: $mtb-white;
+}
+
+// *****************
+// Images
+// *****************
+.mtb-img-profile-lg {
+    background-size: cover;
+    background-position: top center;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
 }
 
 // *****************
