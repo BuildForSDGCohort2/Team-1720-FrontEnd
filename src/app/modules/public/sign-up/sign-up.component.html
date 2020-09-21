@@ -11,26 +11,26 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form [formGroup]="registerForm">
                         <div class="col-12 d-flex px-0">
                             <div class="form-group mtb-input-wrapper">
-                                <input type="text" placeholder="Name" class="mtb-input-md">
+                                <input type="text" placeholder="Name" class="mtb-input-md" formControlName="name">
                             </div>
                             <div class="form-group mtb-input-wrapper ml-2">
-                                <input type="text" placeholder="Surname" class="mtb-input-md">
+                                <input type="text" placeholder="Surname" class="mtb-input-md" formControlName="surname">
                             </div>
                         </div>
                         <div class="col-12 d-flex px-0">
                             <div class="form-group mtb-input-wrapper">
-                                <input type="email" placeholder="Email" class="mtb-input-md">
+                                <input type="email" placeholder="Email" class="mtb-input-md" formControlName="email">
                             </div>
                             <div class="form-group mtb-input-wrapper ml-2">
-                                <input type="tel" placeholder="Mobile number" class="mtb-input-md">
+                                <input type="tel" placeholder="Mobile number" class="mtb-input-md" formControlName="mobile">
                             </div>
                         </div>
                         <div class="col-12 d-flex px-0">
                             <div class="form-group mtb-input-wrapper">
-                                <select name="gender" id="">
+                                <select name="gender" id="" formControlName="gender">
                                     <option value="">Please select your gender</option>
                                     <option value="Female">Female</option>
                                     <option value="Male">Male</option>
@@ -39,17 +39,17 @@
                                 </select>
                             </div>
                             <div class="form-group mtb-input-wrapper ml-2">
-                                <input type="dateOfBirth" placeholder="Date of Birth" placeholder="yyyy-mm-dd" name="dp" [minDate]="minDate" ngbDatepicker #dp="ngbDatepicker" (click)="dp.toggle()" class="mtb-input-md">
+                                <input type="dateOfBirth" placeholder="Date of Birth" placeholder="yyyy-mm-dd" name="dp" [minDate]="minDate" ngbDatepicker #dp="ngbDatepicker" (click)="dp.toggle()" class="mtb-input-md" formControlName="dateOfBirth">
                             </div>
                         </div>
                         <div class="col-12 px-0 d-none" [ngClass]="{'d-flex': userType === 'doctor'}">
                             <div class="form-group mtb-input-wrapper">
-                                <input type="text" placeholder="Medical Licence ID" class="mtb-input-md">
+                                <input type="text" placeholder="Medical Licence ID" class="mtb-input-md" formControlName="medicalId">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="mtb-input-wrapper-checkbox">
-                                <input type="checkbox" id="check" name="check" value="" />
+                                <input type="checkbox" id="check" name="check" value="" formControlName="terms_and_conditions" />
                                 <label for="check">
                                     <span></span>I accept the <a href="javascript:void(0)" (click)="open(content)">Terms and conditions</a>
                                 </label>

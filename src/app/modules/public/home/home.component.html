@@ -25,29 +25,29 @@
                             </nav>
                             <div class="tab-content py-3 px-3 px-sm-0 mtb-card-tabs-md" id="nav-tabContent">
                                 <div class="tab-pane fade show active" id="nav-get-help" role="tabpanel" aria-labelledby="nav-get-help-tab">
-                                    <form>
+                                    <form [formGroup]="helpRequestForm">
                                         <h3 class="mtb-section-title-1 my-3">Seeking medical help..</h3>
                                         <div class="col-12">
                                             <div class="row">
                                                 <div class="col-12 col-lg-6 pl-lg-0">
                                                     <div class="form-group">
                                                         <div class="mtb-input-wrapper">
-                                                            <input type="text" class="mtb-input mtb-input-search" placeholder="Full Name">
+                                                            <input type="text" class="mtb-input mtb-input-search" placeholder="Full Name" formControlName="full_name">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="mtb-input-wrapper">
-                                                            <input type="email" class="mtb-input mtb-input-search" placeholder="Email">
+                                                            <input type="email" class="mtb-input mtb-input-search" placeholder="Email" formControlName="email">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="mtb-input-wrapper">
-                                                            <input type="mobile" class="mtb-input mtb-input-search" placeholder="Mobile number">
+                                                            <input type="mobile" class="mtb-input mtb-input-search" placeholder="Mobile number" formControlName="mobile">
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
                                                         <div class="mtb-input-wrapper-checkbox">
-                                                            <input type="checkbox" id="check" name="check" value="" />
+                                                            <input type="checkbox" id="check" name="check" value="" formControlName="accepted_terms_and_conditions" />
                                                             <label for="check">
                                                                 <span></span>I accept the <a href="javascript:void(0)"
                                                                     (click)="open(content)">Terms and conditions</a>
@@ -58,7 +58,7 @@
                                                 <div class="col-12 col-lg-6 pl-lg-0">
                                                     <div class="form-group">
                                                         <div class="mtb-input-wrapper">
-                                                            <textarea name="condition" id="" cols="20" rows="10" placeholder="Give us a short description of what you are feeling"></textarea>
+                                                            <textarea name="condition" id="" cols="20" rows="10" placeholder="Give us a short description of what you are feeling" formControlName="help_description"></textarea>
                                                         </div>
                                                         <!-- <p >There is a flat rate fee of R 20.00 that is charged per inquiry</p> -->
                                                     </div>
@@ -67,18 +67,28 @@
                                         </div>
 
                                         <div class="col-12 d-flex justify-content-end">
-                                            <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Get Help</a>
+                                            <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green" (click)="onSubmitGetHelp()">Get Help</a>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <form>
+                                    <form [formGroup]="findDoctorForm">
                                         <h3 class="mtb-section-title-1 mt-3">Find a doctor</h3>
                                         <div class="form-group">
                                             <div class="mtb-input-w-icon">
                                                 <i class="ri-search-line"></i>
-                                                <input type="text" class="mtb-input mtb-input-search" placeholder="Search for a doctor by name or profession">
+                                                <input type="text" class="mtb-input mtb-input-search" formControlName="doctor_name" value="getDocf.value" placeholder="Search for a doctor by name or profession" (input)="onDoctorAutoComplete($event, getDocf.value.doctor_name)">
                                             </div>
+                                            <ng-container *ngIf="autoCompleteDocs.length > 0">
+                                                <div class="mtb-autocomplete col-12 w-100">
+                                                    <div *ngFor="let doctor of autoCompleteDocs">
+                                                        <i class="ri-nurse-line"></i>
+                                                        <p>{{doctor.doctorName}}</p>
+                                                        <p>{{doctor.officeNumber}}</p>
+                                                        <p>{{doctor.location}}</p>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Find doctor</a>
@@ -91,13 +101,23 @@
                                     </div>
                                 </div>
                                 <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                    <form>
+                                    <form [formGroup]="findHospitalForm">
                                         <h3 class="mtb-section-title-1 mt-3">Find a hospital</h3>
                                         <div class="form-group">
                                             <div class="mtb-input-w-icon">
                                                 <i class="ri-search-line"></i>
-                                                <input type="text" class="mtb-input mtb-input-search" placeholder="Search for a hospital. E.g. Johannesburg">
+                                                <input type="text" class="mtb-input mtb-input-search" placeholder="Search for a hospital. E.g. Johannesburg" formControlName="hospital_name" value="getHospf.value.hospital_name" (input)="onHospitalAutoComplete($event, getHospf.value.hospital_name)">
                                             </div>
+                                            <ng-container *ngIf="autoCompleteHosp.length > 0">
+                                                <div class="mtb-autocomplete col-12 w-100">
+                                                    <div *ngFor="let doctor of autoCompleteHosp">
+                                                        <i class="ri-nurse-line"></i>
+                                                        <p>{{doctor.doctorName}}</p>
+                                                        <p>{{doctor.officeNumber}}</p>
+                                                        <p>{{doctor.location}}</p>
+                                                    </div>
+                                                </div>
+                                            </ng-container>
                                         </div>
                                         <div class="col-12 d-flex justify-content-center">
                                             <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Find hospital</a>

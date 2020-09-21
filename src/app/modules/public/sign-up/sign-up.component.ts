@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-sign-up',
@@ -10,12 +11,36 @@ export class SignUpComponent implements OnInit {
   userType = 'patient';
   minDate;
   closeResult = '';
+  registerForm: FormGroup;
 
-  constructor(private modalService: NgbModal) {
+  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
     this.minDate = { year: 1900, month: 1, day: 1 };
    }
 
   ngOnInit(): void {
+    // Creating the login form
+    if (this.userType === 'patient') {
+      this.registerForm = this.formBuilder.group({
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        gender: ['', Validators.required],
+        email: ['', Validators.required],
+        mobile: ['', Validators.required],
+        dateOfBirth: ['', Validators.required],
+        accepted_terms_and_conditions: [null, Validators.required]
+      });
+    } else if (this.userType === 'doctor'){
+      this.registerForm = this.formBuilder.group({
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        gender: ['', Validators.required],
+        email: ['', Validators.required],
+        mobile: ['', Validators.required],
+        dateOfBirth: ['', Validators.required],
+        medicalId: ['', Validators.required],
+        accepted_terms_and_conditions: [null, Validators.required]
+      });
+    }
   }
 
   changeUserType(): any {

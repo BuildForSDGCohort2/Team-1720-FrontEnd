@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -50,6 +51,7 @@ import { LegalComponent } from './modules/public/legal/legal.component';
     BrowserModule,
     AppRoutingModule,
     CountdownModule,
+    ReactiveFormsModule,
     NgbModule
   ],
   providers: [CookieService],
