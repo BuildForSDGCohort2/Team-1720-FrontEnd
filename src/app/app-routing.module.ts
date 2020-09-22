@@ -15,6 +15,14 @@ import { TermsAndConditionsComponent } from './modules/public/legal/terms-and-co
 import { CountdownTimerComponent } from './modules/public/countdown-timer/countdown-timer.component';
 import { ErrorPageComponent } from './modules/public/error-page/error-page.component';
 
+// Admin Pages
+import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
+import { HealthCardComponent } from './modules/admin/health-card/health-card.component';
+import { ProfileComponent } from './modules/admin/profile/profile.component';
+import { SettingsComponent } from './modules/admin/settings/settings.component';
+import { TreatmentsComponent } from './modules/admin/treatments/treatments.component';
+import { PaymentsComponent } from './modules/admin/payments/payments.component';
+
 const routes: Routes = [
   {
     path: '',
@@ -65,6 +73,30 @@ const routes: Routes = [
   {
     path: 'public-profile',
     component: PublicProfileComponent
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent
+  },
+  {
+    path: 'settings',
+    component: SettingsComponent
+  },
+  {
+    path: 'health-card',
+    component: DashboardComponent
+  },
+  {
+    path: 'treatments',
+    component: TreatmentsComponent
+  },
+  {
+    path: 'payments',
+    component: PaymentsComponent
   },
   {
     path: '404',

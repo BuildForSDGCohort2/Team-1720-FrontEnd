@@ -25,6 +25,12 @@ import { PublicFooterComponent } from './shared/components/navigation/public-foo
 import { SignUpComponent } from './modules/public/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LegalComponent } from './modules/public/legal/legal.component';
+import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
+import { ProfileComponent } from './modules/admin/profile/profile.component';
+import { TreatmentsComponent } from './modules/admin/treatments/treatments.component';
+import { HealthCardComponent } from './modules/admin/health-card/health-card.component';
+import { PaymentsComponent } from './modules/admin/payments/payments.component';
+import { SettingsComponent } from './modules/admin/settings/settings.component';
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -45,7 +51,13 @@ import { LegalComponent } from './modules/public/legal/legal.component';
     AdminFooterComponent,
     PublicFooterComponent,
     SignUpComponent,
-    LegalComponent
+    LegalComponent,
+    DashboardComponent,
+    ProfileComponent,
+    TreatmentsComponent,
+    HealthCardComponent,
+    PaymentsComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule,
