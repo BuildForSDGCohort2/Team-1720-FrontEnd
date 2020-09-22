@@ -1,1 +1,32 @@
-<p>admin-header works!</p>
+<header class="container-fluid fixed-top mtb-admin-main-header-wrapper">
+    <nav class="navbar navbar-expand-lg navbar-light mtb-main-nav">
+        <a class="navbar-brand ai-header-logo" [routerLink]="['/dashboard']"><img src="../assets/logos/mtibu-icon-color.svg"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mtbbu-admin-header-nav">
+            <ul class="navbar-nav ml-auto d-flex flex-row align-items-center">
+                <li class="nav-item active">
+                    <a class="nav-link mtb-notification"><i class="ri-notification-fill"></i></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="dropdown-toggle nav-link d-flex flex-row align-items-center mtb-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="mr-1 mtb-image-circle-sm" style="background-image: url('../assets/images/mtb-profile-image-01.jpg')"></div>
+                        allan
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/settings']" routerLinkActive="router-link-active">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Log out</a>
+                    </div>
+                </li>
+            </ul>
+            <!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> -->
+        </div>
+    </nav>
+</header>

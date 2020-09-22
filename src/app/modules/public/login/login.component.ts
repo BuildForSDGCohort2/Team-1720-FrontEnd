@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private cookieService: CookieService, private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
     // Creating the form
@@ -18,6 +20,11 @@ export class LoginComponent implements OnInit {
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+  }
+
+  logUserIn(): any{
+    this.cookieService.set('mtibabu', JSON.stringify({ user: 'userTest' }));
+    this.router.navigate(['/dashboard']);
   }
 
 }
