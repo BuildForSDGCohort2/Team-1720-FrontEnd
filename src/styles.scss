@@ -294,6 +294,12 @@ p {
     height: 70px;
 }
 
+.mtb-admin-main-header-wrapper {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+}
+
 .mtb-main-nav {
     width: 95%;
 }
@@ -330,6 +336,40 @@ p {
                         transition: all .3s ease;
                         background-color: transparent;
                         border-color: $mtb-p-green;
+                    }
+                }
+            }
+        }
+    }
+}
+
+#mtbbu-admin-header-nav {
+    ul {
+        li {
+            a {
+                font-family: $mtb-fnt-noto;
+                font-size: $mtb-fnt-sz-11;
+                color: $mtb-black-o-8;
+                cursor: pointer;
+                &.mtb-notification {
+                    padding: 0.1rem 1rem;
+                    background-color: $mtb-white;
+                    transition: all .3s ease;
+                    border-right: 1px solid $mtb-black-o-2;
+                    &:hover {
+                        color: $mtb-p-green-o-6;
+                        transition: all .3s ease;
+                        background-color: transparent;
+                    }
+                }
+                &.mtb-profile {
+                    padding: 0.5rem 1rem;
+                    transition: all .3s ease;
+                    text-transform: capitalize;
+                    &:hover {
+                        color: $mtb-p-green;
+                        transition: all .3s ease;
+                        background-color: transparent;
                     }
                 }
             }
@@ -1088,6 +1128,19 @@ p {
     border-radius: 50%;
     height: 200px;
     width: 200px;
+}
+
+.mtb-image-md {
+    width: 70px;
+    height: 70px;
+}
+
+.mtb-image-circle-sm {
+    width: 40px;
+    height: 40px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
 }
 
 // *****************

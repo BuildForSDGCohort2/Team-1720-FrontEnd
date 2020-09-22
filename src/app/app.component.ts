@@ -16,13 +16,18 @@ export class AppComponent {
   loading = true;
 
   constructor(private cookieService: CookieService, private router: Router, public route: ActivatedRoute) {
-    this.cookieService.set('mtibabu', JSON.stringify({user: ''}));
+    // this.cookieService.set('mtibabu', JSON.stringify({user: ''}));
     this.cookieValue = JSON.parse(this.cookieService.get('mtibabu'));
     this.userLoggedIn = this.cookieValue.user !== undefined && this.cookieValue.user.length > 0 ? true : false;
 
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationStart) {
         this.loading = true;
+        if (val.url === '/home') {
+          this.isHome = true;
+        } else {
+          this.isHome = false;
+        }
       }
       if (val instanceof NavigationCancel) {
         this.loading = false;
@@ -42,6 +47,9 @@ export class AppComponent {
         } else {
           this.isHome = false;
         }
+
+        this.cookieValue = JSON.parse(this.cookieService.get('mtibabu'));
+        this.userLoggedIn = this.cookieValue.user !== undefined && this.cookieValue.user.length > 0 ? true : false;
       }
     });
   }
