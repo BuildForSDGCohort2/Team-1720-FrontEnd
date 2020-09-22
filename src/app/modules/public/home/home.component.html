@@ -72,7 +72,7 @@
                                     </form>
                                 </div>
                                 <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                    <form [formGroup]="findDoctorForm">
+                                    <form [formGroup]="findDoctorForm" *ngIf="showFindDocForm">
                                         <h3 class="mtb-section-title-1 mt-3">Find a doctor</h3>
                                         <div class="form-group">
                                             <div class="mtb-input-w-icon">
@@ -82,10 +82,18 @@
                                             <ng-container *ngIf="autoCompleteDocs.length > 0">
                                                 <div class="mtb-autocomplete col-12 w-100">
                                                     <div *ngFor="let doctor of autoCompleteDocs">
-                                                        <i class="ri-nurse-line"></i>
-                                                        <p>{{doctor.doctorName}}</p>
-                                                        <p>{{doctor.officeNumber}}</p>
-                                                        <p>{{doctor.location}}</p>
+                                                        <div class="row">
+                                                            <a href="javascript:void(0)" class="mtb-autocomplete-link p-3" (click)="docAutoCompleteSelect(doctor.docId)">
+                                                                <div class="col-3 d-flex justify-content-center pr-0 mtb-autocomplete-image-wrapper">
+                                                                    <i class="ri-nurse-line"></i>
+                                                                </div>
+                                                                <div class="col-9 pl-0 mtb-autocomplete-content">
+                                                                    <h5>{{doctor.doctorName}}</h5>
+                                                                    <h6>{{doctor.typeOfDoctor}}</h6>
+                                                                    <p><i class="ri-map-pin-line"></i> {{doctor.location}}</p>
+                                                                </div>
+                                                            </a>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </ng-container>
@@ -94,6 +102,45 @@
                                             <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Find doctor</a>
                                         </div>
                                     </form>
+
+                                    <ng-container *ngIf="!showFindDocForm">
+                                        <div class="col-12">
+                                            <div class="row">
+                                                <div class="col-12 d-flex justify-content-between mtb-results-title">
+                                                    <p class="mtb-results-location"><i class="ri-map-pin-line"></i> Location</p>
+                                                    <a href="javascript:void(0)" (click)="backToSearch()" class="mtb-link mtb-link-xs">Change</a>
+                                                </div>
+                                                <div class="col-12 d-flex justify-content-between p-3">
+                                                    <div class="row w-100 mx-0">
+                                                        <div class="col-2 d-flex justify-content-center mtb-result-icon-sm">
+                                                            <i class="ri-nurse-line"></i>
+                                                        </div>
+                                                        <div class="col-7 pl-0 mtb-results-content">
+                                                            <h5>Selected Doctor name</h5>
+                                                            <h6>Speciality of the doctor</h6>
+                                                            <a href="javascript:void(0)" [routerLink]="['/public-profile']" routerLinkActive="router-link-active" class="d-flex align-items-start mtb-link mtb-link-xs"><i class="ri-information-line mr-1"></i> About doctor</a>
+                                                        </div>
+                                                        <div class="col-3 d-flex justify-content-end pr-0">
+                                                            <a href="javascript:void(0)" (click)="backToSearch()" class="d-flex align-items-start mtb-link mtb-link-xs"> <i class="ri-close-line"></i> Cancel</a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12 d-flex flex-column pl-4">
+                                                    <a href="https://www.google.com/maps/dir//Google+Johannesburg,+Building+E,+Ballyoaks+Office+Park,+35+Ballyclare+Dr,+Johannesburg,+2021/@-26.0743552,28.0293213,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x1e9573fa022abc83:0x8caaabb3684fceb1!2m2!1d28.03151!2d-26.07436!3e0"
+                                                        target="_blank" class="mtb-link mtb-link-xs mtb-text-black pb-1"><i class="ri-map-pin-line"></i> Building E, Ballyoaks Office Park, 35 Ballyclare
+                                                    Dr, Johannesburg, 2021</a>
+                                                    <a href="tel:+27123456789" class="mtb-link mtb-link-xs mtb-text-black pb-1"><i class="ri-phone-fill"></i> +27 (0) 15 234 5678</a>
+                                                    <a href="mailto:info@doc.co.za" class="mtb-link mtb-link-xs mtb-text-black pb-1"><i class="ri-phone-fill"></i> info@doc.co.za</a>
+                                                </div>
+                                                <div class="col-12">
+                                                    <a href="javascript:void(0)">
+                                                        <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green">Make Request</a>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </ng-container>
+
 
                                     <div class="col-12 mtb-footer-cont-links text-center">
                                         <a href="javascript:void(0)" [routerLink]="['/login']" routerLinkActive="router-link-active" class="mtb-link mtb-link-md">I ‘m a

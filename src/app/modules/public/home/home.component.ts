@@ -16,14 +16,15 @@ export class HomeComponent implements OnInit {
   submittedGetHelp = false;
   submittedFindDoc = false;
   submittedFindHosp = false;
+  showFindDocForm = true;
   autoCompleteDocs = [];
   autoCompleteHosp = [];
 
   doctorsNames = [
-    { doctorName: 'Amare Abdoul', location: 'Johannesburg', officeNumber: '+27 (0) 12 345 6789' },
-    { doctorName: 'Abidemi Abeni', location: 'Johannesburg', officeNumber: '+27 (0) 12 345 6789' },
-    { doctorName: 'Abidun Chidum', location: 'Cape Town', officeNumber: '+27 (0) 12 345 6789' },
-    { doctorName: 'Amare Abdoul', location: 'Johannesburg', officeNumber: '+27 (0) 12 345 6789' },
+    { docId: 1, doctorName: 'Amare Abdoul', location: 'Johannesburg', officeNumber: '+27 (0) 12 345 6789', typeOfDoctor: 'General Practioner' },
+    { docId: 2, doctorName: 'Abidemi Abeni', location: 'Johannesburg', officeNumber: '+27 (0) 12 345 6789', typeOfDoctor: 'Dentist' },
+    { docId: 3, doctorName: 'Abidun Chidum', location: 'Cape Town', officeNumber: '+27 (0) 12 345 6789', typeOfDoctor: 'Psychologist' },
+    { docId: 4, doctorName: 'Amare Abdoul', location: 'Johannesburg', officeNumber: '+27 (0) 12 345 6789', typeOfDoctor: 'Psychatrist' },
   ];
 
   hospitalNames = [
@@ -114,7 +115,7 @@ export class HomeComponent implements OnInit {
     this.autoCompleteDocs = [];
     const enteredVal = val;
     const availableDocs = this.doctorsNames.filter((doc) => {
-      if (doc.doctorName.toLowerCase().includes(enteredVal.toLowerCase()) || doc.location.toLowerCase().includes(enteredVal.toLowerCase())){
+      if (doc.doctorName.toLowerCase().includes(enteredVal.toLowerCase()) || doc.location.toLowerCase().includes(enteredVal.toLowerCase()) || doc.typeOfDoctor.toLowerCase().includes(enteredVal.toLowerCase())){
         return doc;
       }
     });
@@ -141,6 +142,14 @@ export class HomeComponent implements OnInit {
     } else {
       return `with: ${reason}`;
     }
+  }
+
+  public docAutoCompleteSelect(docId): any{
+    this.showFindDocForm = false;
+  }
+
+  public backToSearch(): any {
+    this.showFindDocForm = true;
   }
 
 }
