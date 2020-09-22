@@ -200,7 +200,8 @@
                                                                     class="ri-information-line mr-1"></i> About doctor</a> -->
                                                         </div>
                                                         <div class="col-3 d-flex justify-content-end pr-0">
-                                                            <a href="javascript:void(0)" (click)="backToSearchHospital()" class="d-flex align-items-start mtb-link mtb-link-xs"> <i class="ri-close-line"></i> Cancel
+                                                            <a href="javascript:void(0)" (click)="backToSearchHospital()" class="d-flex align-items-start mtb-link mtb-link-xs">
+                                                                <i class="ri-close-line"></i> Cancel
                                                             </a>
                                                         </div>
                                                     </div>
@@ -298,7 +299,7 @@
         </form>
     </div>
     <div class="modal-footer d-flex justify-content-between mtb-modal-footer">
-        <a href="javascript:void(0)" class="mtb-link mtb-link-xs">Cancel</a>
+        <a href="javascript:void(0)" (click)="modal.dismiss('Cross click')" class="mtb-link mtb-link-xs"><i class="ri-close-line"></i> Cancel</a>
         <a href="javascript:void(0)" class="btn btn-sm mtb-btn-md mtb-btn-green" (click)="modal.close('Save click')">
             Make request
         </a>
