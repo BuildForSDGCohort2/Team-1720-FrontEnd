@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   submittedFindDoc = false;
   submittedFindHosp = false;
   showFindDocForm = true;
+  showFindHospital = true;
   autoCompleteDocs = [];
   autoCompleteHosp = [];
 
@@ -57,6 +58,16 @@ export class HomeComponent implements OnInit {
   }
 
   open(content): any {
+    this.modalService.open(content,
+      { ariaLabelledBy: 'modal-basic-title', windowClass: 'modal-dialog-centered' }).result.then((result) => {
+        this.closeResult = `Closed with: ${result}`;
+      }, (reason) => {
+        this.closeResult =
+          `Dismissed ${this.getDismissReason(reason)}`;
+      });
+  }
+
+  openRequest(content): any {
     this.modalService.open(content,
       { ariaLabelledBy: 'modal-basic-title', windowClass: 'modal-dialog-centered' }).result.then((result) => {
         this.closeResult = `Closed with: ${result}`;
@@ -150,6 +161,14 @@ export class HomeComponent implements OnInit {
 
   public backToSearch(): any {
     this.showFindDocForm = true;
+  }
+
+  public hospitalAutoCompleteSelect(): any{
+    this.showFindHospital = false;
+  }
+
+  public backToSearchHospital(): any {
+    this.showFindHospital = true;
   }
 
 }
