@@ -7,8 +7,14 @@
 
         <div class="collapse navbar-collapse" id="mtbbu-admin-header-nav">
             <ul class="navbar-nav ml-auto d-flex flex-row align-items-center">
-                <li class="nav-item active">
+                <li class="nav-item dropdown active" appDropdownExpand>
                     <a class="nav-link mtb-notification"><i class="ri-notification-fill"></i></a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
+                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/settings']" routerLinkActive="router-link-active">Settings</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Log out</a>
+                    </div>
                 </li>
                 <li class="nav-item dropdown" appDropdownExpand>
                     <a class="dropdown-toggle nav-link d-flex flex-row align-items-center mtb-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
