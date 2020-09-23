@@ -6,6 +6,19 @@
         </button>
 
         <div class="collapse navbar-collapse" id="mtbbu-admin-header-nav">
+            <div class="ml-auto d-flex w-75">
+                <div class="mx-auto mtb-header-search-wrapper">
+                    <form [formGroup]="headerSearch">
+                        <div class="form-control mtb-header-search">
+                            <i class="ri-search-line"></i>
+                            <input type="text" value="" placeholder="Search for doctor or hospital" formControlName="searchTerm">
+                        </div>
+                    </form>
+                </div>
+                <div class="mx-auto mtb-header-current-date">
+                    <h6>{{currentDate | date:'fullDate' }}</h6>
+                </div>
+            </div>
             <ul class="navbar-nav ml-auto d-flex flex-row align-items-center">
                 <li class="nav-item dropdown active" appDropdownExpand>
                     <a class="nav-link mtb-notification"><i class="ri-notification-fill"></i></a>

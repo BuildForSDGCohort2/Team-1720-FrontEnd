@@ -344,6 +344,41 @@ p {
 }
 
 #mtbbu-admin-header-nav {
+    .mtb-header-current-date {
+        padding: 0.7rem 1.3rem;
+        border-radius: 5px;
+        box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        -webkit-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        -moz-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        -o-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        h6 {
+            font-family: $mtb-fnt-noto;
+            font-size: $mtb-fnt-sz-md;
+            color: $mtb-black-o-4;
+            margin-bottom: 0;
+        }
+    }
+    .mtb-header-search-wrapper {
+        box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        -webkit-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        -moz-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        -o-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
+        .mtb-header-search {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            border-radius: 5px;
+            border: none;
+        }
+        input {
+            padding: 0.3rem 0.7rem;
+            margin-left: 0.5rem;
+            font-family: $mtb-fnt-noto;
+            font-size: $mtb-fnt-sz-11;
+            font-weight: $mtb-fnt-w-500;
+            border: none;
+        }
+    }
     ul {
         li {
             a {
@@ -372,6 +407,52 @@ p {
                         background-color: transparent;
                     }
                 }
+            }
+            .dropdown-menu {
+                margin: 0;
+            }
+        }
+    }
+}
+
+// Sidebar Naivation
+// Admin
+.mtb-admin-sidebard {
+    margin: 2.7rem 0;
+    padding-bottom: 0.6rem;
+    background-color: $mtb-white;
+    border-radius: 3px 10px 3px 3px;
+    box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    .mtb-admin-sidebar-links-wrapper {
+        padding: 0.6rem;
+        border-bottom: 1px solid $mtb-black-o-0-2;
+        width: 95%;
+        &:last-child {
+            border-bottom: none;
+        }
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            font-family: $mtb-fnt-manrope;
+            color: $mtb-black-o-5;
+            font-size: $mtb-fnt-sz-md;
+            font-weight: $mtb-fnt-w-500;
+            transition: all 0.2s ease-in-out;
+            i {
+                margin-right: 0.3rem;
+            }
+            &.mtb-link-active {
+                color: $mtb-p-green;
+                transition: all 0.2s ease-in-out;
+            }
+            &:hover {
+                text-decoration: none;
+                color: $mtb-p-green;
+                transition: all 0.2s ease-in-out;
             }
         }
     }

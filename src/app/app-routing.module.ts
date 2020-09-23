@@ -16,6 +16,7 @@ import { CountdownTimerComponent } from './modules/public/countdown-timer/countd
 import { ErrorPageComponent } from './modules/public/error-page/error-page.component';
 
 // Admin Pages
+import { AdminComponent } from './modules/admin/admin/admin.component';
 import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
 import { HealthCardComponent } from './modules/admin/health-card/health-card.component';
 import { ProfileComponent } from './modules/admin/profile/profile.component';
@@ -71,32 +72,38 @@ const routes: Routes = [
     ]
   },
   {
+    path: '',
+    component: AdminComponent,
+    children: [
+      {
+        path: 'dashboard',
+        component: DashboardComponent
+      },
+      {
+        path: 'profile',
+        component: ProfileComponent
+      },
+      {
+        path: 'settings',
+        component: SettingsComponent
+      },
+      {
+        path: 'health-card',
+        component: HealthCardComponent
+      },
+      {
+        path: 'treatments',
+        component: TreatmentsComponent
+      },
+      {
+        path: 'payments',
+        component: PaymentsComponent
+      }
+    ]
+  },
+  {
     path: 'public-profile',
     component: PublicProfileComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: 'settings',
-    component: SettingsComponent
-  },
-  {
-    path: 'health-card',
-    component: DashboardComponent
-  },
-  {
-    path: 'treatments',
-    component: TreatmentsComponent
-  },
-  {
-    path: 'payments',
-    component: PaymentsComponent
   },
   {
     path: '404',

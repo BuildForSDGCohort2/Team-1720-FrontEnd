@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
+import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-admin-header',
@@ -9,9 +10,16 @@ import { Router } from '@angular/router';
 })
 export class AdminHeaderComponent implements OnInit {
 
-  constructor(private cookieService: CookieService, private router: Router) { }
+  currentDate = new Date();
+  headerSearch: FormGroup;
+
+  constructor(private cookieService: CookieService, private router: Router, private formBuilder: FormBuilder) { }
 
   ngOnInit(): void {
+    // Creating the form
+    this.headerSearch = this.formBuilder.group({
+      searchTerm: ['', Validators.required]
+    });
   }
 
   logout(): any{
