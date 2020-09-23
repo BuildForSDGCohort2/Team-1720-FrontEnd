@@ -17,7 +17,7 @@ export class AppComponent {
 
   constructor(private cookieService: CookieService, private router: Router, public route: ActivatedRoute) {
     // this.cookieService.set('mtibabu', JSON.stringify({user: ''}));
-    if (this.cookieService.check('mtibu')){
+    if (!this.cookieService.check('mtibu')){
       this.cookieService.set('mtibabu', JSON.stringify({ user: '' }));
     }
     this.cookieValue = JSON.parse(this.cookieService.get('mtibabu'));
