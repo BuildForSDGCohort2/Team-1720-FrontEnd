@@ -32,6 +32,7 @@ import { HealthCardComponent } from './modules/admin/health-card/health-card.com
 import { PaymentsComponent } from './modules/admin/payments/payments.component';
 import { SettingsComponent } from './modules/admin/settings/settings.component';
 import { DropdownExpandDirective } from './shared/directives/dropdown-expand.directive';
+import { AdminComponent } from './modules/admin/admin/admin.component';
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -59,7 +60,8 @@ import { DropdownExpandDirective } from './shared/directives/dropdown-expand.dir
     HealthCardComponent,
     PaymentsComponent,
     SettingsComponent,
-    DropdownExpandDirective
+    DropdownExpandDirective,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

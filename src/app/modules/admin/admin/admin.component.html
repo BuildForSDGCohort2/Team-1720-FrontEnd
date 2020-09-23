@@ -1,0 +1,29 @@
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar Navigation -->
+        <div class="col-12 col-lg-2 pl-lg-4">
+            <nav class="d-flex flex-lg-column mtb-admin-sidebard">
+                <div class="mtb-admin-sidebar-links-wrapper">
+                    <a href="javascript:void(0)" [routerLink]="['/dashboard']" routerLinkActive="mtb-link-active"><i
+                            class="ri-home-7-fill"></i> Home</a>
+                </div>
+                <div class="mtb-admin-sidebar-links-wrapper">
+                    <a href="javascript:void(0)" [routerLink]="['/treatments']" routerLinkActive="mtb-link-active">
+                        <i class="ri-medicine-bottle-fill"></i>Treatments</a>
+                </div>
+                <div class="mtb-admin-sidebar-links-wrapper">
+                    <a href="javascript:void(0)" [routerLink]="['/health-card']" routerLinkActive="mtb-link-active"><i class="ri-health-book-fill"></i>Health Card</a>
+                </div>
+                <div class="mtb-admin-sidebar-links-wrapper">
+                    <a href="javascript:void(0)" [routerLink]="['/payments']" routerLinkActive="mtb-link-active"> <i class="ri-bank-card-2-line"></i>Payments</a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- In Page Content -->
+        <div class="col-12 col-lg-10">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
