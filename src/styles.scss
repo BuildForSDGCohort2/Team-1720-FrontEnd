@@ -359,6 +359,8 @@ p {
         }
     }
     .mtb-header-search-wrapper {
+        width: 45%;
+        border-radius: 6px;
         box-shadow: 3px 1px 7px $mtb-black-o-0-5;
         -webkit-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
         -moz-box-shadow: 3px 1px 7px $mtb-black-o-0-5;
@@ -369,6 +371,11 @@ p {
             align-items: center;
             border-radius: 5px;
             border: none;
+        }
+        i {
+            color: $mtb-black-o-3;
+            padding-right: 1rem;
+            border-right: 1px solid $mtb-black-o-1;
         }
         input {
             padding: 0.3rem 0.7rem;
@@ -736,6 +743,81 @@ p {
     padding: 1rem 2rem 0rem 1rem;
 }
 
+.mtb-notification {
+    h5 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-15;
+        font-weight: $mtb-fnt-w-500;
+        margin-bottom: 0;
+    }
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-11;
+        font-weight: $mtb-fnt-w-400;
+    }
+}
+
+// Notifications Cards
+.mtb-notification-green {
+    background-color: $mtb-p-green-o-1;
+    color: $mtb-p-green;
+    a {
+        color: $mtb-p-green;
+        &:hover {
+            text-decoration: none;
+            color: $mtb-p-green-o-4;
+        }
+    }
+    .btn {
+        background-color: $mtb-p-green;
+        color: $mtb-white;
+        border: 1px solid transparent;
+        &:hover {
+            border-color: $mtb-p-green;
+            background-color: transparent;
+            color: $mtb-p-green;
+        }
+    }
+    .mtb-link {
+        &:hover {
+            color: $mtb-p-green-o-4;
+        }
+    }
+    &.card {
+        background-color: $mtb-p-green-o-1;
+    }
+}
+
+.mtb-notification-red {
+    background-color: $mtb-red-o-1;
+    color: $mtb-red;
+    a {
+        color: $mtb-red;
+        &:hover {
+            text-decoration: none;
+            color: $mtb-red-o-4;
+        }
+    }
+    .btn {
+        background-color: $mtb-red;
+        color: $mtb-white;
+        border: 1px solid transparent;
+        &:hover {
+            border-color: $mtb-red;
+            background-color: transparent;
+            color: $mtb-red;
+        }
+    }
+    .mtb-link {
+        &:hover {
+            color: $mtb-red-o-4;
+        }
+    }
+    &.card {
+        background-color: $mtb-red-o-1;
+    }
+}
+
 // *****************
 // Buttons
 // *****************
@@ -827,12 +909,26 @@ p {
     }
 }
 
+.mtb-link-sm {
+    font-size: $mtb-fnt-sz-xs;
+}
+
 .mtb-link-md {
     font-size: $mtb-fnt-sz-11;
 }
 
+.mtb-link-bold {
+    font-family: $mtb-fnt-w-600;
+}
+
 .mtb-icon-link-sm {
     font-size: $mtb-fnt-sz-sm;
+}
+
+.mtb-link-divider {
+    border-right: 1px solid $mtb-black-o-2;
+    padding-right: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .mtb-link-xs {

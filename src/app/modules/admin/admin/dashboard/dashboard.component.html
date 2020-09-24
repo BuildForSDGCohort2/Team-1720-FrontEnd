@@ -1,0 +1,22 @@
+<div class="row py-4">
+
+    <!-- Header -->
+    <div class="col-12">
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <app-header-notification [notificationType]="'green'" [notificationTitle]="'Treatment request status changed'" [notificationMessage]="'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s'"
+                    [notificationMainLinkText]="'View content'">
+                </app-header-notification>
+            </div>
+            <div class="col-12 col-lg-4 d-flex flex-row justify-content-center align-items-start">
+                <a href="javascript:void(0)" class="mtb-link mtb-link-md mtb-link-bold mtb-link-divider">Share basic info</a>
+                <a href="javascript:void(0)" class="mtb-link mtb-link-md"><i class="ri-add-line"></i> Create a new request</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- First Row -->
+    <div class="col-12 col-lg-4">
+        <app-card-current-treatment-mini></app-card-current-treatment-mini>
+    </div>
+</div>

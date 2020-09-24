@@ -1,0 +1,23 @@
+<div class="card mtb-card-reset mtb-notification" [ngClass]="{'mtb-notification-red': notification === 'red', 'mtb-notification-green' : notification === 'green'}" *ngIf="showNotification">
+    <div class="card-title mtb-card-title pb-0 mb-0">
+        <div class="row">
+            <div class="col-12 col-lg 11">
+                <h5>{{title}}</h5>
+            </div>
+            <div class="col-12 col-lg-1 d-flex justify-content-end pr-0">
+                <a href="javasctipt:void(0)" class=""><i class="ri-close-line" (click)="hideNotification()"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="card-body pt-0">
+        <div class="row">
+            <div class="col-12 col-lg-8 d-flex flex-column justify-content-center">
+                <p>{{message}}</p>
+            </div>
+            <div class="col-12 col-lg-4 d-flex flex-column align-items-end mt-2" *ngIf="mainLinkText.length > 0 || secondaryLinkText.length > 0">
+                <a href="javascript:void(0)" class="btn btn-xs mtb-btn-sm" *ngIf="mainLinkText.length > 0">{{mainLinkText}}</a>
+                <a href="javascript:void(0)" class="mt-1 mtb-link mtb-link-xs" *ngIf="secondaryLinkText.length > 0">{{secondaryLinkText}}</a>
+            </div>
+        </div>
+    </div>
+</div>

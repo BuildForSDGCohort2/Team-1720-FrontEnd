@@ -17,12 +17,12 @@ import { ErrorPageComponent } from './modules/public/error-page/error-page.compo
 
 // Admin Pages
 import { AdminComponent } from './modules/admin/admin/admin.component';
-import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
-import { HealthCardComponent } from './modules/admin/health-card/health-card.component';
-import { ProfileComponent } from './modules/admin/profile/profile.component';
-import { SettingsComponent } from './modules/admin/settings/settings.component';
-import { TreatmentsComponent } from './modules/admin/treatments/treatments.component';
-import { PaymentsComponent } from './modules/admin/payments/payments.component';
+import { DashboardComponent } from './modules/admin/admin/dashboard/dashboard.component';
+import { HealthCardComponent } from './modules/admin/admin/health-card/health-card.component';
+import { ProfileComponent } from './modules/admin/admin/profile/profile.component';
+import { SettingsComponent } from './modules/admin/admin/settings/settings.component';
+import { TreatmentsComponent } from './modules/admin/admin/treatments/treatments.component';
+import { PaymentsComponent } from './modules/admin/admin/payments/payments.component';
 
 const routes: Routes = [
   {
