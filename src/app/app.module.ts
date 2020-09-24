@@ -25,14 +25,20 @@ import { PublicFooterComponent } from './shared/components/navigation/public-foo
 import { SignUpComponent } from './modules/public/sign-up/sign-up.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LegalComponent } from './modules/public/legal/legal.component';
-import { DashboardComponent } from './modules/admin/dashboard/dashboard.component';
-import { ProfileComponent } from './modules/admin/profile/profile.component';
-import { TreatmentsComponent } from './modules/admin/treatments/treatments.component';
-import { HealthCardComponent } from './modules/admin/health-card/health-card.component';
-import { PaymentsComponent } from './modules/admin/payments/payments.component';
-import { SettingsComponent } from './modules/admin/settings/settings.component';
+import { DashboardComponent } from './modules/admin/admin/dashboard/dashboard.component';
+import { ProfileComponent } from './modules/admin/admin/profile/profile.component';
+import { TreatmentsComponent } from './modules/admin/admin/treatments/treatments.component';
+import { HealthCardComponent } from './modules/admin/admin/health-card/health-card.component';
+import { PaymentsComponent } from './modules/admin/admin/payments/payments.component';
+import { SettingsComponent } from './modules/admin/admin/settings/settings.component';
 import { DropdownExpandDirective } from './shared/directives/dropdown-expand.directive';
 import { AdminComponent } from './modules/admin/admin/admin.component';
+import { HeaderNotificationComponent } from './shared/components/cards/header-notification/header-notification.component';
+import { CardCurrentTreatmentMiniComponent } from './shared/components/cards/card-current-treatment-mini/card-current-treatment-mini.component';
+import { CardPrimaryPhysicianMiniComponent } from './shared/components/cards/card-primary-physician-mini/card-primary-physician-mini.component';
+import { CardProfileMiniComponent } from './shared/components/cards/card-profile-mini/card-profile-mini.component';
+import { CardPaymentsMiniComponent } from './shared/components/cards/card-payments-mini/card-payments-mini.component';
+import { CardRecentTreatmentsMiniComponent } from './shared/components/cards/card-recent-treatments-mini/card-recent-treatments-mini.component';
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -61,7 +67,13 @@ import { AdminComponent } from './modules/admin/admin/admin.component';
     PaymentsComponent,
     SettingsComponent,
     DropdownExpandDirective,
-    AdminComponent
+    AdminComponent,
+    HeaderNotificationComponent,
+    CardCurrentTreatmentMiniComponent,
+    CardPrimaryPhysicianMiniComponent,
+    CardProfileMiniComponent,
+    CardPaymentsMiniComponent,
+    CardRecentTreatmentsMiniComponent
   ],
   imports: [
     BrowserModule,
