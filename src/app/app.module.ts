@@ -39,6 +39,9 @@ import { CardPrimaryPhysicianMiniComponent } from './shared/components/cards/car
 import { CardProfileMiniComponent } from './shared/components/cards/card-profile-mini/card-profile-mini.component';
 import { CardPaymentsMiniComponent } from './shared/components/cards/card-payments-mini/card-payments-mini.component';
 import { CardRecentTreatmentsMiniComponent } from './shared/components/cards/card-recent-treatments-mini/card-recent-treatments-mini.component';
+import { CardPaymentsComponent } from './shared/components/cards/card-payments/card-payments.component';
+import { CardTreatmentsComponent } from './shared/components/cards/card-treatments/card-treatments.component';
+import { CardHealthCardComponent } from './shared/components/cards/card-health-card/card-health-card.component';
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -73,7 +76,10 @@ import { CardRecentTreatmentsMiniComponent } from './shared/components/cards/car
     CardPrimaryPhysicianMiniComponent,
     CardProfileMiniComponent,
     CardPaymentsMiniComponent,
-    CardRecentTreatmentsMiniComponent
+    CardRecentTreatmentsMiniComponent,
+    CardPaymentsComponent,
+    CardTreatmentsComponent,
+    CardHealthCardComponent
   ],
   imports: [
     BrowserModule,

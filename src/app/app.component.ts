@@ -17,7 +17,7 @@ export class AppComponent {
 
   constructor(private cookieService: CookieService, private router: Router, public route: ActivatedRoute) {
     // this.cookieService.set('mtibabu', JSON.stringify({user: ''}));
-    if (!this.cookieService.check('mtibu')){
+    if (!this.cookieService.check('mtibabu')){
       this.cookieService.set('mtibabu', JSON.stringify({ user: '' }));
     }
 
@@ -53,6 +53,7 @@ export class AppComponent {
         }
 
         this.cookieValue = JSON.parse(this.cookieService.get('mtibabu'));
+        console.log(this.cookieValue);
         this.userLoggedIn = this.cookieValue.user !== undefined && this.cookieValue.user.length > 0 ? true : false;
       }
     });
