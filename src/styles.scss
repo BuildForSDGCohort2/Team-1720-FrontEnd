@@ -3,6 +3,10 @@
 @import "~normalize.css";
 @import "_base.scss";
 @import 'remixicon/fonts/remixicon.css';
+
+/* Importing Bootstrap SCSS file. */
+
+@import '~bootstrap/scss/bootstrap';
 * {
     margin: 0;
     padding: 0;
@@ -628,6 +632,18 @@ p {
     color: $mtb-black-o-6;
 }
 
+.mtb-title-status-highlight {
+    color: $mtb-p-green;
+    font-weight: $mtb-fnt-w-700;
+}
+
+.mtb-card-title-2 {
+    font-family: $mtb-fnt-noto;
+    font-weight: $mtb-fnt-w-500;
+    font-size: $mtb-fnt-sz-md;
+    margin-bottom: 0;
+}
+
 // Title seperators
 .mtb-title-right-border {
     border-right: 1px solid $mtb-black-o-1;
@@ -675,6 +691,25 @@ p {
     height: 60%;
     background-color: $mtb-black-o-1;
     display: block;
+}
+
+// Borders
+.mtb-border-bottom {
+    border-bottom: 1px solid $mtb-black-o-0-5;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+.mtb-border-bottom-2 {
+    border-bottom: 1px solid $mtb-black-o-0-5;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    &:last-child {
+        border-bottom: none;
+    }
 }
 
 // *****************
@@ -733,6 +768,22 @@ p {
     }
 }
 
+.mtb-card-reset-2 {
+    background-color: transparent;
+    border: none;
+    box-shadow: 1px 1px 7px $mtb-black-o-0-5;
+    -webkit-box-shadow: 1px 1px 7px $mtb-black-o-0-5;
+    -moz-box-shadow: 1px 1px 7px $mtb-black-o-0-5;
+    -o-box-shadow: 1px 1px 7px $mtb-black-o-0-5;
+    &.card {
+        border: none;
+        box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+        -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+        -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+        -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    }
+}
+
 .mtb-card-tabs-md {
     // min-height: 19rem;
     max-height: 23rem;
@@ -741,6 +792,63 @@ p {
 
 .mtb-card-title {
     padding: 1rem 2rem 0rem 1rem;
+}
+
+.mtb-card-title-01 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-4;
+    &:after {
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: $mtb-black-o-1;
+        display: block;
+        margin: 0.4rem 0 0 0;
+    }
+}
+
+.mtb-card-title-02 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-20;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-8;
+}
+
+.mtb-card-title-03 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-15;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-4;
+    &:after {
+        content: "";
+        width: 30px;
+        height: 2px;
+        background-color: $mtb-black-o-1;
+        display: block;
+        margin: 0.4rem 0 0 0;
+    }
+}
+
+.mtb-card-title-right {}
+
+.mtb-card-title-stats-1 {
+    color: $mtb-black-o-7;
+    h6 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-lg;
+        font-weight: $mtb-fnt-w-800;
+        margin-bottom: 0;
+    }
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-xs;
+        font-weight: $mtb-fnt-w-500;
+        margin-bottom: 0;
+        line-height: 11px;
+        text-transform: capitalize;
+    }
 }
 
 .mtb-notification {
@@ -815,6 +923,40 @@ p {
     }
     &.card {
         background-color: $mtb-red-o-1;
+    }
+}
+
+.mtb-card-body-info-1 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+}
+
+.mtb-card-body-info-2 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-5;
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.mtb-card-info-title-subscripts {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-5;
+    margin-bottom: 0.8rem;
+}
+
+.mtb-doctor-info {
+    h6 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-11;
+        font-weight: $mtb-fnt-w-500;
+        color: $mtb-black-o-6;
+        margin-bottom: 0;
     }
 }
 
@@ -987,6 +1129,13 @@ p {
 .mtb-link-dark-grey {
     color: $mtb-black-o-8;
     font-weight: $mtb-fnt-w-700;
+}
+
+.mtb-link-red {
+    color: $mtb-red;
+    &:hover {
+        color: $mtb-red-o-6;
+    }
 }
 
 // *****************
@@ -1320,6 +1469,22 @@ p {
     border-radius: 50%;
 }
 
+.mtb-image-circle-md {
+    width: 55px;
+    height: 55px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.mtb-image-circle-lg {
+    width: 75px;
+    height: 75px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
 // *****************
 // Autocomplete
 // *****************
@@ -1385,6 +1550,24 @@ p {
 }
 
 // *****************
+// Form Styling
+// *****************
+.mtb-select {
+    border: 1px solid $mtb-black-o-2;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0.3rem 0.5rem;
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    font-weight: $mtb-fnt-w-400;
+    color: $mtb-black-o-5;
+    &:focus {
+        outline: none;
+    }
+}
+
+// *****************
 // Results
 // *****************
 .mtb-results-title {
@@ -1444,7 +1627,77 @@ p {
     background-position: center center;
 }
 
+// *****************
+// Treatment Card
+// *****************
+.mtb-card-treatment-body {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    font-weight: $mtb-fnt-w-500;
+}
 
-/* Importing Bootstrap SCSS file. */
+.mtb-title-custom-01 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-7;
+    margin-bottom: 0.25rem;
+}
 
-@import '~bootstrap/scss/bootstrap';
+.mtb-title-status-time {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-3;
+}
+
+.mtb-card-status-title {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-6;
+    margin-bottom: 0.2rem;
+}
+
+.mtb-title-profession {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-400;
+    border-left: 1px solid $mtb-black-o-0-2;
+    color: $mtb-black-o-3;
+    display: inline-block;
+    padding-left: 0.4rem;
+    position: relative;
+    &:before {
+        content: '';
+        display: inline-block;
+        background-color: $mtb-black-o-1;
+        height: 100%;
+        width: 1px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+// *****************
+// Payment Card
+// *****************
+.mtb-payments-row {
+    text-align: center;
+    color: $mtb-black-o-2;
+    h6 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-lg;
+        font-weight: $mtb-fnt-w-800;
+        margin-bottom: 0px;
+        color: $mtb-black-o-5;
+    }
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-xs;
+        font-weight: $mtb-fnt-w-700;
+        margin-bottom: 0px;
+        text-transform: capitalize;
+    }
+}
