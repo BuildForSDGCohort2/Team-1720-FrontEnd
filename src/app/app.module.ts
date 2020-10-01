@@ -43,6 +43,7 @@ import { CardPaymentsComponent } from './shared/components/cards/card-payments/c
 import { CardTreatmentsComponent } from './shared/components/cards/card-treatments/card-treatments.component';
 import { CardHealthCardComponent } from './shared/components/cards/card-health-card/card-health-card.component';
 import { PaymentTableComponent } from './shared/components/tables/payment-table/payment-table.component';
+import { PageFooterSlideOutComponent } from './shared/components/elements/page-footer-slide-out/page-footer-slide-out.component';
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -81,7 +82,8 @@ import { PaymentTableComponent } from './shared/components/tables/payment-table/
     CardPaymentsComponent,
     CardTreatmentsComponent,
     CardHealthCardComponent,
-    PaymentTableComponent
+    PaymentTableComponent,
+    PageFooterSlideOutComponent
   ],
   imports: [
     BrowserModule,
