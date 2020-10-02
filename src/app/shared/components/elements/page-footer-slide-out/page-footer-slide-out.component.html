@@ -2,27 +2,193 @@
     <div class="container mtb-footer-slideout">
         <div class="row">
             <div class="col-12 mtb-slideout-header">
-                <h4>The heading of the information will go here</h4>
-                <a href="javascript:void(0)" (click)="closeSlideOut()" class="d-flex flex-row align-items-center mtb-link mtb-link-sm"><i class="ri-close-line"></i>
+                <h4 class="">Consultation payment</h4>
+                <a href="javascript:void(0)" (click)="closeSlideOut()" class="d-flex flex-row align-items-center mtb-link mtb-link-sm-close"><i class="ri-close-line"></i>
                     Close</a>
             </div>
             <div class="col-12 mtb-slideout-body">
+                <div class="row d-flex flex-row align-items-center">
+                    <div class="col-6 col-lg-3 pr-0 d-flex flex-row">
+                        <div style="background-image: url('../assets/images/mtb-profile-image-04.jpg');" class="mtb-image-circle-sm"></div>
+                        <div class="pl-2 mtb-doctor-info-2">
+                            <h4 class="mtb-text-sm">Dr Joan Akoth</h4>
+                            <p class="mb-0 mtb-card-info-title-subscripts-2">General Practioner</p>
+                            <div class="pt-0 mt-1 d-flex flex-row">
+                                <a href="tel:0123456789" class="mr-1 mtb-link mtb-link-sm">+27 (0) 12 345 6789</a>
+                                <a href="mailto:jakoth@medihelp.com" class="mtb-link mtb-link-sm">jakoth@medihelp.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="mb-2 mtb-payment-status">
+                            <p class="pb-1">Requested:</p>
+                            <p><strong>07 September 2020</strong></p>
+                        </div>
+                        <div class="mt-2 mtb-payment-status">
+                            <p class="pb-1">Completed:</p>
+                            <p><strong>08 September 2020</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="mb-2 mtb-payment-status">
+                            <p class="pb-1">Amount:</p>
+                            <p class="mtb-amount-highlight"><strong>R 50.00</strong></p>
+                        </div>
+                        <div class="mt-2 mtb-payment-status">
+                            <p class="pb-1">Ref:</p>
+                            <p><strong>#123123123</strong></p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-lg-5">
+                        <h5 class="mtb-main-title-6">Amount due: R 50.00</h5>
+                        <h6 class="mtb-main-title-10">Select method of payment</h6>
+                        <div class="d-flex flex-row justify-content-between">
+                            <a href="javascript:void(0)" class="btn btn-sm w-50 mr-lg-2 mtb-btn-md mtb-btn-black" (click)="open(requestForm)">Medical Aid</a>
+                            <a href="javascript:void(0)" class="btn btn-sm w-50 mtb-btn-md mtb-btn-black">Card</a>
+                        </div>
+                        <a href="javascript:void(0)" (click)="open(viewDisputeForm)" class="d-flex flex-row align-items-center mt-1 mtb-link mtb-link-sm"><i
+                                class="ri-question-fill"></i>Dispute request</a>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="col-12 mtb-slideout-footer">
+                <a href="javascript:void(0)" class="d-flex flex-row align-items-center mtb-link mtb-link-sm"><i class="ri-close-line"></i> Cancel</a>
+                <a href="javascript:void(0)" class="d-flex flex-row align-items-center btn btn-md mtb-btn-green mtb-btn-md"><i
+                        class="ri-check-line mr-1"></i> Make payment</a>
+            </div> -->
+        </div>
+    </div>
+</div>
+
+
+<ng-template #requestForm let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Medical aid form completion
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <form [formGroup]="medicalAidForm">
+            <div class="col-12">
                 <div class="row">
-                    <div class="col-6 col-lg-4">
-                        <h6 class="mtb-text-sm">Dr Joan Akoth</h6>
-                        <p class="mb-0 mtb-card-info-title-subscripts">General Practioner</p>
-                        <div class="pt-0 mt-0">
-                            <a href="tel:0123456789" class="mr-1 mtb-link mtb-link-sm">+27 (0) 12 345 6789</a>
-                            <a href="mailto:jakoth@medihelp.com" class="mtb-link mtb-link-sm">jakoth@medihelp.com</a>
+                    <div class="col-12 col-lg-6 pl-lg-0">
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <input type="text" class="mtb-input mtb-input-search" placeholder="Full Name" formControlName="full_name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <input type="email" class="mtb-input mtb-input-search" placeholder="Email" formControlName="email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <input type="mobile" class="mtb-input mtb-input-search" placeholder="Mobile number" formControlName="mobile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper-checkbox">
+                                <input type="checkbox" id="check" name="check" value="" formControlName="accepted_terms_and_conditions" />
+                                <label for="check">
+                                    <span></span>I accept the <a href="javascript:void(0)" (click)="open(content)">Terms
+                                        and
+                                        conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 pl-lg-0">
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <textarea name="condition" id="" cols="20" rows="10" placeholder="Give us a short description of what you are feeling" formControlName="notes"></textarea>
+                            </div>
+                            <!-- <p >There is a flat rate fee of R 20.00 that is charged per inquiry</p> -->
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 mtb-slideout-footer">
-                <a href="javascript:void(0)" class="d-flex flex-row align-items-center mtb-link mtb-link-sm"><i class="ri-close-line"></i> Cancel</a>
-                <a href="javascript:void(0)" class="d-flex flex-row align-items-center btn btn-md mtb-btn-green mtb-btn-md"><i
-                        class="ri-check-line mr-1"></i> Make payment</a>
-            </div>
-        </div>
+
+            <!-- <div class="col-12 d-flex justify-content-end">
+                <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green" (click)="onSubmitGetHelp()">Get
+                    Help</a>
+            </div> -->
+        </form>
     </div>
-</div>
+    <div class="modal-footer d-flex justify-content-between mtb-modal-footer">
+        <a href="javascript:void(0)" (click)="modal.dismiss('Cross click')" class="mtb-link mtb-link-xs"><i
+                class="ri-close-line"></i> Cancel</a>
+        <a href="javascript:void(0)" class="btn btn-sm mtb-btn-md mtb-btn-green" (click)="modal.close('Save click')">
+            Make request
+        </a>
+    </div>
+</ng-template>
+
+<ng-template #viewDisputeForm let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Dispute consultation
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <form [formGroup]="disputeForm">
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-lg-6 pl-lg-0">
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <input type="text" class="mtb-input mtb-input-search" placeholder="Full Name" formControlName="patient_full_name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <input type="email" class="mtb-input mtb-input-search" placeholder="Email" formControlName="patient_email">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <input type="mobile" class="mtb-input mtb-input-search" placeholder="Mobile number" formControlName="patient_mobile">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper-checkbox">
+                                <input type="checkbox" id="check" name="check" value="" formControlName="patient_accepted_terms_and_conditions" />
+                                <label for="check">
+                                    <span></span>I accept the <a href="javascript:void(0)" (click)="open(content)">Terms
+                                        and
+                                        conditions</a>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6 pl-lg-0">
+                        <div class="form-group">
+                            <div class="mtb-input-wrapper">
+                                <textarea name="condition" id="" cols="20" rows="10" placeholder="Give us a short description of what you are feeling" formControlName="patient_notes"></textarea>
+                            </div>
+                            <!-- <p >There is a flat rate fee of R 20.00 that is charged per inquiry</p> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="col-12 d-flex justify-content-end">
+                <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green" (click)="onSubmitGetHelp()">Get
+                    Help</a>
+            </div> -->
+        </form>
+    </div>
+    <div class="modal-footer d-flex justify-content-between mtb-modal-footer">
+        <a href="javascript:void(0)" (click)="modal.dismiss('Cross click')" class="mtb-link mtb-link-xs"><i
+                class="ri-close-line"></i> Cancel</a>
+        <a href="javascript:void(0)" class="btn btn-sm mtb-btn-md mtb-btn-green" (click)="modal.close('Save click')">
+            Make request
+        </a>
+    </div>
+</ng-template>

@@ -2,6 +2,7 @@
 
 @import "~normalize.css";
 @import "_base.scss";
+@import "~animate.css/animate.min";
 @import 'remixicon/fonts/remixicon.css';
 
 /* Importing Bootstrap SCSS file. */
@@ -612,6 +613,13 @@ p {
     color: $mtb-black-o-7;
 }
 
+.mtb-main-title-10 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-sm;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-7;
+}
+
 .mtb-card-section-title {
     font-family: $mtb-fnt-noto;
     font-size: $mtb-fnt-sz-md;
@@ -969,12 +977,37 @@ p {
     margin-bottom: 0.8rem;
 }
 
+.mtb-card-info-title-subscripts-2 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-8;
+    margin-bottom: 0.8rem;
+}
+
 .mtb-doctor-info {
+    h4 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-md;
+        font-weight: $mtb-fnt-w-500;
+        color: $mtb-black-o-6;
+        margin-bottom: 0;
+    }
     h6 {
         font-family: $mtb-fnt-noto;
         font-size: $mtb-fnt-sz-11;
         font-weight: $mtb-fnt-w-500;
         color: $mtb-black-o-6;
+        margin-bottom: 0;
+    }
+}
+
+.mtb-doctor-info-2 {
+    h4 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-md;
+        font-weight: $mtb-fnt-w-500;
+        color: $mtb-black-o-8;
         margin-bottom: 0;
     }
 }
@@ -1000,7 +1033,7 @@ p {
     font-size: $mtb-fnt-sz-11;
     font-family: $mtb-fnt-manrope;
     font-weight: $mtb-fnt-w-500;
-    letter-spacing: 1px;
+    letter-spacing: 0.3px;
     &.btn {
         font-size: $mtb-fnt-sz-11;
         font-family: $mtb-fnt-manrope;
@@ -1042,6 +1075,27 @@ p {
             background-color: transparent;
             border-color: $mtb-p-green;
             color: $mtb-p-green;
+        }
+    }
+}
+
+.mtb-btn-black {
+    background-color: $mtb-black-o-8;
+    color: $mtb-white;
+    border: 2px solid transparent;
+    &:hover {
+        background-color: transparent;
+        border-color: $mtb-black-o-8;
+        color: $mtb-black-o-8;
+    }
+    &.btn {
+        background-color: $mtb-black-o-8;
+        color: $mtb-white;
+        border: 2px solid transparent;
+        &:hover {
+            background-color: transparent;
+            border-color: $mtb-black-o-8;
+            color: $mtb-black-o-8;
         }
     }
 }
@@ -1101,6 +1155,15 @@ p {
 
 .mtb-link-sm {
     font-size: $mtb-fnt-sz-xs;
+}
+
+.mtb-link-sm-close {
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-red-o-7;
+    i {
+        font-size: $mtb-fnt-sz-13;
+    }
 }
 
 .mtb-link-md {
@@ -1390,6 +1453,11 @@ p {
 // *****************
 // Modals
 // *****************
+.modal {
+    z-index: 9992;
+    background-color: $mtb-black-o-5;
+}
+
 .mtb-modal-title {
     display: flex;
     align-items: center;
@@ -1733,18 +1801,22 @@ p {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 9999;
-    background-color: $mtb-black-o-0-8;
+    z-index: 9990;
+    background-color: $mtb-black-o-2;
+    animation: fadeIn;
+    animation-duration: .4s;
     .mtb-footer-slideout {
         position: absolute;
         bottom: 0;
         left: 0;
         right: 0;
-        min-height: 10rem;
+        min-height: 15rem;
         background-color: $mtb-white;
         -webkit-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
         -moz-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
         -o-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+        animation: fadeInUp;
+        animation-duration: .4s;
     }
 }
 
@@ -1764,7 +1836,7 @@ p {
 }
 
 .mtb-slideout-body {
-    padding: 0.8rem 0.5rem;
+    padding: 2rem 1rem;
     border-bottom: 1px solid $mtb-black-o-0-8;
 }
 
@@ -1810,7 +1882,14 @@ p {
     font-family: $mtb-fnt-noto;
     font-size: $mtb-fnt-sz-xs;
     font-weight: $mtb-fnt-w-500;
-    color: $mtb-black-o-3;
+    color: $mtb-black-o-5;
+}
+
+.mtb-payment-status {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-13;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-5;
 }
 
 .mtb-card-status-title {
@@ -1840,6 +1919,13 @@ p {
         top: 0;
         left: 0;
     }
+}
+
+.mtb-amount-highlight {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-13;
+    font-weight: $mtb-fnt-w-800;
+    color: $mtb-black-o-6;
 }
 
 // *****************
