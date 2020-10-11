@@ -1,0 +1,299 @@
+<div class="row">
+    <!-- calendar -->
+    <div class="col-12 col-lg-5">
+        <div class="row d-flex flex-row justify-content-between">
+            <div class="col-12">
+                <h3 class="mtb-main-title-6">{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+            </div>
+            <div class="col-12">
+                <div class="btn-group w-100 mtb-btn-group">
+                    <div class="btn btn-sm d-flex flex-row align-items-center justify-content-center mtb-btn-group-btn-icon" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"><i class="ri-arrow-left-s-line"></i></div>
+                    <div class="btn btn-xs mtb-btn-group-btn mtb-black" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">
+                        Month
+                    </div>
+                    <div class="btn btn-xs mtb-btn-group-btn mtb-inactive" mwlCalendarToday [(viewDate)]="viewDate">
+                        Today
+                    </div>
+                    <div class="btn btn-xs mtb-btn-group-btn" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">
+                        Week
+                    </div>
+                    <div class="btn btn-xs d-flex flex-row align-items-center justify-content-center mtb-btn mtb-btn-group-btn-icon" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="closeOpenMonthViewDay()"><i class="ri-arrow-right-s-line"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <div [ngSwitch]="view">
+            <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [refresh]="refresh" [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)" (actionClicked)="actionClicked($event)"
+                (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-month-view>
+            <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" [refresh]="refresh" (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+            </mwl-calendar-week-view>
+
+        </div>
+    </div>
+
+    <!-- Info -->
+    <div class="col-12 col-lg-7">
+        <div class="row">
+            <div class="col-12">
+                <h5 class="mtb-text-sm-bold">{{viewDate | date : 'EEEE dd MMMM yyyy' }}</h5>
+            </div>
+            <div class="col-12 py-1">
+                <div class="d-flex justify-content-between mtb-section-w-botder">
+                    <h4 class="mtb-text-sm">Average daily information</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Large -->
+        <div class="row">
+            <div class="col-6 col-lg-4 text-center py-2">
+                <h5 class="mtb-main-title-5">Temperature</h5>
+                <h6 class="mtb-main-title-6 my-0">34.6</h6>
+                <h6 class="mtb-text-xs-bold">Degrees Celcius</h6>
+                <div class="mtb-link-groups">
+                    <a href="javascript:void(0)" class="mtb-link mtb-link-sm mtb-link-black" (click)="open(contentT)">View</a>
+                    <a href="javascript:void(0)" class="ml-3 d-flex align-items-center justify-content-between mtb-link mtb-link-sm mtb-link-black" (click)="open(contentT)"><i class="ri-add-line"></i> Add</a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-4 text-center py-2">
+                <h5 class="mtb-main-title-5">Blood Pressure</h5>
+                <h6 class="mtb-main-title-6 my-0">90/120</h6>
+                <h6 class="mtb-text-xs-bold">mmHg</h6>
+                <div class="mtb-link-groups">
+                    <a href="javascript:void(0)" class="mtb-link mtb-link-sm mtb-link-black" (click)="open(contentBP)">View</a>
+                    <a href="javascript:void(0)" class="ml-3 d-flex align-items-center justify-content-between mtb-link mtb-link-sm mtb-link-black" (click)="open(contentBP)"><i class="ri-add-line"></i> Add</a>
+                </div>
+            </div>
+            <div class="col-6 col-lg-4 text-center py-2">
+                <h5 class="mtb-main-title-5">Sugar Level</h5>
+                <h6 class="mtb-main-title-6 my-0">5</h6>
+                <h6 class="mtb-text-xs-bold">mg/dl</h6>
+                <div class="mtb-link-groups">
+                    <a href="javascript:void(0)" class="mtb-link mtb-link-sm mtb-link-black" (click)="open(contentSL)">View</a>
+                    <a href="javascript:void(0)" class="ml-3 d-flex align-items-center justify-content-between mtb-link mtb-link-sm mtb-link-black" (click)="open(contentSL)"><i class="ri-add-line"></i> Add</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Smaller Stats -->
+        <div class="row mt-3">
+            <div class="col-12 col-lg-10 offset-lg-1 mtb-stats-border-bottom">
+                <p>Weight</p>
+                <p>90 Kg</p>
+            </div>
+        </div>
+        <div class="row mt-1">
+            <div class="col-12 col-lg-10 offset-lg-1 mtb-stats-border-bottom">
+                <p>Height</p>
+                <p>157 cm</p>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-12 col-lg-10 offset-lg-1 pl-0">
+                <p class="mtb-main-title-10">Extra notes</p>
+            </div>
+            <div class="col-12 col-lg-10 offset-lg-1 pl-0">
+                <p class="mtb-text-10">
+                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                </p>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12 col-lg-10 offset-lg-1 pl-0">
+                <a href="javascript:void(0)" (click)="open(contentGI)" class="btn btn-sm mtb-btn mtb-btn-reset mtb-btn-sm mtb-btn-border">Update Stats</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Temperature -->
+<ng-template #contentT let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Temperature
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <h5 class="text-right pb-2 mtb-main-title-7">Today's Average: <strong>34.7 &#8451;</strong></h5>
+        <div class="form-group d-flex flex-row align-items-center justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Time</p>
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="01:00">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Temperature</p>
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="36.0">
+                </div>
+            </div>
+            <div class="mtb-links-group">
+                <a href="javascript:void(0)" class="mtb-link mtb-link-sm"><i class="ri-close-line"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="javascript:void(0)" class="btn btn-xs mtb-btn mtb-btn-sm mtb-btn-black">Add new temperature value</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer mtb-modal-footer d-flex justify-content-between">
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark d-flex align-items-center mtb-btn-xs mtb-btn-red" (click)="modal.close('Save click')">
+            <i class="ri-close-line mtb-icon-sm mr-1"></i> Close
+        </a>
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark  d-flex align-items-center mtb-btn-xs mtb-btn-xs mtb-btn-green" (click)="modal.close('Save click')">
+            <i class="ri-refresh-line mtb-icon-sm mr-1"></i> Update
+        </a>
+    </div>
+</ng-template>
+
+<!-- Sugar Level -->
+<ng-template #contentSL let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Sugar Level
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <h5 class="text-right pb-2 mtb-main-title-7">Today's Average: <strong>34.7  mg/dl</strong></h5>
+        <div class="form-group d-flex flex-row align-items-center justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Time</p>
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="01:00">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Sugar reading</p>
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="36.0">
+                </div>
+            </div>
+            <div class="mtb-links-group">
+                <a href="javascript:void(0)" class="mtb-link mtb-link-sm"><i class="ri-close-line"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="javascript:void(0)" class="btn btn-xs mtb-btn mtb-btn-sm mtb-btn-black">Add new temperature value</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer mtb-modal-footer d-flex justify-content-between">
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark d-flex align-items-center mtb-btn-xs mtb-btn-red" (click)="modal.close('Save click')">
+            <i class="ri-close-line mtb-icon-sm mr-1"></i> Close
+        </a>
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark  d-flex align-items-center mtb-btn-xs mtb-btn-xs mtb-btn-green" (click)="modal.close('Save click')">
+            <i class="ri-refresh-line mtb-icon-sm mr-1"></i> Update
+        </a>
+    </div>
+</ng-template>
+
+<!-- Blood Pressure -->
+<ng-template #contentBP let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            Blood Pressure
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <h5 class="text-right pb-2 mtb-main-title-7">Today's Average: <strong>90/120 mm/Hg</strong></h5>
+        <div class="form-group d-flex flex-row align-items-center justify-content-between">
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Time</p>
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="01:00">
+                </div>
+            </div>
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Blood pressure</p>
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="36.0">
+                </div>
+            </div>
+            <div class="mtb-links-group">
+                <a href="javascript:void(0)" class="mtb-link mtb-link-sm"><i class="ri-close-line"></i></a>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <a href="javascript:void(0)" class="btn btn-xs mtb-btn mtb-btn-sm mtb-btn-black">Add new temperature value</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer mtb-modal-footer d-flex justify-content-between">
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark d-flex align-items-center mtb-btn-xs mtb-btn-red" (click)="modal.close('Save click')">
+            <i class="ri-close-line mtb-icon-sm mr-1"></i> Close
+        </a>
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark  d-flex align-items-center mtb-btn-xs mtb-btn-xs mtb-btn-green" (click)="modal.close('Save click')">
+            <i class="ri-refresh-line mtb-icon-sm mr-1"></i> Update
+        </a>
+    </div>
+</ng-template>
+
+<!-- General daily info -->
+<ng-template #contentGI let-modal>
+    <div class="modal-header mtb-modal-title">
+        <h4 class="modal-title" id="modal-basic-title">
+            General info
+        </h4>
+        <a href="javascript:void(0)" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <i class="ri-close-line"></i>
+        </a>
+    </div>
+    <div class="modal-body mtb-modal-body">
+        <div class="form-group d-flex flex-row align-items-center justify-content-between mtb-border-bottom">
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Weight</p>
+            </div>
+            <div class="d-flex flex-row align-items-center mtb-links-group">
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="kg">
+                </div>
+                <a href="javascript:void(0)" class="ml-2 mtb-link mtb-link-sm"><i class="ri-close-line mtb-icon-link-sm"></i></a>
+            </div>
+        </div>
+        <div class="form-group d-flex flex-row align-items-center justify-content-between mtb-border-bottom">
+            <div class="d-flex flex-row align-items-center">
+                <p class="mtb-text-10">Height</p>
+            </div>
+            <div class="d-flex flex-row align-items-center mtb-links-group">
+                <div class="mtb-input-wrapper">
+                    <input type="text" value="" placeholder="m">
+                </div>
+                <a href="javascript:void(0)" class="ml-2 mtb-link mtb-link-sm"><i class="ri-close-line mtb-icon-link-sm"></i></a>
+            </div>
+        </div>
+        <div class="form-group d-flex flex-column align-items-center mtb-border-bottom">
+            <div class="d-flex flex-row align-items-center w-100 mtb-links-group">
+                <div class="mtb-input-wrapper w-100 ">
+                    <textarea type="text" value="" placeholder="Your daily notes....." class="w-100"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer mtb-modal-footer d-flex justify-content-between">
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark d-flex align-items-center mtb-btn-xs mtb-btn-red" (click)="modal.close('Save click')">
+            <i class="ri-close-line mtb-icon-sm mr-1"></i> Close
+        </a>
+        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark  d-flex align-items-center mtb-btn-xs mtb-btn-xs mtb-btn-green" (click)="modal.close('Save click')">
+            <i class="ri-refresh-line mtb-icon-sm mr-1"></i> Update
+        </a>
+    </div>
+</ng-template>

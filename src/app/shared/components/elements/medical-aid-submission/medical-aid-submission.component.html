@@ -1,0 +1,63 @@
+<div class="modal-header mtb-modal-title">
+    <h4 class="modal-title" id="modal-basic-title">
+        Medical aid form completion
+    </h4>
+    <a href="javascript:void(0)" class="close" aria-label="Close" (click)="closeModal()">
+        <i class="ri-close-line"></i>
+    </a>
+</div>
+<div class="modal-body mtb-modal-body">
+    <form [formGroup]="medicalAidForm">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-12 col-lg-6 pl-lg-0">
+                    <div class="form-group">
+                        <div class="mtb-input-wrapper">
+                            <input type="text" class="mtb-input mtb-input-search" placeholder="Full Name" formControlName="full_name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="mtb-input-wrapper">
+                            <input type="email" class="mtb-input mtb-input-search" placeholder="Email" formControlName="email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="mtb-input-wrapper">
+                            <input type="mobile" class="mtb-input mtb-input-search" placeholder="Mobile number" formControlName="mobile">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="mtb-input-wrapper-checkbox">
+                            <input type="checkbox" id="check" name="check" value="" formControlName="accepted_terms_and_conditions" />
+                            <label for="check">
+                                <span></span>I accept the <a href="javascript:void(0)">Terms
+                                    and
+                                    conditions</a>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 pl-lg-0">
+                    <div class="form-group">
+                        <div class="mtb-input-wrapper">
+                            <textarea name="condition" id="" cols="20" rows="10" placeholder="Give us a short description of what you are feeling" formControlName="notes"></textarea>
+                        </div>
+                        <!-- <p >There is a flat rate fee of R 20.00 that is charged per inquiry</p> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="col-12 d-flex justify-content-end">
+                <a href="javascript:void(0)" class="btn btn-md mt-3 mtb-btn-md mtb-btn-green" (click)="onSubmitGetHelp()">Get
+                    Help</a>
+            </div> -->
+    </form>
+</div>
+<div class="modal-footer d-flex justify-content-between mtb-modal-footer">
+    <a href="javascript:void(0)" (click)="closeModal()" class="mtb-link mtb-link-xs"><i
+            class="ri-close-line"></i> Cancel</a>
+    <a href="javascript:void(0)" class="btn btn-sm mtb-btn-md mtb-btn-green" (click)="closeModal()">
+        Make request
+    </a>
+</div>

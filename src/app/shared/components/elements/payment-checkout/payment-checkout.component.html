@@ -1,0 +1,55 @@
+<div class="row d-flex flex-row align-items-center">
+    <div class="col-6 col-lg-3 pr-0 d-flex flex-row">
+        <div style="background-image: url('../assets/images/mtb-profile-image-04.jpg');" class="mtb-image-circle-sm"></div>
+        <div class="pl-2 mtb-doctor-info-2">
+            <h4 class="mtb-text-sm">Dr Joan Akoth</h4>
+            <p class="mb-0 mtb-card-info-title-subscripts-2">General Practioner</p>
+            <div class="pt-0 mt-1 d-flex flex-row">
+                <a href="tel:0123456789" class="mr-1 mtb-link mtb-link-sm">+27 (0) 12 345 6789</a>
+                <a href="mailto:jakoth@medihelp.com" class="mtb-link mtb-link-sm">jakoth@medihelp.com</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mb-2 mtb-payment-status">
+            <p class="pb-1">Requested:</p>
+            <p><strong>07 September 2020</strong></p>
+        </div>
+        <div class="mt-2 mtb-payment-status">
+            <p class="pb-1">Completed:</p>
+            <p><strong>08 September 2020</strong></p>
+        </div>
+    </div>
+    <div class="col-6 col-lg-2">
+        <div class="mb-2 mtb-payment-status">
+            <p class="pb-1">Amount:</p>
+            <p class="mtb-amount-highlight"><strong>R 50.00</strong></p>
+        </div>
+        <div class="mt-2 mtb-payment-status">
+            <p class="pb-1">Ref:</p>
+            <p><strong>#123123123</strong></p>
+        </div>
+    </div>
+    <div class="col-6 col-lg-5">
+        <h4 class="mtb-title-outstanding" *ngIf="requestId === '012393'">Outstanding</h4>
+        <h4 class="mtb-title-paid" *ngIf="requestId === '0123492'">Paid</h4>
+        <h5 class="mtb-main-title-6">Amount due: R 50.00</h5>
+        <h6 class="mtb-main-title-10">Select method of payment</h6>
+        <div class="d-flex flex-row justify-content-between">
+            <a href="javascript:void(0)" class="btn btn-sm w-50 mr-lg-2 mtb-btn-md mtb-btn-black" (click)="open(requestForm)">Medical Aid</a>
+            <a href="javascript:void(0)" class="btn btn-sm w-50 mtb-btn-md mtb-btn-black">Card</a>
+        </div>
+        <a href="javascript:void(0)" (click)="open(viewDisputeForm)" class="d-flex flex-row align-items-center mt-1 mtb-link mtb-link-sm"><i
+                                class="ri-question-fill"></i>Dispute request</a>
+    </div>
+</div>
+
+
+
+<ng-template #requestForm let-modal>
+    <app-medical-aid-submission (closePopUp)="closePopUp($event)"></app-medical-aid-submission>
+</ng-template>
+
+<ng-template #viewDisputeForm let-modal>
+    <app-request-dispute (closePopUp)="closePopUp($event)"></app-request-dispute>
+</ng-template>

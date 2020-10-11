@@ -1,0 +1,41 @@
+<div class="card mtb-card-reset-2">
+    <div class="card-title">
+        <h5 class="mtb-health-card-title">Current Statistics</h5>
+    </div>
+    <div class="card-body pt-1">
+        <div class="row">
+            <div class="col-12 d-flex flex-row justify-content-between align-items-center pb-2">
+                <div class="ai-graph-title">
+                    <h4 class="mtb-main-title-10">{{chartTitle}}</h4>
+                </div>
+                <div class="ai-graph-option-duration-wrapper">
+                    <label for="graph-duration" class="mtb-text-10">Select time:</label>
+                    <select name="ai-graph-duration-option" id="" class="text-center mtb-select-3 mtb-select-sm" (change)="onGraphDurationChange($event, $event.target.value)">
+                        <option value="days">Days</option>
+                        <option value="weeks">Week</option>
+                        <option value="months">Month</option>
+                        <option value="years">Year</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <app-bar-graph [title]="chartTitle" [yLabel]="chartYLabel" [xLabel]="chartXLabel" [chartData]="chartData" [yAxisData]="yAxisData">
+        </app-bar-graph>
+    </div>
+    <div class="card-footer">
+        <div class="row">
+            <div class="col mb-2">
+                <a href="javascript:void(0)" (click)="updateChartData('temperature')" class="btn btn-block btn-sm mtb-active mtb-btn-sm mtb-btn-border active" appClickActive>Temperature</a>
+            </div>
+            <div class="col mb-2">
+                <a href="javascript:void(0)" (click)="updateChartData('sugar-level')" class="btn btn-block btn-sm mtb-active mtb-btn-sm mtb-btn-border" appClickActive>Sugar Level</a>
+            </div>
+            <div class="col mb-2">
+                <a href="javascript:void(0)" (click)="updateChartData('weight')" class="btn btn-block btn-sm mtb-active mtb-btn-sm mtb-btn-border" appClickActive>Weight</a>
+            </div>
+            <div class="col mb-2">
+                <a href="javascript:void(0)" (click)="updateChartData('blood-pressure')" class="btn btn-block btn-sm mtb-active mtb-btn-sm mtb-btn-border" appClickActive>Blood Pressure</a>
+            </div>
+        </div>
+    </div>
+</div>
