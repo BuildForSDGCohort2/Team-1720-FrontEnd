@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CookieService } from 'ngx-cookie-service';
@@ -10,6 +11,7 @@ import { ErrorPageComponent } from './modules/public/error-page/error-page.compo
 
 // ------ External Libraries ----------------
 import { CountdownModule } from 'ngx-countdown';
+import { ChartsModule } from 'ng2-charts';
 import { HomeComponent } from './modules/public/home/home.component';
 import { TermsAndConditionsComponent } from './modules/public/legal/terms-and-conditions/terms-and-conditions.component';
 import { PrivacyPolicyComponent } from './modules/public/legal/privacy-policy/privacy-policy.component';
@@ -44,6 +46,26 @@ import { CardTreatmentsComponent } from './shared/components/cards/card-treatmen
 import { CardHealthCardComponent } from './shared/components/cards/card-health-card/card-health-card.component';
 import { PaymentTableComponent } from './shared/components/tables/payment-table/payment-table.component';
 import { PageFooterSlideOutComponent } from './shared/components/elements/page-footer-slide-out/page-footer-slide-out.component';
+import { PaymentCheckoutComponent } from './shared/components/elements/payment-checkout/payment-checkout.component';
+import { ViewChatComponent } from './shared/components/elements/view-chat/view-chat.component';
+import { MedicalAidSubmissionComponent } from './shared/components/elements/medical-aid-submission/medical-aid-submission.component';
+import { RequestDisputeComponent } from './shared/components/elements/request-dispute/request-dispute.component';
+import { CardHealthCardStatsComponent } from './shared/components/cards/card-health-card-stats/card-health-card-stats.component';
+import { CardHealthCardDailyComponent } from './shared/components/cards/card-health-card-daily/card-health-card-daily.component';
+import { BarGraphComponent } from './shared/components/charts/bar-graph/bar-graph.component';
+import { ClickActiveDirective } from './shared/directives/click-active/click-active.directive';
+import { CalendarComponent } from './shared/components/calendar/calendar/calendar.component';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+// import { adapterFactory } from 'angular-calendar/date-adapters/moment';
+import * as moment from 'moment';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import {   FlatpickrModule } from 'angularx-flatpickr';
+import { CardProfileGeneralComponent } from './shared/components/cards/card-profile-general/card-profile-general.component';
+import { CardProfileSettingsComponent } from './shared/components/cards/card-profile-settings/card-profile-settings.component';
+
+// export function momentAdapterFactory() {
+//   return adapterFactory(moment);
+// };
 // ------ End of External Libraries ----------
 
 @NgModule({
@@ -83,14 +105,29 @@ import { PageFooterSlideOutComponent } from './shared/components/elements/page-f
     CardTreatmentsComponent,
     CardHealthCardComponent,
     PaymentTableComponent,
-    PageFooterSlideOutComponent
+    PageFooterSlideOutComponent,
+    PaymentCheckoutComponent,
+    ViewChatComponent,
+    MedicalAidSubmissionComponent,
+    RequestDisputeComponent,
+    CardHealthCardStatsComponent,
+    CardHealthCardDailyComponent,
+    BarGraphComponent,
+    ClickActiveDirective,
+    CalendarComponent,
+    CardProfileGeneralComponent,
+    CardProfileSettingsComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     CountdownModule,
     ReactiveFormsModule,
-    NgbModule
+    ChartsModule,
+    NgbModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
   providers: [CookieService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

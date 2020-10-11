@@ -1,21 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
-  selector: 'app-card-payments',
-  templateUrl: './card-payments.component.html',
-  styleUrls: ['./card-payments.component.scss']
+  selector: 'app-view-chat',
+  templateUrl: './view-chat.component.html',
+  styleUrls: ['./view-chat.component.scss']
 })
-export class CardPaymentsComponent implements OnInit {
+export class ViewChatComponent implements OnInit {
 
+  @Input() reqId: any;
+
+  requestedId: any;
   closeResult = '';
-  showSlideComponent = false;
-  slideOutView: string;
-  slideOutRef: number;
 
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
+    this.requestedId = this.reqId !== undefined && this.reqId.length > 0 ? this.reqId : '';
   }
 
   open(content): any {
@@ -24,27 +25,8 @@ export class CardPaymentsComponent implements OnInit {
         this.closeResult = `Closed with: ${result}`;
       }, (reason) => {
         this.closeResult =
-          `Dismissed ${this.  getDismissReason(reason)}`;
+          `Dismissed ${this.getDismissReason(reason)}`;
       });
-  }
-
-  openFooterSlideOut($id, $view): any{
-    this.slideOutRef = $id;
-    this.slideOutView = $view;
-    this.showSlideComponent = true;
-  }
-
-  footerSlideOutData(data): any{
-    console.log(data);
-  }
-
-  footerSlideOutClose($event): any {
-    const closeVal = $event.close;
-    if (closeVal){
-      this.showSlideComponent = !closeVal;
-    }else{
-      this.showSlideComponent = closeVal;
-    }
   }
 
   private getDismissReason(reason: any): string {
@@ -56,5 +38,6 @@ export class CardPaymentsComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
 
 }

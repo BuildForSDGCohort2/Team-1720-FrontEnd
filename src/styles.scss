@@ -634,9 +634,9 @@ p {
     color: $mtb-white;
 }
 
-.mtb-text-sm {
+.mtb-text-10 {
     font-family: $mtb-fnt-manrope;
-    font-size: $mtb-fnt-sz-sm;
+    font-size: $mtb-fnt-sz-xs;
     color: $mtb-black-o-6;
 }
 
@@ -652,11 +652,61 @@ p {
     margin-bottom: 0;
 }
 
+.mtb-title-outstanding {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-lg;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-red;
+    text-transform: uppercase;
+}
+
+.mtb-title-paid {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-lg;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-p-green;
+    text-transform: uppercase;
+    letter-spacing: .3px;
+}
+
+.mtb-text-xs {
+    font-family: $mtb-fnt-manrope;
+    font-size: $mtb-fnt-sz-xs;
+    color: $mtb-black-o-6;
+}
+
+.mtb-text-xs-bold {
+    font-family: $mtb-fnt-manrope;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-black-o-8;
+}
+
+.mtb-text-sm {
+    font-family: $mtb-fnt-manrope;
+    font-size: $mtb-fnt-sz-sm;
+    color: $mtb-black-o-6;
+}
+
+.mtb-text-sm-bold {
+    font-family: $mtb-fnt-manrope;
+    font-size: $mtb-fnt-sz-sm;
+    font-weight: $mtb-fnt-w-800;
+    color: $mtb-black-o-6;
+}
+
 // Title seperators
 .mtb-title-right-border {
     border-right: 1px solid $mtb-black-o-1;
     padding-right: 0.5rem;
     margin-right: 0.5rem;
+    letter-spacing: .3px;
+}
+
+.mtb-section-w-botder {
+    padding: 0.3rem 0 0 0;
+    margin: 0 0 0.3rem 0;
+    border-bottom: 1px solid $mtb-black-o-0-8;
 }
 
 // *****************
@@ -718,6 +768,24 @@ p {
     &:last-child {
         border-bottom: none;
     }
+}
+
+.mtb-stats-border-bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid $mtb-black-o-0-8;
+    padding: 0 0 0.3rem 0;
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: 500;
+    color: $mtb-black-o-7;
+    letter-spacing: -0.2px;
+}
+
+.mtb-stats-end {
+    display: flex;
+    flex-direction: row;
 }
 
 // *****************
@@ -789,6 +857,10 @@ p {
         -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
         -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
         -o-box-shadow: 3px 3px 7px $mtb-black-o-0-5;
+    }
+    .card-footer {
+        border: none;
+        background-color: transparent;
     }
 }
 
@@ -1015,6 +1087,42 @@ p {
 // *****************
 // Buttons
 // *****************
+.mtb-btn-reset {
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+}
+
+.mtb-btn-xs {
+    font-size: $mtb-fnt-sz-xs;
+    font-family: $mtb-fnt-manrope;
+    font-weight: $mtb-fnt-w-500;
+    letter-spacing: 0px;
+    &.btn {
+        font-size: $mtb-fnt-sz-xs;
+        font-family: $mtb-fnt-manrope;
+        font-weight: $mtb-fnt-w-500;
+        letter-spacing: 0px;
+        padding: 0.4rem 1rem;
+        &.mtb-btn-red {
+            border-color: $mtb-red;
+            color: $mtb-red;
+            &:hover {
+                background-color: $mtb-red;
+                color: $mtb-white;
+            }
+        }
+    }
+    &.mtb-btn-red {
+        border-color: $mtb-red;
+        color: $mtb-red;
+        &:hover {
+            background-color: $mtb-red;
+            color: $mtb-white;
+        }
+    }
+}
+
 .mtb-btn-sm {
     font-size: $mtb-fnt-sz-xs;
     font-family: $mtb-fnt-manrope;
@@ -1118,6 +1226,89 @@ p {
             border-color: $mtb-black-o-4;
             color: $mtb-black-o-4;
         }
+    }
+}
+
+.mtb-btn-border {
+    background-color: transparent;
+    color: $mtb-black-o-6;
+    border: 2px solid $mtb-black-o-4;
+    opacity: 1;
+    letter-spacing: 0.5px;
+    &:hover {
+        background-color: $mtb-black-o-6;
+        border-color: $mtb-black-o-1;
+        color: $mtb-white;
+        opacity: 1;
+    }
+    &.btn {
+        background-color: transparent;
+        color: $mtb-black-o-6;
+        border: 2px solid $mtb-black-o-4;
+        opacity: 1;
+        letter-spacing: 0.5px;
+        &:hover {
+            opacity: 1;
+            background-color: $mtb-black-o-6;
+            border-color: $mtb-black-o-1;
+            color: $mtb-white;
+        }
+    }
+    &.active {
+        background-color: $mtb-black-o-6;
+        color: $mtb-white;
+        opacity: 1;
+        border-color: $mtb-black-o-1;
+    }
+}
+
+.mtb-btn-group {
+    font-size: $mtb-fnt-sz-xs;
+}
+
+.mtb-btn-group-btn-icon {
+    font-size: $mtb-fnt-sz-lg;
+    border: 2px solid $mtb-black-o-1;
+    line-height: 10px;
+    &:hover {
+        background-color: $mtb-black-o-0-2;
+        color: $mtb-black-o-3;
+    }
+}
+
+.mtb-btn-group-btn {
+    font-size: $mtb-fnt-sz-xs;
+    border: 2px solid $mtb-black-o-1;
+    transition: all .2s ease-in-out;
+    &:hover {
+        background-color: $mtb-black-o-6;
+        color: $mtb-white-o-5;
+        transition: all .2s ease-in-out;
+    }
+    &.mtb-inactive {
+        background-color: $mtb-black-o-0-2;
+        color: $mtb-black-o-6;
+        transition: all .2s ease-in-out;
+        &:hover {
+            background-color: $mtb-black-o-6;
+            color: $mtb-white-o-5;
+            transition: all .2s ease-in-out;
+        }
+    }
+    &.mtb-black {
+        background-color: $mtb-black-o-3;
+        color: $mtb-white;
+        transition: all .2s ease-in-out;
+        &:hover {
+            background-color: $mtb-black-o-6;
+            color: $mtb-white-o-5;
+            transition: all .2s ease-in-out;
+        }
+    }
+    &.active {
+        background-color: $mtb-black-o-6;
+        color: $mtb-white-o-9;
+        transition: all .2s ease-in-out;
     }
 }
 
@@ -1249,12 +1440,23 @@ p {
     }
 }
 
+.mtb-link-groups {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
 // *****************
 // Icons
 // *****************
 .mtb-icon-md {
     font-size: $mtb-fnt-sz-lg;
     line-height: $mtb-fnt-sz-30;
+}
+
+.mtb-icon-sm {
+    font-size: $mtb-fnt-sz-md;
+    line-height: $mtb-fnt-sz-md;
 }
 
 // *****************
@@ -1448,6 +1650,14 @@ p {
 .mtb-input-search {
     width: 100%;
     border: none;
+}
+
+.mtb-select {
+    border: 1px solid $mtb-black-o-0-2;
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    background-color: transparent;
+    display: inline-block;
 }
 
 // *****************
@@ -1699,6 +1909,23 @@ p {
     }
 }
 
+.mtb-select-3 {
+    min-width: 25%;
+    border: 1px solid $mtb-black-o-2;
+    outline: none;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    margin: 0 0 0 0.4rem;
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    font-weight: $mtb-fnt-w-400;
+    color: $mtb-black-o-5;
+    &:focus {
+        outline: none;
+    }
+}
+
 // *****************
 // Tables Styling
 // *****************
@@ -1738,6 +1965,15 @@ p {
     .table-responsive-stack td {
         float: left\9;
         width: 100%;
+    }
+}
+
+// *****************
+// Charts
+// *****************
+.chart-wrapper {
+    canvas {
+        height: 250px !important;
     }
 }
 
@@ -1948,4 +2184,437 @@ p {
         margin-bottom: 0px;
         text-transform: capitalize;
     }
+}
+
+// *****************
+// Chat View
+// *****************
+.mtb-chat-quick-view-wrapper {
+    min-height: 50vh;
+}
+
+.mtb-chat-containaner {}
+
+.mtb-chat-messages-view-container {
+    background-color: $mtb-black-o-0-2;
+    max-height: 54vh;
+    overflow-y: auto;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.mtb-other-chatter {
+    max-width: 65%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    margin: 0.2rem 0;
+    .mtb-chat-message {
+        padding: 0 0 0 0.5rem;
+        p {
+            background-color: $mtb-black-o-1;
+        }
+    }
+}
+
+.mtb-user-chatter {
+    max-width: 65%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    align-self: flex-end;
+    margin: 0.2rem 0;
+    .mtb-chat-message {
+        padding: 0 0.5rem 0 0rem;
+    }
+}
+
+.mtb-chat-image {
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+}
+
+.mtb-chat-message {
+    max-width: 90%;
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-11;
+        font-weight: $mtb-fnt-w-500;
+        margin: 0.4rem 0;
+        padding: 0.6rem 0.8rem 0 0.8rem;
+        color: $mtb-black-o-8;
+        border-radius: 8px;
+        background-color: $mtb-black-o-0-5;
+        box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        -o-box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        &:last-child {
+            margin: 0.4rem 0 0 0;
+        }
+        span {
+            &.mtb-message-time {
+                display: flex;
+                align-self: flex-start;
+                width: 100%;
+                padding: 0.4rem 0 0.4rem 0;
+                font-family: $mtb-fnt-noto;
+                font-size: $mtb-fnt-sz-xxxs;
+                font-weight: $mtb-fnt-w-500;
+                color: $mtb-black-o-2;
+            }
+        }
+    }
+}
+
+.mtb-chat-show {
+    display: flex !important;
+}
+
+.mtb-chat-input-wrapper {
+    width: 100%;
+    display: none;
+    flex-direction: row;
+    align-items: center;
+    background-color: $mtb-black-o-1;
+    padding: 0.5rem;
+    .mtb-chat-input-other-actions {
+        display: none;
+        max-width: 8%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        // padding-right: 0.5rem;
+        margin-right: 0.5rem;
+        border-right: 1px solid $mtb-black-o-2;
+    }
+    .mtb-chat-input-typing-container {
+        display: none;
+        max-width: 92%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-end;
+        input,
+        textarea {
+            width: 100%;
+            font-family: $mtb-fnt-noto;
+            font-size: $mtb-fnt-sz-11;
+            font-weight: $mtb-fnt-w-500;
+            padding: 0.5rem;
+            border-radius: 0;
+            border-color: $mtb-black-o-1;
+            min-height: 33px;
+            height: 33px;
+            max-height: 53px;
+        }
+    }
+}
+
+.mtb-chat-disabled {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: $mtb-black-o-1;
+    color: $mtb-black-o-5;
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-11;
+    font-weight: $mtb-fnt-w-500;
+    font-style: italic;
+    padding: 1rem;
+}
+
+.mtb-chat-header-options {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.4rem 0;
+}
+
+.mtb-chat-icon-header {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-5;
+    display: flex;
+    align-items: center;
+    &:hover {
+        color: $mtb-p-green;
+        text-decoration: none;
+    }
+    i {
+        margin-right: 0.5rem;
+        font-size: $mtb-fnt-sz-15;
+    }
+}
+
+.mtb-chat-send {
+    max-height: 35px;
+    margin-left: 0.5rem;
+}
+
+.mtb-chat-icon {
+    color: $mtb-black-o-4;
+    padding: 0rem;
+    i {
+        font-size: $mtb-fnt-sz-22;
+    }
+    &:hover {
+        text-decoration: none;
+        color: $mtb-p-green;
+    }
+}
+
+// Extra Info
+.mtb-chat-extra-info-wrapper {}
+
+.mtb-chat-extra-info-image-1 {
+    width: 70px;
+    height: 70px;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.mtb-chat-extra-contact-info {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-black-o-7;
+    h4 {
+        font-size: $mtb-fnt-sz-15;
+        margin-bottom: 0.3rem;
+        font-weight: $mtb-fnt-w-800;
+    }
+    p {
+        margin: 0.1rem 0;
+        letter-spacing: 0.1px;
+        line-height: $mtb-fnt-sz-15;
+    }
+}
+
+.mtb-chat-extra-info-stats {
+    margin: 2rem 0;
+}
+
+.mtb-chat-info-small {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-4;
+    p {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $mtb-black-o-0-2;
+        padding: 0.4rem 0;
+    }
+}
+
+.mtb-chat-info-stats-duration {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-400;
+    color: $mtb-black-o-4;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $mtb-black-o-0-5;
+    padding: 0.4rem 0;
+}
+
+.mtb-chat-info-stats-highlight {
+    font-weight: $mtb-fnt-w-700;
+    // width: 100%;
+    // display: block;
+    line-height: $mtb-fnt-sz-11;
+    margin-bottom: 0.4rem;
+}
+
+.mtb-chat-info-duration-hightlight {
+    font-weight: $mtb-fnt-w-700;
+    font-size: $mtb-fnt-sz-15;
+    // width: 100%;
+    // display: block;
+    line-height: $mtb-fnt-sz-11;
+    margin-bottom: 0.4rem;
+    margin-top: 0.4rem;
+    color: $mtb-black-o-6;
+}
+
+.mtb-chat-info-security-check {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-400;
+    color: $mtb-black-o-4;
+    margin-bottom: 0.2rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid $mtb-black-o-0-2;
+    padding: 0.4rem 0;
+    a {
+        font-weight: $mtb-fnt-w-600;
+        color: $mtb-black-o-6;
+        display: flex;
+        line-height: $mtb-fnt-sz-15;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            height: 1px;
+            width: 100%;
+            background-color: $mtb-black-o-6;
+            bottom: -3px;
+            right: 0;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $mtb-p-green;
+            transition: all .3s ease;
+            -webkit-transition: all .3s ease;
+            -moz-transition: all .3s ease;
+            -o-transition: all .3s ease;
+            &:after {
+                width: 60%;
+                background-color: $mtb-p-green;
+            }
+        }
+    }
+}
+
+.mtb-chat-extra-info-title {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-sm;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-black-o-7;
+}
+
+// *****************
+// Health Cards
+// *****************
+.mtb-health-card-title {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-13;
+    font-weight: $mtb-fnt-w-700;
+    color: $mtb-black-o-4;
+    padding: 0.9rem 0.9rem 0 0.9rem;
+    position: relative;
+    &:after {
+        content: '';
+        width: 10%;
+        height: 2px;
+        background-color: $mtb-black-o-3;
+        position: absolute;
+        left: 0.9rem;
+        bottom: -7px;
+    }
+}
+
+// *****************
+//  Calendar
+// *****************
+.cal-month-view .cal-day-number {
+    font-size: $mtb-fnt-sz-xs;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.cal-month-view .cal-cell-top {
+    min-height: 40px;
+    flex: 0;
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.cal-month-view .cal-events {
+    flex: 0;
+}
+
+.cal-month-view .cal-day-cell {
+    min-height: 40px;
+}
+
+.cal-month-view .cal-day-cell.cal-today .cal-day-number {
+    font-size: $mtb-fnt-sz-xs;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+
+.cal-month-view .cal-day-badge {
+    font-size: $mtb-fnt-sz-xxxs;
+    margin-top: 0px;
+}
+
+.cal-month-view .cal-event {
+    width: 3px;
+    height: 3px;
+}
+
+.cal-month-view .cal-header .cal-cell {
+    font-size: $mtb-fnt-sz-xxs;
+}
+
+.cal-week-view .cal-day-headers {
+    font-size: $mtb-fnt-sz-xxs;
+}
+
+.cal-week-view .cal-time {
+    font-size: $mtb-fnt-sz-xxs;
+}
+
+.cal-week-view .cal-time {
+    width: 45px;
+}
+
+.cal-week-view .cal-time-label-column {
+    width: 45px;
+}
+
+.cal-week-view .cal-day-headers {
+    padding-left: 45px;
+    width: 500px;
+}
+
+.cal-week-view {
+    overflow-y: auto;
+    max-height: 16.5rem;
+}
+
+.cal-hour-segment {
+    width: 63.7px;
+    &.cal-after-hour-start {
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.cal-month-view .cal-cell.cal-event-highlight {
+    background-color: red !important;
+}
+
+.cal-month-view .cal-open-day-events {
+    display: none;
+}
+
+.cal-cell.cal-day-cell.cal-in-month.cal-open {
+    background-color: $mtb-black-o-0-5 !important;
 }

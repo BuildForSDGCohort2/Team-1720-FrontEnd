@@ -1,0 +1,159 @@
+<div class="row">
+    <!-- Left content -->
+    <div class="col-12 col-lg-6">
+        <div class="card mtb-card-reset">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12 pb-0">
+                        <h4 class="mt-2 pb-2 mtb-card-title-03 mtb-border-bottom">Personal information</h4>
+                    </div>
+                    <div class="col-12 d-flex flex-row align-items-center">
+                        <div class="mtb-image-circle-lg" style="background-image: url('../assets/images/mtb-profile-image-01.jpg');"></div>
+                        <div class="mtb-upload-links">
+                            <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark ml-3 mtb-link mtb-link-xs mtb-btn-black-o-4">Upload Image</a>
+                        </div>
+                    </div>
+                    <div class="col-12 mt-3">
+                        <div class="row">
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Last name</label>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-first-name" placeholder="John">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Last name</label>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Doe">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Mobile</label>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="tel" class="mtb-input-md" name="mtb-first-name" placeholder="+27 (0) 12 345 6789">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Email</label>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="email" class="mtb-input-md" name="mtb-last-name" placeholder="info@medihelp.co.za">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Gender</label>
+                                    <div class="form-group mtb-input-wrapper">
+                                        <select name="gender" id="">
+                                            <option value="">Please select your gender</option>
+                                            <option value="Female">Female</option>
+                                            <option value="Male">Male</option>
+                                            <option value="Other">Other</option>
+                                            <option value="not-say">Rather not say</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Date of birth</label>
+                                    <div class="mtb-input-wrapper">
+                                        <div class="form-group mtb-input-wrapper mb-0">
+                                            <input type="dateOfBirth" placeholder="Date of Birth" placeholder="yyyy-mm-dd" name="dp" [minDate]="minDate" ngbDatepicker #dp="ngbDatepicker" (click)="dp.toggle()" class="mtb-input-md" formControlName="dateOfBirth">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Right Content -->
+    <div class="col-12 col-lg-6">
+        <div class="row">
+            <div class="col-12">
+                <!-- Address -->
+                <div class="card mtb-card-reset">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 pb-0 d-flex flex-row align-content-lg-center justify-content-between">
+                                <h4 class="mt-2 pb-2 mtb-card-title-03">Address</h4>
+
+                                <div class="custom-control custom-switch">
+                                    <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                                    <label class="custom-control-label pt-1 mtb-text-10" for="customSwitch1">Home address is same as postal address?</label>
+                                </div>
+
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Home address</label>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Street number and street name">
+                                    </div>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Suburb">
+                                    </div>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Province">
+                                    </div>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Country">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12 col-lg-6">
+                                <div class="form-group">
+                                    <label class="mb-1 mtb-text-sm">Postal address</label>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Street number and street name">
+                                    </div>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Suburb">
+                                    </div>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Province">
+                                    </div>
+                                    <div class="mtb-input-wrapper">
+                                        <input type="text" class="mtb-input-md" name="mtb-last-name" placeholder="Country">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Allergies -->
+                <div class="card mt-3 mtb-card-reset">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12 pb-0 d-flex flex-row align-content-lg-center justify-content-between">
+                                <h4 class="mt-2 pb-2 mtb-card-title-03">Allergies</h4>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <div class="mtb-input-wrapper">
+                                        <textarea type="text" row="3" class="w-100 mtb-input-md" name="mtb-allergies" placeholder="Street number and street name"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="col-12 d-flex justify-content-end my-3">
+        <a href="javascript:void(0)" class="btn btn-md py-2 px-5 mtb-btn mtb-btn-xs mtb-btn-green">Update All </a>
+    </div>
+</div>
