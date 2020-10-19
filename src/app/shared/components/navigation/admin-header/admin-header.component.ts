@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-admin-header',
@@ -13,7 +14,12 @@ export class AdminHeaderComponent implements OnInit {
   currentDate = new Date();
   headerSearch: FormGroup;
 
-  constructor(private cookieService: CookieService, private router: Router, private formBuilder: FormBuilder) { }
+  constructor(
+    private cookieService: CookieService,
+    private router: Router,
+    private formBuilder: FormBuilder,
+    private titleService: Title
+  ) { }
 
   ngOnInit(): void {
     // Creating the form
@@ -25,6 +31,12 @@ export class AdminHeaderComponent implements OnInit {
   logout(): any{
     this.cookieService.set('mtibabu', JSON.stringify({ user: '' }));
     this.router.navigate(['/home']);
+  }
+
+  // Setting the page title
+  setDocTitle(title: string): any {
+    // console.log('current title:::::' + this.titleService.getTitle());
+    this.titleService.setTitle('mTatibu: ' + title);
   }
 
 }

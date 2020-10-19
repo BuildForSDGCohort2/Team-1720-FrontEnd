@@ -31,31 +31,38 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    data: { title: 'Home: Find your medical assitance' }
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    data: { title: 'Login' }
   },
   {
     path: 'sign-up',
-    component: SignUpComponent
+    component: SignUpComponent,
+    data: { title: 'Sign up: Register/Sign up' }
   },
   {
     path: 'how-it-works',
-    component: HowItWorksComponent
+    component: HowItWorksComponent,
+    data: { title: 'How it works' }
   },
   {
     path: 'about-us',
-    component: AboutUsComponent
+    component: AboutUsComponent,
+    data: { title: 'About Us' }
   },
   {
     path: 'search-results',
-    component: SearchResultsComponent
+    component: SearchResultsComponent,
+    data: { title: 'Search Results' }
   },
   {
     path: 'legal',
     component: LegalComponent,
+    data: { title: 'Legal: ' },
     children: [
       {
         path: '',
@@ -63,51 +70,62 @@ const routes: Routes = [
       },
       {
         path: 'privacy-policy',
-        component: PrivacyPolicyComponent
+        component: PrivacyPolicyComponent,
+        data: { title: 'Privacy Policy' }
       },
       {
         path: 'terms-and-conditions',
-        component: TermsAndConditionsComponent
+        component: TermsAndConditionsComponent,
+        data: { title: 'Terms and Conditions' }
       }
     ]
   },
   {
     path: '',
     component: AdminComponent,
+    data: { title: 'Admin: ' },
     children: [
       {
         path: 'dashboard',
-        component: DashboardComponent
+        component: DashboardComponent,
+        data: { title: 'Dashboard' }
       },
       {
         path: 'profile',
-        component: ProfileComponent
+        component: ProfileComponent,
+        data: { title: 'Profile' }
       },
       {
         path: 'settings',
-        component: SettingsComponent
+        component: SettingsComponent,
+        data: { title: 'Settings' }
       },
       {
         path: 'health-card',
-        component: HealthCardComponent
+        component: HealthCardComponent,
+        data: { title: 'Health Card' }
       },
       {
         path: 'treatments',
-        component: TreatmentsComponent
+        component: TreatmentsComponent,
+        data: { title: 'Treatments' }
       },
       {
         path: 'payments',
-        component: PaymentsComponent
+        component: PaymentsComponent,
+        data: { title: 'Payments' }
       }
     ]
   },
   {
     path: 'public-profile',
-    component: PublicProfileComponent
+    component: PublicProfileComponent,
+    data: { title: 'Public Profile' }
   },
   {
     path: '404',
-    component: ErrorPageComponent
+    component: ErrorPageComponent,
+    data: { title: 'Page Not Found' }
   },
   {
     path: '**',

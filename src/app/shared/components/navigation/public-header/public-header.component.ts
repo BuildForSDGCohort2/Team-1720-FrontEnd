@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-public-header',
@@ -9,7 +10,7 @@ import { Router, NavigationEnd } from '@angular/router';
 export class PublicHeaderComponent implements OnInit {
   isHome = false;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private titleService: Title) { }
 
   ngOnInit(): void {
     this.router.events.subscribe((val) => {
@@ -21,6 +22,12 @@ export class PublicHeaderComponent implements OnInit {
         }
       }
     });
+  }
+
+  // Setting the page title
+  setDocTitle(title: string): any {
+    // console.log('current title:::::' + this.titleService.getTitle());
+    this.titleService.setTitle('mTatibu: ' + title);
   }
 
 }

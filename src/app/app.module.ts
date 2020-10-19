@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -62,6 +62,12 @@ import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
 import {   FlatpickrModule } from 'angularx-flatpickr';
 import { CardProfileGeneralComponent } from './shared/components/cards/card-profile-general/card-profile-general.component';
 import { CardProfileSettingsComponent } from './shared/components/cards/card-profile-settings/card-profile-settings.component';
+import { PersonalInfoComponent } from './shared/components/forms/personal-info/personal-info.component';
+import { AddressPhysicalComponent } from './shared/components/forms/address-physical/address-physical.component';
+import { AddressWorkComponent } from './shared/components/forms/address-work/address-work.component';
+import { MedicalAllergiesComponent } from './shared/components/forms/medical-allergies/medical-allergies.component';
+import { MedicalAidInfoComponent } from './shared/components/forms/medical-aid-info/medical-aid-info.component';
+import { FinancialInfoComponent } from './shared/components/forms/financial-info/financial-info.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -116,7 +122,13 @@ import { CardProfileSettingsComponent } from './shared/components/cards/card-pro
     ClickActiveDirective,
     CalendarComponent,
     CardProfileGeneralComponent,
-    CardProfileSettingsComponent
+    CardProfileSettingsComponent,
+    PersonalInfoComponent,
+    AddressPhysicalComponent,
+    AddressWorkComponent,
+    MedicalAllergiesComponent,
+    MedicalAidInfoComponent,
+    FinancialInfoComponent
   ],
   imports: [
     BrowserModule,
@@ -129,7 +141,7 @@ import { CardProfileSettingsComponent } from './shared/components/cards/card-pro
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
-  providers: [CookieService],
+  providers: [CookieService, Title],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

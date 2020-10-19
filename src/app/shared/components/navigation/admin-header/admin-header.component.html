@@ -1,6 +1,6 @@
 <header class="container-fluid fixed-top mtb-admin-main-header-wrapper">
     <nav class="navbar navbar-expand-lg navbar-light mtb-main-nav">
-        <a class="navbar-brand ai-header-logo" [routerLink]="['/dashboard']"><img src="../assets/logos/mtibu-icon-color.svg"></a>
+        <a class="navbar-brand ai-header-logo" (click)="setDocTitle('Admin Dashboard')" [routerLink]="['/dashboard']"><img src="../assets/logos/mtibu-icon-color.svg"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -23,20 +23,20 @@
                 <li class="nav-item dropdown active" appDropdownExpand>
                     <a class="nav-link mtb-notification"><i class="ri-notification-fill"></i></a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
-                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/settings']" routerLinkActive="router-link-active">Settings</a>
+                        <a class="dropdown-item" (click)="setDocTitle('Profile')" href="javascript:void(0)" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
+                        <a class="dropdown-item" (click)="setDocTitle('Security Settings')" href="javascript:void(0)" [routerLink]="['/settings']" routerLinkActive="router-link-active">Security Settings</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Log out</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown" appDropdownExpand>
-                    <a class="dropdown-toggle nav-link d-flex flex-row align-items-center mtb-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a (click)="setDocTitle('Admin Profile')" class="dropdown-toggle nav-link d-flex flex-row align-items-center mtb-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="mr-1 mtb-image-circle-sm" style="background-image: url('../assets/images/mtb-profile-image-01.jpg')"></div>
                         allan
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
-                        <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/settings']" routerLinkActive="router-link-active">Settings</a>
+                        <a class="dropdown-item" (click)="setDocTitle('Profile Settings')" href="javascript:void(0)" [routerLink]="['/profile']" routerLinkActive="router-link-active">Profile</a>
+                        <a class="dropdown-item" (click)="setDocTitle('Security Settings')" href="javascript:void(0)" [routerLink]="['/settings']" routerLinkActive="router-link-active">Security Settings</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Log out</a>
                     </div>

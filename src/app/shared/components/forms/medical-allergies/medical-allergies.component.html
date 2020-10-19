@@ -1,0 +1,65 @@
+<!-- https://stackblitz.com/edit/angular-tag-input?file=src%2Fapp%2Feditor%2Feditor.component.ts -->
+<div class="col-12 mtb-border-bottom">
+    <h4 class="mtb-main-title-9">Allergies</h4>
+    <div class="row">
+        <div class="col-12 col-lg-11">
+            <span class="mtb-tag-item" *ngFor="let tag of tags">
+                {{tag}}
+            </span>
+        </div>
+        <div class="col-12 col-lg-1 d-flex flex-lg-row justify-content-lg-end">
+            <a href="javascript:void(0)" (click)="ExpandAllergiesEdit()" class="text-right mtb-link mtb-link-sm">Edit</a>
+        </div>
+    </div>
+    <form [formGroup]="medicalAllergiesForm" class="mt-4 mtb-form-edit" [ngClass]="{ 'd-none' : !editAllergies, 'd-block fade show' : editAllergies }">
+        <h4 class="mtb-text-10">Edit Allergies</h4>
+        <div class="form-row pb-3">
+            <div class="col pr-lg-4 mtb-form-input-wrapper-tags">
+                <div class="editor-tag" (click)="focusTagInput()">
+                    <span class="tag-item" *ngFor="let tag of tags">
+                        {{tag}}
+                        <span class="remove-tag" (click)="removeTag(tag)">×</span>
+                    </span>
+                    <input placeholder="Add Medical Allergies" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)" formControlName="tag">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex flex-row justify-content-end">
+                <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-btn mtb-btn-sm" (click)="ExpandAllergiesEdit()">Save</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col-12 mt-3">
+    <h4 class="mtb-main-title-9">Vaccines</h4>
+    <div class="row">
+        <div class="col-12 col-lg-11">
+            <span class="mtb-tag-item" *ngFor="let tag of tags">
+                {{tag}}
+            </span>
+        </div>
+        <div class="col-12 col-lg-1 d-flex flex-lg-row justify-content-lg-end">
+            <a href="javascript:void(0)" (click)="ExpandAllergiesEdit()" class="text-right mtb-link mtb-link-sm">Edit</a>
+        </div>
+    </div>
+    <form [formGroup]="medicalAllergiesForm" class="mt-4 mtb-form-edit" [ngClass]="{ 'd-none' : !editAllergies, 'd-block fade show' : editAllergies }">
+        <h4 class="mtb-text-10">Edit Allergies</h4>
+        <div class="form-row pb-3">
+            <div class="col pr-lg-4 mtb-form-input-wrapper-tags">
+                <div class="editor-tag" (click)="focusTagInput()">
+                    <span class="tag-item" *ngFor="let tag of tags">
+                        {{tag}}
+                        <span class="remove-tag" (click)="removeTag(tag)">×</span>
+                    </span>
+                    <input placeholder="Add Medical Allergies" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)" formControlName="tag">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 d-flex flex-row justify-content-end">
+                <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-btn mtb-btn-sm" (click)="ExpandAllergiesEdit()">Save</a>
+            </div>
+        </div>
+    </form>
+</div>
