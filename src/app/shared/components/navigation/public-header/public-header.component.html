@@ -1,6 +1,6 @@
 <header class="container-fluid fixed-top mtb-pub-main-header-wrapper" [ngClass]="{'mtb-pub-header': !isHome}">
     <nav class="navbar navbar-expand-lg navbar-light mtb-main-nav">
-        <a class="navbar-brand ai-header-logo" [routerLink]="['/home']"><img src="../assets/logos/mtibu-icon-color.svg"></a>
+        <a class="navbar-brand ai-header-logo" (click)="setDocTitle('Home')" [routerLink]="['/home']"><img src="../assets/logos/mtibu-icon-color.svg"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -8,10 +8,10 @@
         <div class="collapse navbar-collapse" id="mtbbu-pub-header-nav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link mtb-signup" [routerLink]="['/sign-up']" routerLinkActive="router-link-active">Create a secure account</a>
+                    <a class="nav-link mtb-signup" (click)="setDocTitle('Sign up')" [routerLink]="['/sign-up']" routerLinkActive="router-link-active">Create a secure account</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mtb-login" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+                    <a class="nav-link mtb-login" (click)="setDocTitle('Login')" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
                 </li>
             </ul>
             <!-- <form class="form-inline my-2 my-lg-0">

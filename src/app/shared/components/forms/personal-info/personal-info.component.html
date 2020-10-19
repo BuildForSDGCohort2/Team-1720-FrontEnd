@@ -1,0 +1,51 @@
+<div class="col-12 p-lg-3">
+    <form [formGroup]="personalInfo">
+        <div class="form-row pb-4">
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="first-name">First Name</label>
+                <input type="text" value="" class="form-control" placeholder="First Name" formControlName="name">
+            </div>
+            <div class="col pl-lg-4 mtb-form-input-wrapper">
+                <label for="last-name">Last Name</label>
+                <input type="text" value="" class="form-control" placeholder="Last Name" formControlName="surname">
+            </div>
+        </div>
+        <div class="form-row pb-4">
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="mobile-number">Mobile Number</label>
+                <input type="tel" value="" class="form-control" placeholder="Mobile Number" formControlName="mobileNumber">
+            </div>
+            <div class="col pl-lg-4 mtb-form-input-wrapper">
+                <label for="work-nummber">Work Number</label>
+                <input type="tel" value="" class="form-control" placeholder="Work Number" formControlName="workNumber">
+            </div>
+        </div>
+        <div class="form-row pb-4 mtb-border-bottom">
+            <div class="col pr-lg-0 mtb-form-input-wrapper">
+                <label for="email">Email Address</label>
+                <input type="email" value="" class="form-control" placeholder="Email Address" formControlName="email">
+            </div>
+        </div>
+        <div class="form-row pb-4 mtb-border-bottom">
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="email">Date of Birth</label>
+                <input type="date" value="" class="form-control" placeholder="Date of Birth" formControlName="dateOfBirth">
+            </div>
+            <div class="col pl-lg-4 pr-lg-0 mtb-form-input-wrapper">
+                <label for="name">Gender</label>
+                <select name="gender" class="form-control" formControlName="gender">
+                    <option value="">Select gender</option>
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                    <option value="other">Other</option>
+                    <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="form-row d-flex flex-row justify-content-end py-3">
+            <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-btn mtb-btn-xs">Update Information</a>
+        </div>
+    </form>
+</div>

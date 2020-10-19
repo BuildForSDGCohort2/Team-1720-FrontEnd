@@ -1,1 +1,64 @@
-<app-card-profile-general></app-card-profile-general>
+<div class="row">
+    <div class="col-12 col-lg-3 order-md-2">
+        <div class="card mtb-card-reset">
+            <div class="card-title pb-0">
+                <div class="col-12 p-3 d-flex flex-column justify-content-center align-items-center">
+                    <div class="mtb-image-circle-xlg" style="background-image: url('../assets/images/mtb-profile-image-01.jpg');"></div>
+                    <div class="mt-3 mtb-upload-links">
+                        <a href="javascript:void(0)" class="btn btn-xs btn-outline-dark ml-3 mtb-link mtb-link-xs mtb-btn-border">Upload Image</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body pt-0">
+                <div class="mtb-profile-user-information">
+                    <h3 class="text-center mtb-text-grey-light mtb-main-title-4">Allan Paul Dennis</h3>
+                    <p class="text-center mtb-text-grey-light mtb-text-10">Johannesburg, South Africa</p>
+                </div>
+            </div>
+        </div>
+        <!-- <app-card-profile-general></app-card-profile-general> -->
+    </div>
+    <div class="col-12 col-lg-9">
+        <div class="card mtb-card-reset">
+            <div class="card-title">
+                <ul class="nav nav-tabs mtb-nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="personal-information-tab" data-toggle="tab" href="#personal-information" role="tab" aria-controls="personal-information" aria-selected="true">Personal Information</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false">Addresses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="medical-allergies-tab" data-toggle="tab" href="#medical-allergies" role="tab" aria-controls="medical-allergies" aria-selected="false">Allergies</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="medical-aid-tab" data-toggle="tab" href="#medical-aid" role="tab" aria-controls="medical-aid" aria-selected="false">Medical Aid</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="financial-information-tab" data-toggle="tab" href="#financial-information" role="tab" aria-controls="financial-information" aria-selected="false">Financial Information</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="personal-information" role="tabpanel" aria-labelledby="personal-information-tab">
+                        <app-personal-info></app-personal-info>
+                    </div>
+                    <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+                        <app-address-physical></app-address-physical>
+                    </div>
+                    <div class="tab-pane fade" id="medical-allergies" role="tabpanel" aria-labelledby="medical-allergies-tab">
+                        <app-medical-allergies></app-medical-allergies>
+                    </div>
+                    <div class="tab-pane fade" id="medical-aid" role="tabpanel" aria-labelledby="medical-aid-tab">
+                        <app-medical-aid-info></app-medical-aid-info>
+                    </div>
+                    <div class="tab-pane fade" id="financial-information" role="tabpanel" aria-labelledby="personal-information-tab">
+                        <app-financial-info></app-financial-info>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <app-card-profile-general></app-card-profile-general> -->
+    </div>
+</div>
