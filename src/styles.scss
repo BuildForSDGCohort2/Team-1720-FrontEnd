@@ -715,6 +715,12 @@ p {
     color: $mtb-black-o-6;
 }
 
+.mtb-text-xxs {
+    font-family: $mtb-fnt-manrope;
+    font-size: $mtb-fnt-sz-xxs;
+    color: $mtb-black-o-6;
+}
+
 .mtb-text-xs-bold {
     font-family: $mtb-fnt-manrope;
     font-size: $mtb-fnt-sz-xs;
@@ -1482,6 +1488,11 @@ p {
     font-weight: $mtb-fnt-w-700;
 }
 
+.mtb-link-light-grey {
+    color: $mtb-black-o-1;
+    font-weight: $mtb-fnt-w-700;
+}
+
 .mtb-link-red {
     color: $mtb-red;
     &:hover {
@@ -1506,6 +1517,12 @@ p {
 .mtb-icon-sm {
     font-size: $mtb-fnt-sz-md;
     line-height: $mtb-fnt-sz-md;
+}
+
+.mtb-icon-actions-md {
+    font-size: $mtb-fnt-sz-lg;
+    font-weight: $mtb-fnt-w-100;
+    line-height: $mtb-fnt-sz-30;
 }
 
 // *****************
@@ -1926,7 +1943,7 @@ p {
 // *****************
 .mtb-img-profile-lg {
     background-size: cover;
-    background-position: top center;
+    background-position: center center;
     border-radius: 50%;
     height: 200px;
     width: 200px;
