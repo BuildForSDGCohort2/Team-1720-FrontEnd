@@ -1,1 +1,77 @@
-<p>medical-aid-info works!</p>
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <div class="card mtb-card-reset mtb-card-outline" *ngIf="fv.medical_aid_name.value === ''">
+            <div class="card-body">
+                <h4 class="mtb-main-title-6">Medical Aid Information</h4>
+                <p class="mtb-text-10"><em>You have not yet added your medical aid information</em></p>
+                <a href="javascript:void(0)" (click)="openMedicalAidInfo()" class="btn btn-sm btn-outline-primary mt-3 mtb-btn mtb-btn-xs mtb-btn-green">Add Medical Aid</a>
+            </div>
+        </div>
+        <div class="card mtb-card-reset mtb-card-outline" *ngIf="fv.medical_aid_name.value !== ''">
+            <!-- Title -->
+            <div class="card-title mtb-card-title">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="mtb-card-section-title">{{fv.medical_aid_name.value}}</h3>
+                    </div>
+                    <div class="col-6 d-flex flex-row justify-content-end">
+                        <a href="javascript:void(0)" (click)="openMedicalAidInfo()" class="text-right mtb-link mtb-link-sm">Edit</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Body -->
+            <div class="card-body mt-0 pt-0">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mtb-text-10 pb-2">Your name: <strong class="mtb-text-sm">{{fv.medical_aid_user_full_name.value}}</strong></p>
+                        <p class="mtb-text-10 pb-2">Medical aid number: <strong class="mtb-text-sm">{{fv.medical_aid_number.value}}</strong></p>
+                        <p class="mtb-text-10 pb-2">Medical memeber number (code): <strong class="mtb-text-sm">{{fv.medical_aid_memeber_number.value}}</strong></p>
+                        <p class="mtb-text-10 pb-2">Date of registration: <strong class="mtb-text-sm">{{fv.medical_aid_original_registation_date.value}}</strong></p>
+                        <p class="mtb-text-xs"><em>Last updated: <strong>12 September 2020</strong></em></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6" [ngClass]="{ 'd-none' : !showMedicalAidForm, 'd-block fade show' : showMedicalAidForm }">
+        <h4 class="mtb-title-custom-01">Medical Aid Information</h4>
+        <form [formGroup]="medicalAidInfo">
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group mtb-form-input-wrapper">
+                        <label for="Medical Aid Name">Medical Aid Name</label>
+                        <input type="text" class="form-control" value="" formControlName="medical_aid_name">
+                    </div>
+                    <div class="form-group mtb-form-input-wrapper">
+                        <label for="Your Name">Your Name</label>
+                        <input type="text" class="form-control" value="" formControlName="medical_aid_user_full_name">
+                    </div>
+                    <div class="form-group mtb-form-input-wrapper">
+                        <label for="Medical Aid Number">Medical Aid Number</label>
+                        <input type="text" class="form-control" value="" formControlName="medical_aid_number">
+                    </div>
+                    <div class="form-group mtb-form-input-wrapper">
+                        <label for="Medical Aid Member Number (Code)">Medical Aid Member Number (Code)</label>
+                        <input type="text" class="form-control" value="" formControlName="medical_aid_memeber_number">
+                    </div>
+                    <div class="form-group mtb-form-input-wrapper">
+                        <label for="Date of registration">Date of registration</label>
+                        <input type="date" value="" class="form-control" placeholder="Date of Birth" formControlName="medical_aid_original_registation_date">
+                        <!-- <input type="text" class="form-control" value="" formControlName="medical_aid_original_registation_date"> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 d-flex flex-row justify-content-end">
+                    <a href="javascript:void(0)" (click)="openMedicalAidInfo()" class="btn btn-sm btn-outline-success mtb-btn mtb-btn-sm">Save</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="row">
+
+</div>
