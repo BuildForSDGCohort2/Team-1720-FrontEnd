@@ -1,9 +1,15 @@
 <!-- https://stackblitz.com/edit/angular-tag-input?file=src%2Fapp%2Feditor%2Feditor.component.ts -->
 <div class="col-12 mtb-border-bottom">
     <h4 class="mtb-main-title-9">Allergies</h4>
-    <div class="row">
+    <div class="row" *ngIf="allergyTags.length === 0">
+        <div class="col-12">
+            <p class="mb-3 mtb-text-grey-light mtb-text-10">You have no allergies added.</p>
+            <a href="javascript:void(0)" (click)="ExpandAllergiesEdit()" class="btn btn-sm btn-outline-primary mtb-btn mtb-btn-xs mtb-btn-green">Add medical allergies</a>
+        </div>
+    </div>
+    <div class="row" *ngIf="allergyTags.length > 0">
         <div class="col-12 col-lg-11">
-            <span class="mtb-tag-item" *ngFor="let tag of tags">
+            <span class="mtb-tag-item" *ngFor="let tag of allergyTags">
                 {{tag}}
             </span>
         </div>
@@ -16,11 +22,11 @@
         <div class="form-row pb-3">
             <div class="col pr-lg-4 mtb-form-input-wrapper-tags">
                 <div class="editor-tag" (click)="focusTagInput()">
-                    <span class="tag-item" *ngFor="let tag of tags">
+                    <span class="tag-item" *ngFor="let tag of allergyTags">
                         {{tag}}
                         <span class="remove-tag" (click)="removeTag(tag)">×</span>
                     </span>
-                    <input placeholder="Add Medical Allergies" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)" formControlName="tag">
+                    <input placeholder="Add Medical Allergies" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)" formControlName="allergies">
                 </div>
             </div>
         </div>
@@ -31,34 +37,41 @@
         </div>
     </form>
 </div>
+<!-- Vaccinations -->
 <div class="col-12 mt-3">
-    <h4 class="mtb-main-title-9">Vaccines</h4>
-    <div class="row">
+    <h4 class="mtb-main-title-9">Vaccinations</h4>
+    <div class="row" *ngIf="vaccinationTags.length === 0">
+        <div class="col-12">
+            <p class="mb-3 mtb-text-grey-light mtb-text-10">You have no vaccinations added.</p>
+            <a href="javascript:void(0)" (click)="ExpandAllVaccinationsEdit()" class="btn btn-sm btn-outline-primary mtb-btn mtb-btn-xs mtb-btn-green">Add Vaccinations</a>
+        </div>
+    </div>
+    <div class="row" *ngIf="vaccinationTags.length > 0">
         <div class="col-12 col-lg-11">
-            <span class="mtb-tag-item" *ngFor="let tag of tags">
+            <span class="mtb-tag-item" *ngFor="let tag of vaccinationTags">
                 {{tag}}
             </span>
         </div>
         <div class="col-12 col-lg-1 d-flex flex-lg-row justify-content-lg-end">
-            <a href="javascript:void(0)" (click)="ExpandAllergiesEdit()" class="text-right mtb-link mtb-link-sm">Edit</a>
+            <a href="javascript:void(0)" (click)="ExpandAllVaccinationsEdit()" class="text-right mtb-link mtb-link-sm">Edit</a>
         </div>
     </div>
-    <form [formGroup]="medicalAllergiesForm" class="mt-4 mtb-form-edit" [ngClass]="{ 'd-none' : !editAllergies, 'd-block fade show' : editAllergies }">
+    <form [formGroup]="medicalVaccinationsForm" class="mt-4 mtb-form-edit" [ngClass]="{ 'd-none' : !editVaccinations, 'd-block fade show' : editVaccinations }">
         <h4 class="mtb-text-10">Edit Allergies</h4>
         <div class="form-row pb-3">
             <div class="col pr-lg-4 mtb-form-input-wrapper-tags">
                 <div class="editor-tag" (click)="focusTagInput()">
-                    <span class="tag-item" *ngFor="let tag of tags">
+                    <span class="tag-item" *ngFor="let tag of vaccinationTags">
                         {{tag}}
-                        <span class="remove-tag" (click)="removeTag(tag)">×</span>
+                        <span class="remove-tag" (click)="removeVaccinationTag(tag)">×</span>
                     </span>
-                    <input placeholder="Add Medical Allergies" #tagInput type="text" class="input-tag" (keyup)="onKeyUp($event)" formControlName="tag">
+                    <input placeholder="Add Vaccinations" #tagInput type="text" class="input-tag" (keyup)="onVaccinationKeyUp($event)" formControlName="vaccinations">
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col-12 d-flex flex-row justify-content-end">
-                <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-btn mtb-btn-sm" (click)="ExpandAllergiesEdit()">Save</a>
+                <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-btn mtb-btn-sm" (click)="ExpandAllVaccinationsEdit()">Save</a>
             </div>
         </div>
     </form>
