@@ -1399,6 +1399,10 @@ p {
     color: $mtb-p-green-o-5;
 }
 
+.mtb-link-xs {
+    font-size: $mtb-fnt-sz-xxs;
+}
+
 .mtb-link-sm {
     font-size: $mtb-fnt-sz-xs;
 }
@@ -1506,9 +1510,23 @@ p {
     justify-content: center;
 }
 
+.mtb-link-border-green {
+    border: 1px solid $mtb-black-o-3;
+    padding: 0.2rem 0.6rem;
+    border-radius: 3px;
+    &:hover {
+        border-color: $mtb-p-green;
+    }
+}
+
 // *****************
 // Icons
 // *****************
+.mtb-icon-lg {
+    font-size: $mtb-fnt-sz-60;
+    line-height: $mtb-fnt-sz-60;
+}
+
 .mtb-icon-md {
     font-size: $mtb-fnt-sz-lg;
     line-height: $mtb-fnt-sz-30;
@@ -2793,3 +2811,7 @@ p {
 .cal-cell.cal-day-cell.cal-in-month.cal-open {
     background-color: $mtb-black-o-0-5 !important;
 }
+
+// *************************
+// *************************
+// *************************
