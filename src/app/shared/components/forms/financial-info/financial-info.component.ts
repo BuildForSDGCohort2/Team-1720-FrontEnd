@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinancialInfoComponent implements OnInit {
 
+  public hasDoctorAdded = false;
+
   constructor() { }
 
   ngOnInit(): void {
