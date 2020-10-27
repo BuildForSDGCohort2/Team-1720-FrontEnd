@@ -1,4 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -74,6 +75,8 @@ import { AddKinComponent } from './shared/components/popups/add-kin/add-kin.comp
 import { EditDoctorComponent } from './shared/components/popups/edit-doctor/edit-doctor.component';
 import { EditKinComponent } from './shared/components/popups/edit-kin/edit-kin.component';
 import { ConfirmComponent } from './shared/components/popups/confirm/confirm.component';
+import { UploadFileComponent } from './shared/components/popups/upload-file/upload-file.component';
+import { ForgotPasswordComponent } from './modules/public/forgot-password/forgot-password.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -140,7 +143,9 @@ import { ConfirmComponent } from './shared/components/popups/confirm/confirm.com
     AddKinComponent,
     EditDoctorComponent,
     EditKinComponent,
-    ConfirmComponent
+    ConfirmComponent,
+    UploadFileComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,
@@ -148,6 +153,7 @@ import { ConfirmComponent } from './shared/components/popups/confirm/confirm.com
     AppRoutingModule,
     CountdownModule,
     ReactiveFormsModule,
+    HttpClientModule,
     ChartsModule,
     NgbModule,
     FlatpickrModule.forRoot(),

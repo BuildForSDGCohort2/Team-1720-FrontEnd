@@ -21,6 +21,11 @@ export class PersonalInfoComponent implements OnInit {
       email: ['info@healthcare.co.za', [Validators.required, Validators.pattern('[a-z0-9.@]*')]],
       dateOfBirth: ['1991/03/19', [Validators.required]],
       gender: ['male', [Validators.required]],
+      doctorLicense: [''],
+      doctorPracticeYears: [''],
+      doctorPlaceOfStudy: [''],
+      doctorHighestQualification: [''],
+      doctorDescription: ['']
     });
   }
 

@@ -1,0 +1,47 @@
+<div class="modal-header mtb-modal-title">
+    <h4 class="modal-title d-flex flex-row align-items-center" id="modal-basic-title"><i class="ri-upload-2-fill mr-1"></i> Upload</h4>
+    <a href="javascript:void(0)" class="close" aria-label="Close" (click)="activeModal.close('Close click')">
+        <span aria-hidden="true">&times;</span>
+    </a>
+</div>
+<div class="modal-body mtb-modal-body">
+
+    <div *ngIf="currentFile" class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{ progress }}" aria-valuemin="0" aria-valuemax="100" [ngStyle]="{ width: progress + '%' }">
+            {{ progress }}%
+        </div>
+    </div>
+
+    <div class="col-12 d-flex flex-column">
+        <label class="btn btn-default btn-sm my-2 mtb-btn mtb-btn-sm mtb-upload-wrapper">
+            <input type="file" (change)="selectFile($event)" />
+        </label>
+
+        <div class="row justify-content-center" [ngClass]="{'d-none': !selectedFiles, 'd-flex': selectedFiles}">
+            <div class="col-5 col-lg-4">
+                <button class="btn btn-outline-success mtb-btn mtb-btn-sm btn-block" [disabled]="!selectedFiles" (click)="upload()">Upload</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="alert alert-light" role="alert">{{ message }}</div>
+
+    <div class="card mtb-card-reset-2" *ngIf="currentFile">
+        <div class="card-header">
+            <h5 class="mtb-title-custom-01">List of uploaded files</h5>
+        </div>
+        <ul class="list-group list-group-flush" *ngFor="let file of fileInfos | async">
+            <li class="list-group-item">
+                <a href="{{ file.url }}">{{ file.name }}</a>
+            </li>
+        </ul>
+    </div>
+
+
+</div>
+<div class="modal-footer mtb-modal-footer d-flex flex-row justify-content-between">
+    <a href="javascript:void(0)" class="btn btn-sm mtb-link mtb-btn-sm" (click)="activeModal.close('Save click')">Cancel</a>
+    <!-- <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="activeModal.close('Save click')">Add Contact</a> -->
+    <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="submitNewDoctor()">Add Doctor</a>
+</div>

@@ -26,6 +26,7 @@
                 <input type="email" value="" class="form-control" placeholder="Email Address" formControlName="email">
             </div>
         </div>
+
         <div class="form-row pb-4 mtb-border-bottom">
             <div class="col pr-lg-4 mtb-form-input-wrapper">
                 <label for="email">Date of Birth</label>
@@ -40,6 +41,34 @@
                     <option value="other">Other</option>
                     <option value="prefer-not-to-say">Prefer not to say</option>
                 </select>
+            </div>
+        </div>
+
+        <!-- Doctor Information -->
+        <div class="form-row pb-4 mtb-border-bottom">
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="email">Medical license number</label>
+                <input type="text" value="" class="form-control" placeholder="RSA123204" formControlName="doctorLicense">
+            </div>
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="email">Years licensed to practice</label>
+                <input type="number" value="" class="form-control" placeholder="3" formControlName="doctorPracticeYears">
+            </div>
+        </div>
+        <div class="form-row pb-4 mtb-border-bottom">
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="email">Place of study</label>
+                <input type="text" value="" class="form-control" placeholder="University of Pretoria" formControlName="doctorPlaceOfStudy">
+            </div>
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="email">Highest qualification</label>
+                <input type="number" value="" class="form-control" placeholder="Masters in Psychology" formControlName="doctorHighestQualification">
+            </div>
+        </div>
+        <div class="form-row pb-4 mtb-border-bottom">
+            <div class="col pr-lg-4 mtb-form-input-wrapper">
+                <label for="email">Description about yourself</label>
+                <textarea name="doc-description" id="" cols="10" rows="5" class="form-control" placeholder="Tell us what makes you a great doctor?" formControlName="doctorDescription"></textarea>
             </div>
         </div>
 
