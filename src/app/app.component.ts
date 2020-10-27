@@ -53,7 +53,6 @@ export class AppComponent {
         }
 
         this.cookieValue = JSON.parse(this.cookieService.get('mtibabu'));
-        console.log(this.cookieValue);
         this.userLoggedIn = this.cookieValue.user !== undefined && this.cookieValue.user.length > 0 ? true : false;
       }
     });

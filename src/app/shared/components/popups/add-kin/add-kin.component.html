@@ -1,0 +1,107 @@
+<div class="modal-header mtb-modal-title">
+    <h4 class="modal-title d-flex flex-row align-items-center" id="modal-basic-title"><i class="ri-account-pin-box-fill mtb-icon-md"></i> Add contact</h4>
+    <a href="javascript:void(0)" class="close" aria-label="Close" (click)="activeModal.close('Close click')">
+        <span aria-hidden="true">&times;</span>
+    </a>
+</div>
+<div class="modal-body mtb-modal-body">
+    <form [formGroup]="addContact">
+        <div class="col-12 mtb-header-error" [ngClass]="{'mtb-form-header-error': addContactSubmitted && contactCtrls.error,  'd-none': !addContactSubmitted}">
+            <h5>Form Submission error</h5>
+            <p>There was an error trying to submit this form.</p>
+        </div>
+        <div class="row">
+            <!-- First and Last name -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.first_name.errors}">
+                            <label for="First Name">First Name</label>
+                            <input type="text" name="first_name" class="form-control" value="" formControlName="first_name">
+                            <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.first_name.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.last_name.errors}">
+                        <div class="form-group mtb-form-input-wrapper">
+                            <label for="Last Name">Last Name</label>
+                            <input type="text" name="last_name" class="form-control" value="" formControlName="last_name">
+                            <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.last_name.errors">This field is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- First and Last name -->
+            <div class="col-12">
+                <div class="form-group mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.email.errors}">
+                    <label for="Email">Email</label>
+                    <input type="email" name="email" class="form-control" value="" formControlName="email">
+                    <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.email.errors">This field is required</p>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group mtb-form-wrapper-select-full" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.relationship.errors}">
+                            <label for="Relationship">Relationship</label>
+                            <select name="relationship" id="mtbRelationship" formControlName="relationship">
+                                <option value="">Please select the relationship</option>
+                                <option value="brother">Brother</option>
+                                <option value="sister">Sister</option>
+                                <option value="mother">Mother</option>
+                                <option value="father">Father</option>
+                                <option value="aunty">Aunty</option>
+                                <option value="uncle">Uncle</option>
+                                <option value="cousin">Cousin</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.relationship.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group mtb-form-wrapper-select-full" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.is_primary.errors}">
+                            <label for="primary kin?">Is primary Kin?</label>
+                            <select name="relationship" id="mtbRelationship" formControlName="is_primary">
+                                <option value="">Is this person your primary kin? </option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                            <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.is_primary.errors">This field is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="col-12">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group mtb-form-input-wrapper">
+                            <label for="Mobile Number">Mobile Number</label>
+                            <input type="tel" name="mobile_num" class="form-control" value="" formControlName="mobile_number" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.mobile_number.errors}">
+                            <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.mobile_number.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="form-group mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': addContactSubmitted && contactCtrls.work_number.errors}">
+                            <label for="Work Number">Work Number</label>
+                            <input type="tel" name="work_num" class="form-control" value="" formControlName="work_number">
+                            <p class="mtb-error-msg" *ngIf="addContactSubmitted && contactCtrls.work_number.errors">This field is required</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Contact Details -->
+            <div class="col-12">
+                <p class="mtb-text-small mb-1">I would like to remove this person</p>
+                <a href="javascript:void(0)" class="btn btn-sm mtb-btn mtb-btn-xs mtb-btn-red mtb-btn-pop-up-remove-contact"><i class="ri-user-unfollow-line"></i> Delete Contact</a>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer mtb-modal-footer d-flex flex-row justify-content-between">
+    <a href="javascript:void(0)" class="btn btn-sm mtb-link mtb-btn-sm" (click)="activeModal.close('Save click')">Cancel</a>
+    <!-- <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="activeModal.close('Save click')">Add Contact</a> -->
+    <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="submitNewContact()"><i class="ri-user-add-line"></i> Add Contact</a>
+</div>
