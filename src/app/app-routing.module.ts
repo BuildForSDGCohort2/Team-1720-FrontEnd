@@ -14,6 +14,7 @@ import { PrivacyPolicyComponent } from './modules/public/legal/privacy-policy/pr
 import { TermsAndConditionsComponent } from './modules/public/legal/terms-and-conditions/terms-and-conditions.component';
 import { CountdownTimerComponent } from './modules/public/countdown-timer/countdown-timer.component';
 import { ErrorPageComponent } from './modules/public/error-page/error-page.component';
+import { ForgotPasswordComponent } from './modules/public/forgot-password/forgot-password.component';
 
 // Admin Pages
 import { AdminComponent } from './modules/admin/admin/admin.component';
@@ -43,6 +44,11 @@ const routes: Routes = [
     path: 'sign-up',
     component: SignUpComponent,
     data: { title: 'Sign up: Register/Sign up' }
+  },
+  {
+    path: 'forgot-password',
+    component: ForgotPasswordComponent,
+    data: { title: 'Forgot password' }
   },
   {
     path: 'how-it-works',
