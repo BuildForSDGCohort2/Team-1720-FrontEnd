@@ -35,25 +35,37 @@
                         <a class="nav-link" id="medical-aid-tab" data-toggle="tab" href="#medical-aid" role="tab" aria-controls="medical-aid" aria-selected="false">Medical Aid</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" id="financial-information-tab" data-toggle="tab" href="#financial-information" role="tab" aria-controls="financial-information" aria-selected="false">Primary Contacts</a>
+                        <a class="nav-link" id="contacts-tab" data-toggle="tab" href="#contacts" role="tab" aria-controls="contacts" aria-selected="false">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="financial-information-tab" data-toggle="tab" href="#financial-information" role="tab" aria-controls="financial-information" aria-selected="false">Financial Information</a>
                     </li>
                 </ul>
             </div>
             <div class="card-body">
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="personal-information" role="tabpanel" aria-labelledby="personal-information-tab">
+                        <!-- Shared Forms -->
                         <app-personal-info></app-personal-info>
                     </div>
                     <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
+                        <!-- Shared Forms -->
                         <app-address-physical></app-address-physical>
                     </div>
                     <div class="tab-pane fade" id="medical-allergies" role="tabpanel" aria-labelledby="medical-allergies-tab">
+                        <!-- Shared Forms -->
                         <app-medical-allergies></app-medical-allergies>
                     </div>
                     <div class="tab-pane fade" id="medical-aid" role="tabpanel" aria-labelledby="medical-aid-tab">
+                        <!-- Shared Forms -->
                         <app-medical-aid-info></app-medical-aid-info>
                     </div>
+                    <div class="tab-pane fade" id="contacts" role="tabpanel" aria-labelledby="contacts-tab">
+                        <!-- Shared Forms -->
+                        <app-contacts></app-contacts>
+                    </div>
                     <div class="tab-pane fade" id="financial-information" role="tabpanel" aria-labelledby="personal-information-tab">
+                        <!-- Shared Forms -->
                         <app-financial-info></app-financial-info>
                     </div>
                 </div>

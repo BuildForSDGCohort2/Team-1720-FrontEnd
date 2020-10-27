@@ -7,11 +7,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinancialInfoComponent implements OnInit {
 
-  public hasDoctorAdded = false;
+  public editBankingInfo = false;
+  public editConsultationInfo = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  openEdit(whichEdit): any {
+    switch (whichEdit) {
+      case 'banking':
+        this.editBankingInfo = !this.editBankingInfo;
+        break;
+      case 'consultation':
+        this.editConsultationInfo = !this.editConsultationInfo;
+        break;
+      default:
+      // code block
+      console.error('No edit name');
+    }
   }
 
 }

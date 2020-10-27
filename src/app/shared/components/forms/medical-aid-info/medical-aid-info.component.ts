@@ -24,7 +24,7 @@ export class MedicalAidInfoComponent implements OnInit {
     });
   }
 
-  get fv(): any { console.log(this.medicalAidInfo.controls); return this.medicalAidInfo.controls; }
+  get fv(): any { return this.medicalAidInfo.controls; }
 
   openMedicalAidInfo(): any{
     this.showMedicalAidForm = !this.showMedicalAidForm;

@@ -68,6 +68,12 @@ import { AddressWorkComponent } from './shared/components/forms/address-work/add
 import { MedicalAllergiesComponent } from './shared/components/forms/medical-allergies/medical-allergies.component';
 import { MedicalAidInfoComponent } from './shared/components/forms/medical-aid-info/medical-aid-info.component';
 import { FinancialInfoComponent } from './shared/components/forms/financial-info/financial-info.component';
+import { ContactsComponent } from './shared/components/forms/contacts/contacts.component';
+import { AddDoctorComponent } from './shared/components/popups/add-doctor/add-doctor.component';
+import { AddKinComponent } from './shared/components/popups/add-kin/add-kin.component';
+import { EditDoctorComponent } from './shared/components/popups/edit-doctor/edit-doctor.component';
+import { EditKinComponent } from './shared/components/popups/edit-kin/edit-kin.component';
+import { ConfirmComponent } from './shared/components/popups/confirm/confirm.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -128,7 +134,13 @@ import { FinancialInfoComponent } from './shared/components/forms/financial-info
     AddressWorkComponent,
     MedicalAllergiesComponent,
     MedicalAidInfoComponent,
-    FinancialInfoComponent
+    FinancialInfoComponent,
+    ContactsComponent,
+    AddDoctorComponent,
+    AddKinComponent,
+    EditDoctorComponent,
+    EditKinComponent,
+    ConfirmComponent
   ],
   imports: [
     BrowserModule,

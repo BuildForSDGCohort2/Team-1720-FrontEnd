@@ -261,6 +261,51 @@ p {
     // }
 }
 
+.mtb-form-input-error-wrapper {
+    input {
+        border-color: $mtb-red-o-6;
+        background-color: $mtb-red-o-1;
+    }
+    select {
+        border-color: $mtb-red-o-6;
+        background-color: $mtb-red-o-1;
+    }
+    &.mtb-form-input-wrapper {
+        input {
+            border-color: $mtb-red-o-6;
+            background-color: $mtb-red-o-1;
+        }
+        select {
+            border-color: $mtb-red-o-6;
+            background-color: $mtb-red-o-1;
+        }
+    }
+}
+
+.mtb-header-error {
+    padding: 0.8rem 0rem;
+    h5 {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-md;
+        font-weight: $mtb-fnt-w-500;
+        color: $mtb-red-o-8;
+    }
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-xs;
+        font-weight: $mtb-fnt-w-400;
+        color: $mtb-red-o-8;
+    }
+}
+
+.mtb-error-msg {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xxs !important;
+    font-weight: $mtb-fnt-w-600;
+    color: $mtb-red-o-8;
+    margin: 0.6rem 0;
+}
+
 // *****************
 // *****************
 // Public Pages
@@ -680,6 +725,12 @@ p {
     color: $mtb-black-o-6;
 }
 
+.mtb-text-xs {
+    font-family: $mtb-fnt-manrope;
+    font-size: $mtb-fnt-sz-xxxs;
+    color: $mtb-black-o-6;
+}
+
 .mtb-title-status-highlight {
     color: $mtb-p-green;
     font-weight: $mtb-fnt-w-700;
@@ -762,6 +813,34 @@ p {
     color: $mtb-black-o-5;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+.mtb-info-group {
+    display: flex;
+    flex-direction: flex-row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid $mtb-black-o-1;
+    padding: 0.5rem 0;
+    &:last-child {
+        border-bottom: none;
+    }
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-11;
+        color: $mtb-black-o-5;
+    }
+    .mtb-info-content {
+        font-weight: $mtb-fnt-w-700;
+        text-transform: capitalize;
+    }
+}
+
+// *****************
+// Highlights
+// *****************
+.mtb-highlight-sm {
+    font-weight: $mtb-fnt-w-800;
 }
 
 // *****************
@@ -880,6 +959,8 @@ p {
     font-size: $mtb-fnt-sz-sm;
     line-height: $mtb-fnt-sz-20;
 }
+
+.mtb-body-text-warning {}
 
 // *****************
 // Cards
@@ -1367,6 +1448,12 @@ p {
     }
 }
 
+.mtb-btn-pop-up-remove-contact {
+    i {
+        font-size: $mtb-fnt-sz-11;
+    }
+}
+
 // *****************
 // Links
 // *****************
@@ -1504,6 +1591,13 @@ p {
     }
 }
 
+.mtb-link-red-white-hover {
+    color: $mtb-red;
+    &:hover {
+        color: $mtb-white;
+    }
+}
+
 .mtb-link-groups {
     display: flex;
     flex-direction: row;
@@ -1543,6 +1637,12 @@ p {
     line-height: $mtb-fnt-sz-30;
 }
 
+.mtb-warning-icon {
+    color: $mtb-red-o-6;
+    font-size: $mtb-fnt-sz-100;
+    line-height: $mtb-fnt-sz-90;
+}
+
 // *****************
 // Tags
 // *****************
@@ -1578,13 +1678,13 @@ p {
         font-family: $mtb-fnt-manrope;
         font-size: $mtb-fnt-sz-xs;
         font-weight: $mtb-fnt-w-600;
-        color: $mtb-black-o-3;
+        color: $mtb-black-o-5;
         margin: 0;
         letter-spacing: 0.3px;
     }
     input {
         border-radius: 0px;
-        border: 1px solid $mtb-black-o-0-2;
+        border: 1px solid $mtb-black-o-0-5;
         padding: 1.1rem 0.7rem;
         font-family: $mtb-fnt-noto;
         font-size: $mtb-fnt-sz-11;
@@ -1682,7 +1782,7 @@ p {
     -webkit-box-shadow: 3px 1-px 7px $mtb-black-o-0-5;
     -moz-box-shadow: 3px -1px 7px $mtb-black-o-0-5;
     -o-box-shadow: 3px -1px 7px $mtb-black-o-0-5;
-    input {
+    label input {
         width: 100%;
         padding: 0.3rem 0.7rem;
         font-family: $mtb-fnt-noto;
@@ -1845,6 +1945,41 @@ p {
     display: inline-block;
 }
 
+.mtb-form-wrapper-select-full {
+    label {
+        font-family: $mtb-fnt-manrope;
+        font-size: $mtb-fnt-sz-xs;
+        font-weight: $mtb-fnt-w-600;
+        color: $mtb-black-o-5;
+        margin: 0;
+        letter-spacing: 0.3px;
+        width: 100%;
+    }
+    select {
+        border-radius: 0px;
+        border: 1px solid $mtb-black-o-0-5;
+        padding: 0.5rem;
+        width: 100%;
+        min-height: 60%;
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-11;
+        font-weight: $mtb-fnt-w-500;
+        color: $mtb-black-o-7;
+        box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        -webkit-box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        -moz-box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        -o-box-shadow: 3px 3px 7px $mtb-black-o-0-2;
+        &:focus {
+            outline: none;
+        }
+        option {
+            &:nth-child(0) {
+                color: $mtb-black-o-0-2;
+            }
+        }
+    }
+}
+
 // *****************
 // Modals
 // *****************
@@ -1912,8 +2047,26 @@ p {
 .mtb-modal-body {
     font-family: $mtb-fnt-noto;
     font-size: $mtb-fnt-sz-md;
-    max-height: 18rem;
+    max-height: 21rem;
     overflow-y: auto;
+    p {
+        font-size: $mtb-fnt-sz-sm;
+        &.mtb-text-small {
+            font-size: $mtb-fnt-sz-xxs;
+            font-family: $mtb-fnt-noto;
+            color: $mtb-black-o-4;
+        }
+    }
+    i {
+        font-size: $mtb-fnt-sz-90;
+        font-weight: $mtb-fnt-w-500;
+    }
+    .mtb-btn-pop-up-remove-contact {
+        width: auto;
+        i {
+            font-size: $mtb-fnt-sz-11;
+        }
+    }
 }
 
 // *****************
@@ -2117,6 +2270,10 @@ p {
     &:focus {
         outline: none;
     }
+}
+
+.mtb-edit-section {
+    background-color: $mtb-black-o-0-5;
 }
 
 // *****************
@@ -2813,5 +2970,31 @@ p {
 }
 
 // *************************
+// Profile Page
 // *************************
-// *************************
+.mtb-add-doc {
+    color: $mtb-black-o-3;
+    a {
+        i {
+            font-weight: $mtb-fnt-w-600;
+        }
+        color: $mtb-black-o-7;
+        &.btn {
+            color: $mtb-black-o-7;
+            border-color: $mtb-black-o-7;
+            font-size: $mtb-fnt-sz-11;
+            margin: 1rem 0;
+            &:hover {
+                background-color: $mtb-p-green;
+                border-color: $mtb-p-green;
+                color: $mtb-white;
+            }
+        }
+    }
+}
+
+.mtb-contact-wrapper {
+    border: 1px solid $mtb-black-o-1;
+    border-radius: 4px;
+    padding: 0.5rem;
+}

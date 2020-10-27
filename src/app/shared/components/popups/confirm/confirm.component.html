@@ -1,0 +1,24 @@
+<div class="modal-header mtb-modal-title">
+    <h4 class="modal-title" id="modal-basic-title">Are you sure?</h4>
+    <a href="javascript:void(0)" class="close" aria-label="Close" (click)="activeModal.close('Close click')">
+        <span aria-hidden="true">&times;</span>
+    </a>
+</div>
+<div class="modal-body mtb-modal-body">
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <i class="ri-error-warning-line mtb-warning-icon"></i>
+        </div>
+    </div>
+    <div class="row mb-4">
+        <div class="col-12">
+            <p class="text-center mtb-body-text-warning">Are you sure that you would like to remove <em class="mtb-highlight-sm">{{name}}</em> as your primary physician?</p>
+        </div>
+    </div>
+
+</div>
+<div class="modal-footer mtb-modal-footer d-flex flex-row justify-content-between">
+    <a href="javascript:void(0)" class="btn btn-sm mtb-link mtb-btn-sm" (click)="activeModal.close('Save click')">Cancel</a>
+    <a href="javascript:void(0)" class="btn btn-sm btn-outline-danger mtb-link mtb-btn-sm mtb-link-red-white-hover" (click)="activeModal.close('Save click')">Remove</a>
+</div>
