@@ -77,6 +77,7 @@ import { EditKinComponent } from './shared/components/popups/edit-kin/edit-kin.c
 import { ConfirmComponent } from './shared/components/popups/confirm/confirm.component';
 import { UploadFileComponent } from './shared/components/popups/upload-file/upload-file.component';
 import { ForgotPasswordComponent } from './modules/public/forgot-password/forgot-password.component';
+import { ChatComponent } from './modules/admin/admin/chat/chat.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -145,7 +146,8 @@ import { ForgotPasswordComponent } from './modules/public/forgot-password/forgot
     EditKinComponent,
     ConfirmComponent,
     UploadFileComponent,
-    ForgotPasswordComponent
+    ForgotPasswordComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,

@@ -923,6 +923,10 @@ p {
     flex-direction: row;
 }
 
+.mtb-border-left {
+    border-left: 1px solid $mtb-black-o-0-5;
+}
+
 // *****************
 // Copy
 // *****************
@@ -2723,6 +2727,24 @@ p {
     }
 }
 
+.mtb-chat-icon-header-2 {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xs;
+    font-weight: $mtb-fnt-w-500;
+    color: $mtb-black-o-5;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    &:hover {
+        color: $mtb-p-green;
+        text-decoration: none;
+    }
+    i {
+        margin-right: 0.5rem;
+        font-size: $mtb-fnt-sz-15;
+    }
+}
+
 .mtb-chat-send {
     max-height: 35px;
     margin-left: 0.5rem;
@@ -3025,4 +3047,27 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+// *************************
+// Chat page
+// *************************
+.mtb-chat-user {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: 0;
+    &:hover {
+        background-color: $mtb-black-o-0-5;
+        text-decoration: none;
+        color: $mtb-p-green;
+        h6 {
+            color: $mtb-p-green;
+        }
+        p {
+            color: $mtb-p-green;
+        }
+    }
 }
