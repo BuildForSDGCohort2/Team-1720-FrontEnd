@@ -24,6 +24,7 @@ import { ProfileComponent } from './modules/admin/admin/profile/profile.componen
 import { SettingsComponent } from './modules/admin/admin/settings/settings.component';
 import { TreatmentsComponent } from './modules/admin/admin/treatments/treatments.component';
 import { PaymentsComponent } from './modules/admin/admin/payments/payments.component';
+import { ChatComponent } from './modules/admin/admin/chat/chat.component';
 
 const routes: Routes = [
   {
@@ -120,6 +121,11 @@ const routes: Routes = [
         path: 'payments',
         component: PaymentsComponent,
         data: { title: 'Payments' }
+      },
+      {
+        path: 'chat',
+        component: ChatComponent,
+        data: { title: 'Chat' }
       }
     ]
   },
