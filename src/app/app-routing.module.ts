@@ -29,7 +29,7 @@ import { ChatComponent } from './modules/admin/admin/chat/chat.component';
 const routes: Routes = [
   {
     path: '',
-    component: CountdownTimerComponent
+    component: HomeComponent
   },
   {
     path: 'home',

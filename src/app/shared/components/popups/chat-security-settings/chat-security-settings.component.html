@@ -1,0 +1,69 @@
+<div class="modal-header mtb-modal-title">
+    <h4 class="modal-title d-flex flex-row align-items-center" id="modal-basic-title"><i class="ri-settings-4-fill"></i> {{name}} Settings</h4>
+    <a href="javascript:void(0)" class="close" aria-label="Close" (click)="activeModal.close('Close click')">
+        <span aria-hidden="true">&times;</span>
+    </a>
+</div>
+<div class="modal-body mtb-modal-body">
+
+    <ng-container *ngIf="name === 'Basic Information' ">
+        <div class="mtb-quick-settings-wrapper">
+            <div class="mttb-security-settings-description-box">
+                <p>This will allow the users in this chat be able to view your basic information, this includes your contact information and your location as well as your health card.</p>
+            </div>
+
+            <div class="custom-control custom-switch mtb-switches-right  mtb-form-input-wrapper">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                <label class="custom-control-label mtb-card-section-body" for="customSwitch1">Allow Dr. Joan A Roseline to view?</label>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="name === 'Medical History' ">
+        <div class="mtb-quick-settings-wrapper">
+            <div class="mttb-security-settings-description-box">
+                <p>This will allow the user to be able to view your medical history notes, that will include doctors notes in the past.</p>
+            </div>
+
+            <div class="form-group d-flex flex-lg-row justify-content-lg-between align-content-lg-center mtb-form-input-wrapper">
+                <label class="mtb-card-section-body"><strong>Allow Dr. Joan A Roseline to view settings?</strong></label>
+                <select name="mtb-med-hstry-setting" class="p-1" id="">
+                    <option value="">Select the duration the doctor can view</option>
+                    <option value="one-month">1 Month</option>
+                    <option value="two-months">2 Months</option>
+                    <option value="three-months">3 Months</option>
+                    <option value="six-months">6 Months</option>
+                    <option value="one-year">1 Year</option>
+                    <option value="everything">Everything</option>
+                    <option value="dont-allow">Don't allow</option>
+                </select>
+            </div>
+        </div>
+    </ng-container>
+    <ng-container *ngIf="name === 'Medical Allergies' ">
+        <div class="mtb-quick-settings-wrapper">
+            <div class="mttb-security-settings-description-box">
+                <p>This will allow the doctor to view your medical allergies as well as your vacinations</p>
+            </div>
+
+            <div class="form-group d-flex flex-lg-row justify-content-lg-between align-content-lg-center mtb-form-input-wrapper">
+                <label class="mtb-card-section-body"><strong>Allow Dr. Joan A Roseline to view?</strong></label>
+                <select name="mtb-med-allergy-setting" class="p-1" id="">
+                    <option value="">Select the duration the doctor can view</option>
+                    <option value="one-month">1 Month</option>
+                    <option value="two-months">2 Months</option>
+                    <option value="three-months">3 Months</option>
+                    <option value="six-months">6 Months</option>
+                    <option value="one-year">1 Year</option>
+                    <option value="everything">Everything</option>
+                    <option value="dont-allow">Don't allow</option>
+                </select>
+            </div>
+        </div>
+    </ng-container>
+
+</div>
+<div class="modal-footer mtb-modal-footer d-flex flex-row justify-content-between">
+    <a href="javascript:void(0)" class="btn btn-sm mtb-link mtb-btn-sm" (click)="activeModal.close('Save click')">Cancel</a>
+    <!-- <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="activeModal.close('Save click')">Add Contact</a> -->
+    <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="activeModal.close('Close click')">Save</a>
+</div>

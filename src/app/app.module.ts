@@ -78,6 +78,7 @@ import { ConfirmComponent } from './shared/components/popups/confirm/confirm.com
 import { UploadFileComponent } from './shared/components/popups/upload-file/upload-file.component';
 import { ForgotPasswordComponent } from './modules/public/forgot-password/forgot-password.component';
 import { ChatComponent } from './modules/admin/admin/chat/chat.component';
+import { ChatSecuritySettingsComponent } from './shared/components/popups/chat-security-settings/chat-security-settings.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -147,7 +148,8 @@ import { ChatComponent } from './modules/admin/admin/chat/chat.component';
     ConfirmComponent,
     UploadFileComponent,
     ForgotPasswordComponent,
-    ChatComponent
+    ChatComponent,
+    ChatSecuritySettingsComponent
   ],
   imports: [
     BrowserModule,

@@ -622,11 +622,41 @@ p {
     }
 }
 
+// Tabbed Navigation
+.mtb-tabbed-nav {
+    border: none;
+    margin: 0 0 1rem 0;
+    li {
+        border: none;
+        a {
+            font-family: $mtb-fnt-manrope;
+            font-size: $mtb-fnt-sz-xs;
+            color: $mtb-black-o-4;
+            border: none;
+            border-bottom: 1px solid transparent;
+            &.nav-link {
+                border: none;
+                border-bottom: 1px solid transparent;
+                &:hover {
+                    border-color: transparent;
+                }
+            }
+            &.nav-link.active {
+                border-color: $mtb-p-green;
+            }
+        }
+    }
+}
+
 // *****************
 // Text Colors
 // *****************
 .mtb-text-grey-light {
     color: $mtb-black-o-0-5;
+}
+
+.mtb-text-grey {
+    color: $mtb-black-o-4;
 }
 
 // *****************
@@ -1718,6 +1748,9 @@ p {
         &:focus {
             outline: none;
         }
+        &.mtb-select-padding-1 {
+            padding: 0.5rem;
+        }
     }
     textarea {
         border-radius: 0px;
@@ -2000,6 +2033,10 @@ p {
             }
         }
     }
+}
+
+.mtb-setting-select {
+    padding: 0.5rem;
 }
 
 // *****************
@@ -2459,6 +2496,34 @@ p {
     }
 }
 
+.mtb-chat-profile-view {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9990;
+    // background-color: $mtb-black-o-2;
+    // animation: fadeIn;
+    // animation-duration: .1s;
+    overflow: hidden;
+    .mtb-right-slide-out {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+        min-height: 15rem;
+        background-color: $mtb-white;
+        -webkit-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+        -moz-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+        -o-box-shadow: 3px -3px 7px $mtb-black-o-0-5;
+        animation: fadeInRight;
+        animation-duration: .1s;
+    }
+}
+
 // *****************
 // Home Pages
 // *****************
@@ -2763,7 +2828,9 @@ p {
 }
 
 // Extra Info
-.mtb-chat-extra-info-wrapper {}
+.mtb-chat-extra-info-wrapper {
+    position: relative;
+}
 
 .mtb-chat-extra-info-image-1 {
     width: 70px;
@@ -2895,6 +2962,110 @@ p {
     color: $mtb-black-o-7;
 }
 
+.mtb-doctor-view-actions-wrapper {
+    display: flex;
+    flex-direction: column;
+    .mtb-action-profile-wwrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 1rem 0;
+        a {
+            font-family: $mtb-fnt-manrope;
+            font-size: $mtb-fnt-sz-xxs;
+            color: $mtb-black-o-4;
+            border: 1px solid $mtb-black-o-4;
+            margin: 0 0.5rem 0 0;
+            &:last-child {
+                margin: 0;
+            }
+            &:hover {
+                background-color: $mtb-black;
+                border-color: $mtb-black;
+                color: $mtb-white;
+            }
+        }
+    }
+    .mtb-action-patient-actions-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        a {
+            font-family: $mtb-fnt-manrope;
+            font-size: $mtb-fnt-sz-xxs;
+            color: $mtb-black-o-4;
+            border-right: 1px solid $mtb-black-o-4;
+            margin: 0 0.5rem 0 0;
+            padding: 0 1rem;
+            &:last-child {
+                margin: 0;
+                border-right: none;
+                padding: 0rem 0rem 0rem 0.5rem;
+            }
+            &:hover {
+                text-decoration: none;
+                color: $mtb-p-green;
+            }
+        }
+    }
+}
+
+.mtb-chat-user {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem 0.7rem;
+    margin: 0;
+    &:hover {
+        background-color: $mtb-black-o-0-5;
+        text-decoration: none;
+        color: $mtb-p-green;
+        h6 {
+            color: $mtb-p-green;
+        }
+        p {
+            color: $mtb-p-green;
+        }
+    }
+}
+
+.mtb-switches-right {
+    padding: 0 !important;
+    label {
+        width: 100%;
+        &:before {
+            left: unset !important;
+            right: 0;
+            width: 1.85rem !important;
+        }
+        &:after {
+            left: unset !important;
+            right: 0.93rem;
+        }
+    }
+}
+
+.mttb-security-settings-description-box {
+    border: 1px solid $mtb-black-o-2;
+    padding: 1rem 2rem;
+    margin: 0 0 1rem 0;
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-sm;
+        line-height: $mtb-fnt-sz-xlg;
+        letter-spacing: 0.01px;
+        color: $mtb-black-o-6;
+    }
+}
+
+.mtb-security-user-status {
+    font-family: $mtb-fnt-noto;
+    font-size: $mtb-fnt-sz-xxs;
+    color: $mtb-black-o-4;
+    margin: 0.8rem 0 0 0;
+}
+
 // *****************
 // Health Cards
 // *****************
@@ -2914,6 +3085,46 @@ p {
         left: 0.9rem;
         bottom: -7px;
     }
+}
+
+.mtb-profile-actions-wrapper {
+    .active {
+        color: $mtb-p-green;
+    }
+}
+
+.mtb-chat-settings-options {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0.5rem;
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-xxs;
+        color: $mtb-black-o-5;
+        margin: 0;
+        &.highlight {
+            font-weight: $mtb-fnt-w-600;
+        }
+    }
+}
+
+.health-info-wrapper {
+    max-height: 45vh;
+    overflow-y: auto;
+}
+
+.health-card-info-wrapper {
+    margin: 0 0 1rem 0;
+    h6 {
+        font-size: $mtb-fnt-sz-11;
+        font-weight: $mtb-fnt-w-700;
+        color: $mtb-black-o-6;
+    }
+}
+
+.mtb-chat-list-wrapper {
+    max-height: 60vh;
+    overflow-y: auto;
 }
 
 // *****************
@@ -3047,27 +3258,4 @@ p {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-// *************************
-// Chat page
-// *************************
-.mtb-chat-user {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    height: 100%;
-    padding: 0.5rem 0.7rem;
-    margin: 0;
-    &:hover {
-        background-color: $mtb-black-o-0-5;
-        text-decoration: none;
-        color: $mtb-p-green;
-        h6 {
-            color: $mtb-p-green;
-        }
-        p {
-            color: $mtb-p-green;
-        }
-    }
 }
