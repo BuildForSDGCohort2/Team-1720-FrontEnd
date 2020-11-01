@@ -25,6 +25,10 @@ export class ChatComponent implements OnInit {
   showHistory       = false;
   showAllergies     = false;
   showNotes         = false;
+  showEndChat       = false;
+
+  // Strings
+  patientName       = 'Joan Rose Akoth';
 
   constructor(private modalService: NgbModal, private render: Renderer2, private elRef: ElementRef) { }
 
@@ -67,14 +71,6 @@ export class ChatComponent implements OnInit {
     console.log(data);
   }
 
-  footerSlideOutClose($event): any {
-    const closeVal = $event.close;
-    if (closeVal) {
-      this.showSlideComponent = !closeVal;
-    } else {
-      this.showSlideComponent = closeVal;
-    }
-  }
 
   changeView($event, view): any{
 
@@ -124,4 +120,20 @@ export class ChatComponent implements OnInit {
     });
   }
 
+
+  // ******************
+  // END OF CHAT FUNC
+  // ******************
+
+  openEndChat(): any{
+    this.showEndChat = !this.showEndChat;
+  }
+
+  footerSlideOutClose($event): any {
+    this.showEndChat = !this.showEndChat;
+  }
+
+  // ******************
+  // END OF CHAT FUNC
+  // ******************
 }

@@ -194,7 +194,7 @@
                 <a href="javascript:void(0)" class="ml-2 mtb-border-left pl-2 mtb-chat-icon-header-2">Invite another doctor</a>
             </div>
             <div class="col-12 col-lg-4 d-flex flex-row justify-content-end">
-                <a href="javascript:void(0)" class="mtb-chat-icon-header-2"><i class="pt-1 m-0 ri-close-fill"></i> End chat</a>
+                <a href="javascript:void(0)" class="mtb-chat-icon-header-2" (click)="openEndChat()"><i class="pt-1 m-0 ri-close-fill"></i> End chat</a>
             </div>
         </div>
 
@@ -646,3 +646,7 @@
 <!-- View Profile -->
 <!-- <app-page-footer-slide-out [showElement]="showSlideComponent" (closeFooterSlideOut)="footerSlideOutClose($event)" [(refId)]="slideOutRef" [elementToShow]="slideOutView" [elementData]="{'title': 'Payment for ' }">
 </app-page-footer-slide-out> -->
+
+<!-- End Chat Info -->
+<app-footer-slideout-end-chat [showElement]="showEndChat" (closeFooterSlideOut)="footerSlideOutClose($event)" [endChatData]="{ name: patientName }"></app-footer-slideout-end-chat>
+<!-- End Chat Info -->

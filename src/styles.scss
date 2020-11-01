@@ -21,7 +21,7 @@ body {
 
 *:focus {
     outline: none;
-    transition: all 0.1s ease-in-out;
+    transition: all 0.01s ease-in-out;
 }
 
 // Overall wrapping container
@@ -3103,6 +3103,10 @@ p {
         color: $mtb-black-o-5;
         margin: 0;
         &.highlight {
+            font-weight: $mtb-fnt-w-600;
+        }
+        &.highlight-2 {
+            font-size: $mtb-fnt-sz-13;
             font-weight: $mtb-fnt-w-600;
         }
     }
