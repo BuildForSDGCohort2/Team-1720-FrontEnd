@@ -1,0 +1,101 @@
+<div class="mtb-footer-slideout-wrapper" *ngIf="showElement">
+    <div class="container mtb-footer-slideout">
+        <div class="row">
+            <div class="col-12 mtb-slideout-header">
+                <h4>End consultation with {{patientName}} </h4>
+                <a href="javascript:void(0)" (click)="closeSlideOut()" class="d-flex flex-row align-items-center mtb-link mtb-link-sm-close">
+                    <i class="ri-close-line"></i>Close
+                </a>
+            </div>
+            <div class="col-12 mtb-slideout-body">
+                <div class="row">
+                    <form [formGroup]="endChatForm" class="w-100 d-flex flex-column flex-lg-row">
+                        <!-- Notes -->
+                        <div class="col-12 col-lg-4">
+                            <h4 class="mtb-main-title-7">Doctors notes</h4>
+                            <div class="form-group mtb-form-input-wrapper">
+                                <textarea class="form-control" name="mtb-doc-notes" id="mtb-doctor-notes" cols="10" rows="5" placeholder="Please write what was the diagnosis of the patient" formControlName="doctorsNotes"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Reason for ending -->
+                        <div class="col-12 col-lg-4">
+
+                            <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                                <label for="reason">Reason for ending chat</label>
+                                <select name="mtb-end-chat-reason" id="mtb-reason-ending" class="form-group p-2" formControlName="reasonForEndingChat">
+                                    <option value="">Please select a reason</option>
+                                    <option value="a-reasonable-diagnosis-was-reached">Diagnosis was reached</option>
+                                    <option value="patient-in-person-consultation">Patient needs to be seen in person</option>
+                                    <option value="patient-was-refered">Refering patient to another doctor</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <!-- Referal Input -->
+                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'patient-in-person-consultation' ">
+                                <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                                    <label for="referal">Referal doctor</label>
+                                    <input type="text" id="mtb-referal-doctor" class="form-group py-2" name="mtb-referal" placeholder="referal doctor" formControlName="patientReferalDoctor">
+                                </div>
+                            </ng-container>
+
+                            <!-- Referal Input -->
+
+                            <!-- Consultation Input -->
+                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'patient-was-refered' ">
+                                <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                                    <label for="consultation-date">In patient date consultation</label>
+                                    <input type="date" id="mtb-consultation-date" class="form-group py-2" name="mtb-consultation" placeholder="date" formControlName="patientConsultationDate">
+                                </div>
+                            </ng-container>
+
+                            <!-- Consultation Input -->
+
+                            <!-- Referal Input -->
+                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'other' ">
+                                <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                                    <label for="other-reason">Other reason</label>
+                                    <textarea name="mtb-other-reason" id="mtb-reason-other" cols="30" rows="3" class="form-control" placeholder="Reason for ending this chat" formControlName="patientOtherReason"></textarea>
+                                </div>
+                            </ng-container>
+
+                            <!-- Referal Input -->
+
+                        </div>
+
+                        <!-- Ending messages -->
+                        <div class="col-12 col-lg-4">
+                            <h4 class="mtb-main-title-7">Summary</h4>
+
+                            <div class="d-flex flex-row justify-content-between mb-0 py-2 mtb-border-bottom mtb-chat-settings-options">
+                                <p>Chat start</p>
+                                <p class="highlight">12 Jan 2020 01:00</p>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between mb-0 py-2 mtb-border-bottom mtb-chat-settings-options">
+                                <p>Chat end</p>
+                                <p class="highlight">12 Jan 2020 01:00</p>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between mb-0 py-2 mtb-border-bottom mtb-chat-settings-options">
+                                <p>Chat duration</p>
+                                <p class="highlight">01:00:00</p>
+                            </div>
+                            <div class="d-flex flex-row justify-content-between mb-0 py-2 mtb-border-bottom mtb-chat-settings-options">
+                                <p>Cost of consultation</p>
+                                <p class="highlight-2">R 40.00</p>
+                            </div>
+                        </div>
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="col-12 mtb-slideout-footer">
+                <a href="javascript:void(0)" class="d-flex flex-row align-items-center mtb-link mtb-link-sm"><i class="ri-close-line"></i> Cancel</a>
+                <a href="javascript:void(0)" (click)="onEndChatFormSubmitted()" class="d-flex flex-row align-items-center btn btn-md mtb-btn-green mtb-btn-md">
+                    End this chat
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

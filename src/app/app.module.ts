@@ -79,6 +79,8 @@ import { UploadFileComponent } from './shared/components/popups/upload-file/uplo
 import { ForgotPasswordComponent } from './modules/public/forgot-password/forgot-password.component';
 import { ChatComponent } from './modules/admin/admin/chat/chat.component';
 import { ChatSecuritySettingsComponent } from './shared/components/popups/chat-security-settings/chat-security-settings.component';
+import { FooterSlideoutEndChatComponent } from './shared/components/elements/footer-slideout-end-chat/footer-slideout-end-chat.component';
+import { InviteDoctorComponent } from './shared/components/popups/invite-doctor/invite-doctor.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -149,7 +151,9 @@ import { ChatSecuritySettingsComponent } from './shared/components/popups/chat-s
     UploadFileComponent,
     ForgotPasswordComponent,
     ChatComponent,
-    ChatSecuritySettingsComponent
+    ChatSecuritySettingsComponent,
+    FooterSlideoutEndChatComponent,
+    InviteDoctorComponent
   ],
   imports: [
     BrowserModule,
