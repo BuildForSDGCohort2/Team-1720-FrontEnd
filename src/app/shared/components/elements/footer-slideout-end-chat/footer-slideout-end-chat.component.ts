@@ -20,7 +20,10 @@ export class FooterSlideoutEndChatComponent implements OnInit, OnChanges {
   inputData: Array<any>;
   patientName: string;
   endChatForm: FormGroup;
-  submitted = false;
+  submitted              = false;
+  otherReasonError       = false;
+  consultationError      = false;
+  referalError           = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
@@ -54,16 +57,60 @@ export class FooterSlideoutEndChatComponent implements OnInit, OnChanges {
     this.closeFooterSlideOut.emit({ close: true });
   }
 
+  // **********************
   // Submitting the form
+  // **********************
   onEndChatFormSubmitted(): any {
     this.submitted = true;
 
     const endChatForm = this.endChatForm;
+    const endChatFormVals = this.endChatForm.value;
+    const reasonVal = endChatFormVals.reasonForEndingChat;
 
     if (endChatForm.status === 'INVALID' ){
       return false;
     }
 
+    // Validating the secondary input box.
+    switch (reasonVal) {
+      case 'patient-in-person-consultation': {
+        if (endChatFormVals.patientConsultationDate === ''){
+          this.consultationError = true;
+          return false;
+        }
+        break;
+      }
+      case 'patient-was-refered': {
+        if (endChatFormVals.patientReferalDoctor === '') {
+          this.referalError = true;
+          return false;
+        }
+        break;
+      }
+      case 'other': {
+        if (endChatFormVals.patientOtherReason === '') {
+          this.otherReasonError = true;
+          return false;
+        }
+        break;
+      }
+      default: {
+        break;
+      }
+    }
+
+    // Reset all errors
+    this.resetOtherErrors();
+    endChatForm.reset();
+    this.submitted = false;
+    this.closeFooterSlideOut.emit({ close: true });
+
+  }
+
+  resetOtherErrors(): any {
+    this.referalError = false;
+    this.consultationError = false;
+    this.otherReasonError = false;
   }
 
 

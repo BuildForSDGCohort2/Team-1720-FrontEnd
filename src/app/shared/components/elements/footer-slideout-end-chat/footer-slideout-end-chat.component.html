@@ -13,15 +13,16 @@
                         <!-- Notes -->
                         <div class="col-12 col-lg-4">
                             <h4 class="mtb-main-title-7">Doctors notes</h4>
-                            <div class="form-group mtb-form-input-wrapper">
+                            <div class="form-group mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': submitted && endDateForm.doctorsNotes.errors}">
                                 <textarea class="form-control" name="mtb-doc-notes" id="mtb-doctor-notes" cols="10" rows="5" placeholder="Please write what was the diagnosis of the patient" formControlName="doctorsNotes"></textarea>
+                                <p [ngClass]="{'mtb-error-msg': submitted && endDateForm.doctorsNotes.errors}" *ngIf="submitted && endDateForm.doctorsNotes.errors">This field is required</p>
                             </div>
                         </div>
 
                         <!-- Reason for ending -->
                         <div class="col-12 col-lg-4">
 
-                            <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                            <div class="form-group mtb-form-input-wrapper d-flex flex-column" [ngClass]="{'mtb-form-input-error-wrapper': submitted && endDateForm.reasonForEndingChat.errors}">
                                 <label for="reason">Reason for ending chat</label>
                                 <select name="mtb-end-chat-reason" id="mtb-reason-ending" class="form-group p-2" formControlName="reasonForEndingChat">
                                     <option value="">Please select a reason</option>
@@ -30,23 +31,26 @@
                                     <option value="patient-was-refered">Refering patient to another doctor</option>
                                     <option value="other">Other</option>
                                 </select>
+                                <p [ngClass]="{'mtb-error-msg': submitted && endDateForm.reasonForEndingChat.errors}" *ngIf="submitted && endDateForm.reasonForEndingChat.errors">This field is required</p>
                             </div>
 
                             <!-- Referal Input -->
-                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'patient-in-person-consultation' ">
-                                <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'patient-was-refered' ">
+                                <div class="form-group mtb-form-input-wrapper d-flex flex-column" [ngClass]="{'mtb-form-input-error-wrapper': submitted && referalError}">
                                     <label for="referal">Referal doctor</label>
                                     <input type="text" id="mtb-referal-doctor" class="form-group py-2" name="mtb-referal" placeholder="referal doctor" formControlName="patientReferalDoctor">
+                                    <p [ngClass]="{'mtb-error-msg': submitted && referalError}" *ngIf="submitted && referalError">This field is required</p>
                                 </div>
                             </ng-container>
 
                             <!-- Referal Input -->
 
                             <!-- Consultation Input -->
-                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'patient-was-refered' ">
-                                <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                            <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'patient-in-person-consultation'">
+                                <div class="form-group mtb-form-input-wrapper d-flex flex-column" [ngClass]="{'mtb-form-input-error-wrapper': submitted && consultationError}">
                                     <label for="consultation-date">In patient date consultation</label>
                                     <input type="date" id="mtb-consultation-date" class="form-group py-2" name="mtb-consultation" placeholder="date" formControlName="patientConsultationDate">
+                                    <p [ngClass]="{'mtb-error-msg': submitted && consultationError}" *ngIf="submitted && consultationError">This field is required</p>
                                 </div>
                             </ng-container>
 
@@ -54,9 +58,10 @@
 
                             <!-- Referal Input -->
                             <ng-container *ngIf="endDateFormVals.reasonForEndingChat === 'other' ">
-                                <div class="form-group mtb-form-input-wrapper d-flex flex-column">
+                                <div class="form-group mtb-form-input-wrapper d-flex flex-column" [ngClass]="{'mtb-form-input-error-wrapper': submitted && otherReasonError}">
                                     <label for="other-reason">Other reason</label>
                                     <textarea name="mtb-other-reason" id="mtb-reason-other" cols="30" rows="3" class="form-control" placeholder="Reason for ending this chat" formControlName="patientOtherReason"></textarea>
+                                    <p [ngClass]="{'mtb-error-msg': submitted && otherReasonError}" *ngIf="submitted && otherReasonError">This field is required</p>
                                 </div>
                             </ng-container>
 
