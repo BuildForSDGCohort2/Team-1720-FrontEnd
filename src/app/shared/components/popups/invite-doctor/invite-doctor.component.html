@@ -1,1 +1,28 @@
-<p>invite-doctor works!</p>
+<div class="modal-header mtb-modal-title">
+    <h4 class="modal-title d-flex flex-row align-items-center" id="modal-basic-title"><i class="ri-account-pin-box-fill mtb-icon-md"></i> Invite doctor</h4>
+    <a href="javascript:void(0)" class="close" aria-label="Close" (click)="activeModal.close('Close click')">
+        <span aria-hidden="true">&times;</span>
+    </a>
+</div>
+<div class="modal-body mtb-modal-body">
+    <form [formGroup]="addDoctor">
+        <!-- <div class="col-12 mtb-header-error" [ngClass]="{'mtb-form-header-error': addContactSubmitted && contactCtrls.error,  'd-none': !addContactSubmitted}">
+            <h5>Form Submission error</h5>
+            <p>There was an error trying to submit this form.</p>
+        </div> -->
+        <div class="row">
+            <!-- First and Last name -->
+            <div class="col-12">
+                <div class="form-group mtb-form-input-wrapper">
+                    <input type="text" name="last_name" class="form-control" value="" formControlName="doctor_id" placeholder="What is the doctor's name">
+                </div>
+            </div>
+        </div>
+    </form>
+
+</div>
+<div class="modal-footer mtb-modal-footer d-flex flex-row justify-content-between">
+    <a href="javascript:void(0)" class="btn btn-sm mtb-link mtb-btn-sm" (click)="activeModal.close('Save click')">Cancel</a>
+    <!-- <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="activeModal.close('Save click')">Add Contact</a> -->
+    <a href="javascript:void(0)" class="btn btn-sm btn-outline-success mtb-link mtb-btn-sm mtb-btn-green" (click)="submitNewDoctor()">Invite Doctor</a>
+</div>

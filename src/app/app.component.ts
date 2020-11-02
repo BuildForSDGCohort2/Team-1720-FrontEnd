@@ -11,7 +11,6 @@ export class AppComponent {
 
   cookieValue;
   userLoggedIn = false;
-  isCountDownPage = false;
   isHome = false;
   loading = true;
 
@@ -27,7 +26,7 @@ export class AppComponent {
     this.router.events.subscribe((val) => {
       if (val instanceof NavigationStart) {
         this.loading = true;
-        if (val.url === '/home') {
+        if (val.url === '/home' || val.url === '/') {
           this.isHome = true;
         } else {
           this.isHome = false;
@@ -41,11 +40,6 @@ export class AppComponent {
       }
       if (val instanceof NavigationEnd) {
         this.loading = false;
-        if (val.url === '/') {
-          this.isCountDownPage = true;
-        } else {
-          this.isCountDownPage = false;
-        }
         if (val.url === '/home') {
           this.isHome = true;
         } else {
