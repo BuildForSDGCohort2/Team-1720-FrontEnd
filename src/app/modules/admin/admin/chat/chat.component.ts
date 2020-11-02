@@ -3,6 +3,7 @@ import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 
 // Importing popups
 import { ChatSecuritySettingsComponent } from '../../../../shared/components/popups/chat-security-settings/chat-security-settings.component';
+import { InviteDoctorComponent } from '../../../../shared/components/popups/invite-doctor/invite-doctor.component';
 
 @Component({
   selector: 'app-chat',
@@ -122,7 +123,7 @@ export class ChatComponent implements OnInit {
 
 
   // ******************
-  // END OF CHAT FUNC
+  // CHAT FUNC
   // ******************
 
   openEndChat(): any{
@@ -135,5 +136,15 @@ export class ChatComponent implements OnInit {
 
   // ******************
   // END OF CHAT FUNC
+  // ******************
+
+  // ******************
+  // INVITE DOCTOR FUNC
+  // ******************
+  inviteDoctor(): any{
+    const modalRef = this.modalService.open(InviteDoctorComponent);
+  }
+  // ******************
+  // END INVITE DOCTOR FUNC
   // ******************
 }

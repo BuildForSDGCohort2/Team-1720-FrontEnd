@@ -1,6 +1,6 @@
 <div [ngClass]="{'mtb-fade-hide': !loading}" class="mtb-loading-screen"></div>
 
-<app-public-header *ngIf="!userLoggedIn && !isCountDownPage"></app-public-header>
+<app-public-header *ngIf="!userLoggedIn"></app-public-header>
 <app-admin-header *ngIf="userLoggedIn && !isCountDownPage"></app-admin-header>
 <div class="" [ngClass]="{'mtb-content-offset': !isHome, 'h-100': isHome }">
     <router-outlet></router-outlet>

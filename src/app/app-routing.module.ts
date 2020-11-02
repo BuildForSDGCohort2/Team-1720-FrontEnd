@@ -27,11 +27,11 @@ import { PaymentsComponent } from './modules/admin/admin/payments/payments.compo
 import { ChatComponent } from './modules/admin/admin/chat/chat.component';
 
 const routes: Routes = [
-  // {
-  //   path: '',
-  //   redirectTo: 'home',
-  //   pathMatch: 'full'
-  // },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
   {
     path: 'home',
     component: HomeComponent,
