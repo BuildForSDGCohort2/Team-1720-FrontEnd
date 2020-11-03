@@ -1,1 +1,29 @@
-<p>settings works!</p>
+<div class="row">
+    <div class="col-12 col-lg-9">
+        <div class="card mtb-card-reset">
+            <div class="card-title">
+                <ul class="nav nav-tabs mtb-nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="login-settings-tab" data-toggle="tab" href="#login-settings" role="tab" aria-controls="login-settings" aria-selected="true">Login settings</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="chat-preferences-tab" data-toggle="tab" href="#chat-preferences" role="tab" aria-controls="chat-preferences" aria-selected="false">Chat preferences</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="login-settings" role="tabpanel" aria-labelledby="login-settings-tab">
+                        <!-- Shared Forms -->
+                        <app-login-settings></app-login-settings>
+                    </div>
+                    <div class="tab-pane fade" id="chat-preferences" role="tabpanel" aria-labelledby="chat-preferences-tab">
+                        <!-- Shared Forms -->
+                        <app-chat-preferences></app-chat-preferences>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <app-card-profile-general></app-card-profile-general> -->
+    </div>
+</div>

@@ -3267,3 +3267,22 @@ p {
     justify-content: center;
     align-items: center;
 }
+
+.mtb-profile-settings-options {
+    display: flex;
+    flex-direction: row;
+    padding: 0 0.5rem;
+    p {
+        font-family: $mtb-fnt-noto;
+        font-size: $mtb-fnt-sz-xs;
+        color: $mtb-black-o-5;
+        margin: 0;
+        &.highlight {
+            font-weight: $mtb-fnt-w-600;
+        }
+        &.highlight-2 {
+            font-size: $mtb-fnt-sz-13;
+            font-weight: $mtb-fnt-w-600;
+        }
+    }
+}

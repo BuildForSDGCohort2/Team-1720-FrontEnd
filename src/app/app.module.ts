@@ -81,6 +81,8 @@ import { ChatComponent } from './modules/admin/admin/chat/chat.component';
 import { ChatSecuritySettingsComponent } from './shared/components/popups/chat-security-settings/chat-security-settings.component';
 import { FooterSlideoutEndChatComponent } from './shared/components/elements/footer-slideout-end-chat/footer-slideout-end-chat.component';
 import { InviteDoctorComponent } from './shared/components/popups/invite-doctor/invite-doctor.component';
+import { LoginSettingsComponent } from './shared/components/forms/login-settings/login-settings.component';
+import { ChatPreferencesComponent } from './shared/components/forms/chat-preferences/chat-preferences.component';
 
 // export function momentAdapterFactory() {
 //   return adapterFactory(moment);
@@ -153,7 +155,9 @@ import { InviteDoctorComponent } from './shared/components/popups/invite-doctor/
     ChatComponent,
     ChatSecuritySettingsComponent,
     FooterSlideoutEndChatComponent,
-    InviteDoctorComponent
+    InviteDoctorComponent,
+    LoginSettingsComponent,
+    ChatPreferencesComponent
   ],
   imports: [
     BrowserModule,
