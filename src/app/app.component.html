@@ -1,9 +1,9 @@
 <div [ngClass]="{'mtb-fade-hide': !loading}" class="mtb-loading-screen"></div>
 
 <app-public-header *ngIf="!userLoggedIn"></app-public-header>
-<app-admin-header *ngIf="userLoggedIn && !isCountDownPage"></app-admin-header>
+<app-admin-header *ngIf="userLoggedIn"></app-admin-header>
 <div class="" [ngClass]="{'mtb-content-offset': !isHome, 'h-100': isHome }">
     <router-outlet></router-outlet>
 </div>
-<app-public-footer *ngIf="!userLoggedIn && !isCountDownPage" class="mt-auto"></app-public-footer>
+<app-public-footer *ngIf="!userLoggedIn" class="mt-auto"></app-public-footer>
 <!-- <app-admin-footer *ngIf="userLoggedIn && !isCountDownPage" class="mt-auto"></app-admin-footer> -->
