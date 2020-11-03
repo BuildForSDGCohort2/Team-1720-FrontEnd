@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col-12">
+        <h5 class="mtb-main-title-5">Current login information</h5>
+
+        <div class="row">
+            <div class="col">
+                <div class="d-flex flex-row justify-content-between mb-0 py-2 mtb-border-bottom mtb-profile-settings-options">
+                    <p>Username</p>
+                    <p class="highlight">allanDen@gmail.com</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex flex-row justify-content-between mb-0 py-2 mtb-border-bottom mtb-profile-settings-options">
+                    <p>Password</p>
+                    <p class="highlight">***********</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" *ngIf="!revealUpdateInfo">
+            <div class="col-12 d-flex flex-row justify-content-lg-end mt-4">
+                <a href="javascript:void(0)" (click)="showUpdateInfo()" class="btn btn-outline-secondary mtb-btn mtb-btn-xs">Update</a>
+            </div>
+        </div>
+
+        <ng-container *ngIf="revealUpdateInfo">
+            <form [formGroup]="updateLoginSettings">
+                <div class="row">
+                    <div class="col-12 mb-2">
+                        <div class="form-grouop mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': (formSubmitted && updateFC.username.errors) }">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control w-25" formControlName="username">
+                            <p class="mtb-error-msg" *ngIf="formSubmitted && updateFC.username.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="form-grouop mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': (formSubmitted && updateFC.currentPassword.errors) }">
+                            <label for="username">Current password</label>
+                            <input type="password" class="form-control" formControlName="currentPassword">
+                            <p class="mtb-error-msg" *ngIf="formSubmitted && updateFC.currentPassword.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="form-grouop mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': (formSubmitted && updateFC.newPassword.errors) }">
+                            <label for="username">New password</label>
+                            <input type="password" class="form-control" formControlName="newPassword">
+                            <p class="mtb-error-msg" *ngIf="formSubmitted && updateFC.newPassword.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="form-grouop mtb-form-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': (formSubmitted && updateFC.newRepeatPassword.errors) }">
+                            <label for="username">Repeat New password</label>
+                            <input type="password" class="form-control" formControlName="newRepeatPassword">
+                            <p class="mtb-error-msg" *ngIf="formSubmitted && updateFC.newRepeatPassword.errors">This field is required</p>
+                        </div>
+                    </div>
+                    <div class="col-12 d-flex flex-row justify-content-lg-between mt-4">
+                        <a href="javascript:void(0)" (click)="updateLoginSettingsCancel()" class="btn btn-outline-danger mtb-btn mtb-btn-md">Cancel</a>
+                        <a href="javascript:void(0)" (click)="submitUpdateLoginSettings()" class="btn btn-outline-success mtb-btn mtb-btn-md">Update</a>
+                    </div>
+                </div>
+            </form>
+        </ng-container>
+
+
+
+        <div class="row mt-5">
+            <div class="col-12 mb-3">
+                <h5 class="mtb-main-title-5">Link other options for signing in</h5>
+            </div>
+            <div class="col-12 d-flex flex-column flex-lg-row justify-content-lg-between align-content-lg-center pb-2 mtb-border-bottom">
+                <p class="d-flex flex-row align-items-center mtb-main-title-10"><i class="ri-google-fill mr-2"></i> Google</p>
+                <div class="d-flex flex-row align-items-center mtb-other-accounts-options">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-outline-secondary mtb-btn mtb-btn-sm" *ngIf="!googleLinked">Link</a>
+                    <p class="mtb-text-10" *ngIf="googleLinked">Linked</p>
+                    <a href="javascript:void(0)" class="p-2 mtb-link mtb-link-lg" *ngIf="googleLinked"><i class="ri-close-fill"></i></a>
+                </div>
+            </div>
+            <div class="col-12 d-flex flex-column flex-lg-row justify-content-lg-between align-content-lg-center pb-2 mtb-border-bottom">
+                <p class="d-flex flex-row align-items-center mtb-main-title-10"><i class="ri-facebook-fill mr-2"></i> Facebook</p>
+                <div class="d-flex flex-row align-items-center mtb-other-accounts-options">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-outline-secondary mtb-btn mtb-btn-sm" *ngIf="!facebookLinked">Link</a>
+                    <p class="mtb-text-10" *ngIf="facebookLinked">Linked</p>
+                    <a href="javascript:void(0)" class="p-2 mtb-link mtb-link-lg" *ngIf="facebookLinked"><i class="ri-close-fill"></i></a>
+                </div>
+            </div>
+            <div class="col-12 d-flex flex-column flex-lg-row justify-content-lg-between align-content-lg-center pb-2 mtb-border-bottom">
+                <p class="d-flex flex-row align-items-center mtb-main-title-10"><i class="ri-twitter-fill mr-2"></i> Twitter</p>
+                <div class="d-flex flex-row align-items-center mtb-other-accounts-options">
+                    <a href="javascript:void(0)" class="btn btn-sm btn-outline-secondary mtb-btn mtb-btn-sm" *ngIf="!twitterLinked">Link</a>
+                    <p class="mtb-text-10" *ngIf="twitterLinked">Linked</p>
+                    <a href="javascript:void(0)" class="p-2 mtb-link mtb-link-lg" *ngIf="twitterLinked"><i class="ri-close-fill"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
