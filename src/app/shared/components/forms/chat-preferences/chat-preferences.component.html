@@ -1,1 +1,63 @@
-<p>chat-preferences works!</p>
+<div class="row">
+
+    <div class="col-12 col-lg-6">
+        <div class="mtb-quick-settings-wrapper">
+            <h4 class="mtb-main-title-5 text-uppercase mb-3">Basic Information</h4>
+            <div class="mttb-security-settings-description-box">
+                <p>This will allow the users in this chat be able to view your basic information, this includes your contact information and your location as well as your health card.</p>
+            </div>
+
+            <div class="custom-control custom-switch mtb-switches-right  mtb-form-input-wrapper">
+                <input type="checkbox" class="custom-control-input" id="customSwitch1">
+                <label class="custom-control-label mtb-card-section-body" for="customSwitch1">For general requests, allow basic information to be viewed?</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <h4 class="mtb-main-title-5 text-uppercase mb-3">Medical History</h4>
+        <div class="mtb-quick-settings-wrapper">
+            <div class="mttb-security-settings-description-box">
+                <p>This will allow the user to be able to view your medical history notes, that will include doctors notes in the past.</p>
+            </div>
+
+            <div class="form-group d-flex flex-column mtb-form-input-wrapper">
+                <label class="mtb-card-section-body"><strong>For general requests, allow your medical history to be viewed?</strong></label>
+                <select name="mtb-med-hstry-setting" class="p-1" id="">
+                    <option value="">Select the duration the doctor can view</option>
+                    <option value="one-month">1 Month</option>
+                    <option value="two-months">2 Months</option>
+                    <option value="three-months">3 Months</option>
+                    <option value="six-months">6 Months</option>
+                    <option value="one-year">1 Year</option>
+                    <option value="everything">Everything</option>
+                    <option value="dont-allow">Don't allow</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-lg-6 mt-3">
+        <h4 class="mtb-main-title-5 text-uppercase mb-3">Allergies and Vaccines</h4>
+        <div class="mtb-quick-settings-wrapper">
+            <div class="mttb-security-settings-description-box">
+                <p>This will allow the doctor to view your medical allergies as well as your vacinations</p>
+            </div>
+
+            <div class="form-group d-flex flex-column mtb-form-input-wrapper">
+                <label class="mtb-card-section-body"><strong>For general requests, allow your allergies and vaccines to be viewed?</strong></label>
+                <select name="mtb-med-allergy-setting" class="p-1" id="">
+                    <option value="">Select the duration the doctor can view</option>
+                    <option value="one-month">1 Month</option>
+                    <option value="two-months">2 Months</option>
+                    <option value="three-months">3 Months</option>
+                    <option value="six-months">6 Months</option>
+                    <option value="one-year">1 Year</option>
+                    <option value="everything">Everything</option>
+                    <option value="dont-allow">Don't allow</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+</div>
