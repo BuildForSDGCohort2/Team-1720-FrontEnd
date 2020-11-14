@@ -49,6 +49,8 @@ export class LoginComponent implements OnInit {
     // this.router.navigate(['/dashboard']);
 
     this.submitted = true;
+    const formVals = this.loginForm.value;
+    this.error = '';
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -56,17 +58,20 @@ export class LoginComponent implements OnInit {
     }
 
     this.loading = true;
-    this.authenticationService.login(this.f.username.value, this.f.password.value)
+    this.authenticationService.login( formVals.username, formVals.password)
       .pipe(first())
       .subscribe({
         next: () => {
           // get return url from route parameters or default to '/'
           const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
+          this.submitted = false;
           this.router.navigate([returnUrl]);
         },
         error: error => {
           this.error = error;
           this.loading = false;
+          this.submitted = false;
+          this.loginForm.reset();
         }
       });
 

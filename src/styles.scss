@@ -287,12 +287,14 @@ p {
 }
 
 .mtb-header-error {
-    padding: 0.8rem 0rem;
+    padding: 0.8rem;
+    background-color: $mtb-red-o-1;
     h5 {
         font-family: $mtb-fnt-noto;
         font-size: $mtb-fnt-sz-md;
         font-weight: $mtb-fnt-w-500;
         color: $mtb-red-o-8;
+        line-height: $mtb-fnt-sz-22;
     }
     p {
         font-family: $mtb-fnt-noto;

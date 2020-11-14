@@ -17,8 +17,13 @@ export class AuthenticationService {
   public currentUser: Observable<User>;
 
   constructor( private cookieService: CookieService, private http: HttpClient ) {
-    this.currentUserSubject = new BehaviorSubject<User>( JSON.parse(localStorage.getItem('currentUser')) );
-    // this.currentUserSubject = new BehaviorSubject<User>(JSON.parse( this.cookieService.get('mtibabu') ) );
+    // this.currentUserSubject = new BehaviorSubject<User>( JSON.parse(localStorage.getItem('currentUser')) );
+    if (this.cookieService.check('mtibabu')){
+      this.currentUserSubject = new BehaviorSubject<User>( JSON.parse(this.cookieService.get('mtibabu')) );
+    } else {
+      this.currentUserSubject = new BehaviorSubject<User>( null );
+    }
+
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
