@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CookieService } from 'ngx-cookie-service';
+
+import { AuthenticationService } from '../../../core/services/authentication.service';
+
+import { first } from 'rxjs/operators';
+
 
 @Component({
   selector: 'app-login',
@@ -11,10 +15,26 @@ import { CookieService } from 'ngx-cookie-service';
 export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
+  loading = false;
+  submitted = false;
+  error = '';
 
-  constructor(private cookieService: CookieService, private formBuilder: FormBuilder, private router: Router) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private route: ActivatedRoute,
+    private router: Router,
+    private authenticationService: AuthenticationService
+  ) {
+
+    // redirect to home if already logged in
+    if (this.authenticationService.currentUserValue) {
+      this.router.navigate(['/dashboard']);
+    }
+
+  }
 
   ngOnInit(): void {
+
     // Creating the form
     this.loginForm = this.formBuilder.group({
       username: ['', Validators.required],
@@ -22,9 +42,34 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  get f(): any{ return this.loginForm.controls; }
+
   logUserIn(): any{
-    this.cookieService.set('mtibabu', JSON.stringify({ user: 'userTest' }));
-    this.router.navigate(['/dashboard']);
+    // this.cookieService.set('mtibabu', JSON.stringify({ user: 'userTest' }));
+    // this.router.navigate(['/dashboard']);
+
+    this.submitted = true;
+
+    // stop here if form is invalid
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    this.loading = true;
+    this.authenticationService.login(this.f.username.value, this.f.password.value)
+      .pipe(first())
+      .subscribe({
+        next: () => {
+          // get return url from route parameters or default to '/'
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
+          this.router.navigate([returnUrl]);
+        },
+        error: error => {
+          this.error = error;
+          this.loading = false;
+        }
+      });
+
   }
 
 }

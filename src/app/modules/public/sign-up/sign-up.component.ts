@@ -12,6 +12,7 @@ export class SignUpComponent implements OnInit {
   minDate;
   closeResult = '';
   registerForm: FormGroup;
+  formSubmitted = false;
 
   constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
     this.minDate = { year: 1900, month: 1, day: 1 };
@@ -59,6 +60,24 @@ export class SignUpComponent implements OnInit {
         this.closeResult =
           `Dismissed ${this.getDismissReason(reason)}`;
       });
+  }
+
+  // Handling the form controls
+  get f(): any { return this.registerForm.controls; }
+
+  // Handling the user login
+  registerUser(): any{
+    const form = this.registerForm;
+    this.formSubmitted = true;
+
+    if ( form.status === 'INVALID'){
+      return false;
+    }
+
+    // Form is valid, create the new user.
+    
+
+    console.log(form);
   }
 
   private getDismissReason(reason: any): string {

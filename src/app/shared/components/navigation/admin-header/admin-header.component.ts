@@ -3,6 +3,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
+import { AuthenticationService } from '../../../../core/services/authentication.service';
 
 @Component({
   selector: 'app-admin-header',
@@ -18,7 +19,8 @@ export class AdminHeaderComponent implements OnInit {
     private cookieService: CookieService,
     private router: Router,
     private formBuilder: FormBuilder,
-    private titleService: Title
+    private titleService: Title,
+    private authenticationService: AuthenticationService
   ) { }
 
   ngOnInit(): void {
@@ -29,7 +31,8 @@ export class AdminHeaderComponent implements OnInit {
   }
 
   logout(): any{
-    this.cookieService.set('mtibabu', JSON.stringify({ user: '' }));
+    // this.cookieService.set('mtibabu', JSON.stringify({ user: '' }));
+    this.authenticationService.logout();
     this.router.navigate(['/home']);
   }
 

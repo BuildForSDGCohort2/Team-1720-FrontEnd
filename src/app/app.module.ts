@@ -1,5 +1,5 @@
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -9,6 +9,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CountdownTimerComponent } from './modules/public/countdown-timer/countdown-timer.component';
 import { ErrorPageComponent } from './modules/public/error-page/error-page.component';
+
+import { JwtInterceptor} from './core/_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './core/_helpers/error.interceptor';
 
 // ------ External Libraries ----------------
 import { CountdownModule } from 'ngx-countdown';
@@ -171,7 +174,10 @@ import { ChatPreferencesComponent } from './shared/components/forms/chat-prefere
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({ provide: DateAdapter, useFactory: adapterFactory })
   ],
-  providers: [CookieService, Title],
+  providers: [CookieService, Title,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })

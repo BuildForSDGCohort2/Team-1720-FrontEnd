@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { AuthGuard } from './core/_helpers/auth.guard';
+
 // Public pages
 import { HomeComponent } from './modules/public/home/home.component';
 import { LoginComponent } from './modules/public/login/login.component';
@@ -91,7 +93,7 @@ const routes: Routes = [
   {
     path: '',
     component: AdminComponent,
-    data: { title: 'Admin: ' },
+    data: { title: 'Admin: ', canActivate: [AuthGuard] },
     children: [
       {
         path: 'dashboard',

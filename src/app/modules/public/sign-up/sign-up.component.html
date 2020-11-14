@@ -11,25 +11,30 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form [formGroup]="registerForm">
+                    <form [formGroup]="registerForm" [ngClass]="{ 'mtb-form-error': formSubmitted && registerForm.status === 'INVALID' }">
                         <div class="col-12 d-flex px-0">
-                            <div class="form-group mtb-input-wrapper">
+                            <div class="form-group flex-column align-items-start mtb-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.firstName.errors }">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.firstName.errors ">Your first name is required.</span>
                                 <input type="text" placeholder="Name" class="mtb-input-md" formControlName="firstName">
                             </div>
-                            <div class="form-group mtb-input-wrapper ml-2">
+                            <div class="form-group flex-column align-items-start mtb-input-wrapper ml-2" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.lastName.errors}">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.lastName.errors ">Your last name is required.</span>
                                 <input type="text" placeholder="Surname" class="mtb-input-md" formControlName="lastName">
                             </div>
                         </div>
                         <div class="col-12 d-flex px-0">
-                            <div class="form-group mtb-input-wrapper">
+                            <div class="form-group flex-column align-items-start mtb-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.email.errors}">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.email.errors ">Your email address is required.</span>
                                 <input type="email" placeholder="Email" class="mtb-input-md" formControlName="email">
                             </div>
-                            <div class="form-group mtb-input-wrapper ml-2">
+                            <div class="form-group flex-column align-items-start mtb-input-wrapper ml-2" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.mobile.errors}">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.mobile.errors ">Your mobile number is required.</span>
                                 <input type="tel" placeholder="Mobile number" class="mtb-input-md" formControlName="mobile">
                             </div>
                         </div>
                         <div class="col-12 d-flex px-0">
-                            <div class="form-group mtb-input-wrapper">
+                            <div class="form-group flex-column align-items-start mtb-input-wrapper" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.gender.errors}">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.gender.errors ">Please select your prefered gender.</span>
                                 <select name="gender" id="" formControlName="gender">
                                     <option value="">Please select your gender</option>
                                     <option value="Female">Female</option>
@@ -38,20 +43,22 @@
                                     <option value="not-say">Rather not say</option>
                                 </select>
                             </div>
-                            <div class="form-group mtb-input-wrapper ml-2">
+                            <div class="form-group flex-column align-items-start mtb-input-wrapper ml-2" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.dateOfBirth.errors}">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.dateOfBirth.errors ">Please select your date of birth</span>
                                 <input type="dateOfBirth" placeholder="Date of Birth" placeholder="yyyy-mm-dd" name="dp" [minDate]="minDate" ngbDatepicker #dp="ngbDatepicker" (click)="dp.toggle()" class="mtb-input-md" formControlName="dateOfBirth">
                             </div>
                         </div>
                         <ng-container *ngIf="userType === 'doctor'">
                             <div class="col-12 px-0 d-none" [ngClass]="{'d-flex': userType === 'doctor'}">
-                                <div class="form-group mtb-input-wrapper">
-                                    <input type="text" placeholder="Medical Licence ID" class="mtb-input-md" formControlName="medicalId">
+                                <div class="form-group flex-column align-items-start mtb-input-wrapper">
+                                    <input *ngIf="userType === 'doctor'" type="text" placeholder="Medical Licence ID" class="mtb-input-md" formControlName="medicalId">
                                 </div>
                             </div>
                         </ng-container>
 
                         <div class="form-group">
-                            <div class="mtb-input-wrapper-checkbox">
+                            <div class="flex-column align-items-start  mtb-input-wrapper-checkbox" [ngClass]="{'mtb-form-input-error-wrapper': formSubmitted && f.accepted_terms_and_conditions.errors}">
+                                <span class="mtb-error-msg" *ngIf="formSubmitted && f.accepted_terms_and_conditions.errors ">Please accept the terms and conditions</span>
                                 <input type="checkbox" id="check" name="check" value="" formControlName="accepted_terms_and_conditions" />
                                 <label for="check">
                                     <span></span>I accept the <a href="javascript:void(0)" (click)="open(content)">Terms and conditions</a>
@@ -60,7 +67,7 @@
                         </div>
 
                         <div class="col-12 px-0 mt-3 text-center">
-                            <a href="javascript:void(0)" class="btn btn-lg btn-block mt-3 mtb-btn-lg mtb-btn-green">Sign up</a>
+                            <a href="javascript:void(0)" (click)="registerUser()" class="btn btn-lg btn-block mt-3 mtb-btn-lg mtb-btn-green">Sign up</a>
                         </div>
                     </form>
                     <div class="col-12 mtb-footer-cont-links text-center">
