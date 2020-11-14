@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router, ActivatedRoute } from '@angular/router';
+
+import { RegistrationService } from '../../../core/services/registration.service';
 
 @Component({
   selector: 'app-sign-up',
@@ -13,8 +16,16 @@ export class SignUpComponent implements OnInit {
   closeResult = '';
   registerForm: FormGroup;
   formSubmitted = false;
+  loading = false;
+  error = '';
 
-  constructor(private modalService: NgbModal, private formBuilder: FormBuilder) {
+  constructor(
+    private modalService: NgbModal,
+    private formBuilder: FormBuilder,
+    private registrationService: RegistrationService,
+    private route: ActivatedRoute,
+    private router: Router,
+    ) {
     this.minDate = { year: 1900, month: 1, day: 1 };
    }
 
@@ -70,14 +81,42 @@ export class SignUpComponent implements OnInit {
     const form = this.registerForm;
     this.formSubmitted = true;
 
-    if ( form.status === 'INVALID'){
+    if ( form.invalid){
       return false;
     }
 
-    // Form is valid, create the new user.
-    
+    const newUser = {
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
+      fullName: form.value.firstName + '' + form.value.lastName,
+      gender: form.value.gender,
+      userStatus: 'new',
+      verified: false,
+      termsAndConditions: form.value.accepted_terms_and_conditions,
+      dateOfBirth: form.value.dateOfBirth.day + '/' + form.value.dateOfBirth.month + '/' + form.value.dateOfBirth.year,
+      mobile: form.value.mobile,
+      email: form.value.email,
+    };
 
-    console.log(form);
+    // console.log(form.value.dateOfBirth);
+    // return false;
+
+    // Form is valid, create the new user.
+    this.registrationService.register(newUser)
+      .subscribe({
+        next: () => {
+          // get return url from route parameters or default to '/'
+          const returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';
+          this.formSubmitted = false;
+          this.router.navigate([returnUrl]);
+        },
+        error: error => {
+          this.error = error;
+          this.loading = false;
+          this.formSubmitted = false;
+          // this.registerForm.reset();
+        }
+      });
   }
 
   private getDismissReason(reason: any): string {
